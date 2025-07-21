@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             TeamsTableSeeder::class,
             PlayersTableSeeder::class,
             TeamTournamentSeeder::class,
+            MatchesTableSeeder::class,
         ]);
     }
 }

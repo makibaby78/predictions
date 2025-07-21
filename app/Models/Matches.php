@@ -10,10 +10,9 @@ class Matches extends Model
 
     protected $fillable = [
         'tournament_id',
-        'team_a_id',
-        'team_b_id',
-        'team_a_score',
-        'team_b_score',
+        'team1_id',
+        'team2_id',
+        'round',
     ];
 
     public function tournament()
@@ -23,16 +22,16 @@ class Matches extends Model
 
     public function teamA()
     {
-        return $this->belongsTo(Team::class, 'team_a_id');
+        return $this->belongsTo(Team::class, 'team1_id');
     }
 
     public function teamB()
     {
-        return $this->belongsTo(Team::class, 'team_b_id');
+        return $this->belongsTo(Team::class, 'team2_id');
     }
 
-    public function winner() 
-    { 
-        return $this->belongsTo(Team::class, 'winner_id'); 
+    public function winner()
+    {
+        return $this->belongsTo(Team::class, 'winner_id');
     }
 }

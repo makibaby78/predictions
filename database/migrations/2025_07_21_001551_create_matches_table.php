@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tournament_id')->constrained();
-            $table->foreignId('team_a_id')->constrained('teams');
-            $table->foreignId('team_b_id')->constrained('teams');
-            $table->unsignedTinyInteger('team_a_score');
-            $table->unsignedTinyInteger('team_b_score');
+            $table->foreignId('tournament_id')->constrained()->onDelete('cascade');
+            $table->foreignId('team1_id')->nullable()->constrained('teams')->nullOnDelete();
+            $table->foreignId('team2_id')->nullable()->constrained('teams')->nullOnDelete();
+            $table->integer('round')->nullable();
+            $table->string('bracket')->nullable();
+            $table->string('group')->nullable();
+            $table->string('stage')->nullable();
+            $table->foreignId('winner_id')->nullable()->constrained('teams')->nullOnDelete();
             $table->timestamps();
+            $table->index(['tournament_id', 'stage', 'group', 'bracket']);
         });
     }
 

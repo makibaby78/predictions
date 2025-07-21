@@ -89,6 +89,11 @@ class TeamsTableSeeder extends Seeder
                 'game_id' => '2',
                 'country' => 'China',
             ],
+            [
+                'name' => 'Virtus.pro',
+                'game_id' => '2',
+                'country' => 'Russia',
+            ],
         ]);
     }
 }

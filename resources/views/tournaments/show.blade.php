@@ -26,20 +26,7 @@
 
     <h2 class="text-xl font-semibold mb-2">Matches</h2>
     <ul class="space-y-3">
-        @forelse ($tournament->matches as $match)
-            <li class="border rounded p-4 shadow-sm">
-                <strong>{{ $match->teamA->name }}</strong>
-                vs
-                <strong>{{ $match->teamB->name }}</strong>
-                @if($match->winner_id)
-                    <span class="ml-4 text-green-600 font-bold">
-                        Winner: {{ $match->winner->name }}
-                    </span>
-                @endif
-            </li>
-        @empty
-            <li>No matches scheduled yet.</li>
-        @endforelse
+        <livewire:tournament-bracket :tournament="$tournament" />
     </ul>
 </div>
 @endsection
