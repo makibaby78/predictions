@@ -13,7 +13,10 @@ class Matches extends Model
         'team1_id',
         'team2_id',
         'round',
-        'winner_id'
+        'winner_id',
+        'bracket',
+        'stage',
+        'group',
     ];
 
     public function tournament()
