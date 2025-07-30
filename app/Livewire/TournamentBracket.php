@@ -82,6 +82,7 @@ class TournamentBracket extends Component
         ]);
 
         $this->cancelEdit();
+
         session()->flash('success', 'Match updated successfully.');
     }
 

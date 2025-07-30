@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use function App\Helpers\getTeamWinRate;
 
 class Team extends Model
 {
@@ -12,6 +13,18 @@ class Team extends Model
     public function tournaments()
     {
         return $this->belongsToMany(Tournament::class);
+    }
+
+    public function winRate($tournamentId = null)
+    {
+        $rateData = getTeamWinRate($this->id, $tournamentId);
+    
+        return number_format($rateData['winrate'], 2);
+    }
+
+    public function winRateData($tournamentId = null)
+    {
+        return getTeamWinRate($this->id, $tournamentId);
     }
 
     public function game()

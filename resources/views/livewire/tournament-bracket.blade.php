@@ -16,7 +16,7 @@
             @endphp
 
             @if ($hasGroup && $hasBracket)
-                <div class="grid grid-cols-2 gap-8">
+                <div>
                     @foreach (['A', 'B'] as $group)
                         <div>
                             <h2 class="text-xl font-bold mb-4 dark:text-white">Group {{ $group }}</h2>
@@ -43,12 +43,19 @@
                                                         <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
                                                             <div class="p-2">
                                                                 {{ $match->teamA->name ?? 'TBD' }}
+                                                                @if ($match->teamA)
+                                                                    T - ({{ $match->teamA->winRate($match->tournament_id) }}%) |
+                                                                    A - ({{ $match->teamA->winRate(null) }}%)
+                                                                @endif
                                                             </div>
 
                                                             <div class="p-2 border-t border-gray-200">
                                                                 {{ $match->teamB->name ?? 'TBD' }}
+                                                                @if ($match->teamB)
+                                                                    T - ({{ $match->teamB->winRate($match->tournament_id) }}%) |
+                                                                    A - ({{ $match->teamB->winRate(null) }}%)
+                                                                @endif
                                                             </div>
-
                                                             @if ($match->winner && is_object($match->winner))
                                                                 <div class="p-2 border-t border-gray-200 text-green-600">
                                                                     Winner: {{ $match->winner->name }}
@@ -85,10 +92,18 @@
                                     <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
                                         <div class="p-2">
                                             {{ $match->teamA->name ?? 'TBD' }}
+                                            @if ($match->teamA)
+                                                T - ({{ $match->teamA->winRate($match->tournament_id) }}%) |
+                                                A - ({{ $match->teamA->winRate(null) }}%)
+                                            @endif
                                         </div>
 
                                         <div class="p-2 border-t border-gray-200">
                                             {{ $match->teamB->name ?? 'TBD' }}
+                                            @if ($match->teamB)
+                                                T - ({{ $match->teamB->winRate($match->tournament_id) }}%) |
+                                                A - ({{ $match->teamB->winRate(null) }}%)
+                                            @endif
                                         </div>
 
                                         @if ($match->winner && is_object($match->winner))
