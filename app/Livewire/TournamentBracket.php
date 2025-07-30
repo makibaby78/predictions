@@ -10,6 +10,13 @@ class TournamentBracket extends Component
 {
     public Tournament $tournament;
 
+    public $editingMatch = null;
+    public $teamA_id;
+    public $teamB_id;
+    public $winner_id;
+    public $teamA_name;
+    public $teamB_name;
+
     public function mount(Tournament $tournament)
     {
         $this->tournament = $tournament;
@@ -26,8 +33,41 @@ class TournamentBracket extends Component
             ->get();
     }
 
+    public function editMatch($matchId)
+    {
+        $match = Matches::findOrFail($matchId);
+        $this->editingMatch = $match->id;
+        $this->teamA_id = $match->team1_id;
+        $this->teamB_id = $match->team2_id;
+        $this->winner_id = $match->winner_id;
+    }
+
+    public function updateMatch()
+    {
+        $match = Matches::findOrFail($this->editingMatch);
+        $match->team1_id = $this->teamA_id;
+        $match->team2_id = $this->teamB_id;
+        $match->winner_id = $this->winner_id;
+        $match->save();
+
+        $this->editingMatch = null;
+        session()->flash('success', 'Match updated successfully!');
+    }
+
+    public function cancelEdit()
+    {
+        $this->editingMatch = null;
+    }
+
+    public function getTeamsProperty()
+    {
+        return \App\Models\Team::orderBy('name')->get();
+    }
+
     public function render()
     {
-        return view('livewire.tournament-bracket');
+        return view('livewire.tournament-bracket', [
+            'teams' => $this->teams,
+        ]);
     }
 }

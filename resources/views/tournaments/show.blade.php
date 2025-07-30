@@ -24,7 +24,7 @@
 
     <hr class="my-4">
 
-    <h2 class="text-xl font-semibold mb-2">Matches</h2>
+    <h2 class="text-xl font-semibold mb-2 dark:text-white">Matches</h2>
     <ul class="space-y-3">
         <livewire:tournament-bracket :tournament="$tournament" />
     </ul>
