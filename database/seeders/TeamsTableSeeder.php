@@ -94,6 +94,16 @@ class TeamsTableSeeder extends Seeder
                 'game_id' => '2',
                 'country' => 'Russia',
             ],
+            ['name' => 'PARIVISION', 'game_id' => 1, 'country' => 'China'],
+            ['name' => 'Tundra Esports', 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => 'Nigma Galaxy', 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => 'Xtreme Gaming', 'game_id' => 1, 'country' => 'SEA'],
+            ['name' => 'BOOM Esports', 'game_id' => 1, 'country' => 'Indonesia'],
+            ['name' => 'BetBoom Team', 'game_id' => 1, 'country' => 'Russia'],
+            ['name' => 'Gaimin Gladiators', 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => 'Team Tidebound', 'game_id' => 1, 'country' => 'China'],
+            ['name' => 'Team Yandex', 'game_id' => 1, 'country' => 'Russia'],
+            ['name' => "Yakult Brothers", 'game_id' => 1, 'country' => 'Asia'],
         ]);
     }
 }

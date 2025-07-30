@@ -13,9 +13,9 @@ class TeamTournamentSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach (range(1, 15) as $teamId) {
+        foreach (range(1, 26) as $teamId) {
             DB::table('team_tournament')->insert([
-                'tournament_id' => 1,
+                'tournament_id' => 2,
                 'team_id' => $teamId,
             ]);
         }
