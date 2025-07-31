@@ -2,10 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TournamentController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\GameController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/games', [GameController::class, 'index'])->name('games.index');
+
+Route::get('/games/{game}/teams', function (\App\Models\Game $game) {
+    return view('games.teams', compact('game'));
+})->name('games.teams.index');
+
+Route::get('/teams/{team}', [TeamController::class, 'show'])->name('teams.show');
 
 Route::get('/tournaments', [TournamentController::class, 'index'])->name('tournament.index');
 Route::get('/tournaments/create', [TournamentController::class, 'create'])->name('tournament.create');

@@ -42,7 +42,7 @@ class TournamentBracket extends Component
 
     public function getTeamsProperty()
     {
-        return Team::orderBy('name')->get();
+        return Team::where('game_id', $this->tournament->game_id)->orderBy('name')->get();
     }
 
     public function editMatch($matchId)
