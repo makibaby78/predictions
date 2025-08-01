@@ -18,11 +18,11 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 1, 'name' => 'Savero', 'country' => 'Indonesia', 'position' => 'Gold Laner'],
             ['team_id' => 1, 'name' => 'Kiboy', 'country' => 'Indonesia', 'position' => 'Roamer'],
         
-            ['team_id' => 2, 'name' => 'Edward', 'country' => 'Philippines', 'position' => 'EXP Laner'],
-            ['team_id' => 2, 'name' => 'Wise', 'country' => 'Philippines', 'position' => 'Jungler'],
-            ['team_id' => 2, 'name' => 'Hadji', 'country' => 'Philippines', 'position' => 'Mid Laner'],
-            ['team_id' => 2, 'name' => 'Oheb', 'country' => 'Philippines', 'position' => 'Gold Laner'],
-            ['team_id' => 2, 'name' => 'Yue', 'country' => 'Philippines', 'position' => 'Roamer'],
+            ['team_id' => 2, 'name' => 'Dyrennn', 'country' => 'Philippines', 'position' => 'EXP Laner'],
+            ['team_id' => 2, 'name' => 'Sutsujin', 'country' => 'Philippines', 'position' => 'Jungler'],
+            ['team_id' => 2, 'name' => 'Rinz', 'country' => 'Philippines', 'position' => 'Mid Laner'],
+            ['team_id' => 2, 'name' => 'Toyy', 'country' => 'Philippines', 'position' => 'Gold Laner'],
+            ['team_id' => 2, 'name' => 'Idok', 'country' => 'Philippines', 'position' => 'Roamer'],
         
             ['team_id' => 3, 'name' => 'FlapTzy', 'country' => 'Philippines', 'position' => 'EXP Laner'],
             ['team_id' => 3, 'name' => 'KyleTzy', 'country' => 'Philippines', 'position' => 'Jungler'],
@@ -36,11 +36,11 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 4, 'name' => 'Skylar', 'country' => 'Indonesia', 'position' => 'Gold Laner'],
             ['team_id' => 4, 'name' => 'Vyn', 'country' => 'Indonesia', 'position' => 'Roamer'],
         
-            ['team_id' => 5, 'name' => 'XINNN', 'country' => 'Indonesia', 'position' => 'EXP Laner'],
-            ['team_id' => 5, 'name' => 'Lemon', 'country' => 'Indonesia', 'position' => 'Jungler'],
-            ['team_id' => 5, 'name' => 'Tazz', 'country' => 'Indonesia', 'position' => 'Mid Laner'],
-            ['team_id' => 5, 'name' => 'DreamS', 'country' => 'Indonesia', 'position' => 'Gold Laner'],
-            ['team_id' => 5, 'name' => 'Kiboy', 'country' => 'Indonesia', 'position' => 'Roamer'],
+            ['team_id' => 5, 'name' => 'Kramm', 'country' => 'Indonesia', 'position' => 'EXP Laner'],
+            ['team_id' => 5, 'name' => 'Sekys', 'country' => 'Indonesia', 'position' => 'Jungler'],
+            ['team_id' => 5, 'name' => 'Stormie', 'country' => 'Indonesia', 'position' => 'Mid Laner'],
+            ['team_id' => 5, 'name' => 'Innocent', 'country' => 'Indonesia', 'position' => 'Gold Laner'],
+            ['team_id' => 5, 'name' => 'Yums', 'country' => 'Indonesia', 'position' => 'Roamer'],
         
             ['team_id' => 6, 'name' => 'Ange1', 'country' => 'Philippines', 'position' => 'EXP Laner'],
             ['team_id' => 6, 'name' => 'Ghost', 'country' => 'Philippines', 'position' => 'Jungler'],

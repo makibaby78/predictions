@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Matches extends Model
 {
-    protected $table = 'matches'; // explicitly define table name since model name is plural
+    protected $table = 'matches';
 
     protected $fillable = [
         'series_id',
@@ -22,14 +22,9 @@ class Matches extends Model
         return $this->belongsTo(Series::class);
     }
 
-    public function team1()
+    public function matchHeroPicks()
     {
-        return $this->belongsTo(Team::class, 'team1_id');
-    }
-
-    public function team2()
-    {
-        return $this->belongsTo(Team::class, 'team2_id');
+        return $this->hasMany(MatchHeroPick::class, 'match_id');
     }
 
     public function winner()

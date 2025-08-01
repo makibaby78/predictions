@@ -54,7 +54,7 @@ class TournamentController extends Controller
         abort_unless($series->tournament_id === $tournament->id, 404);
     
         // Eager load matches and teams
-        $series->load('matches.team1', 'matches.team2', 'matches.winner');
+        $series->load('matches.series.teamA', 'matches.series.teamB', 'matches.winner');
     
         return view('tournaments.series.show', compact('tournament', 'series'));
     }

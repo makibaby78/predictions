@@ -10,8 +10,6 @@ class MobileLegendsHeroesSeeder extends Seeder
 {
     public function run()
     {
-        $game = Game::firstOrCreate(['name' => 'Mobile Legends: Bang Bang']);
-
         $heroNames = [
             'Miya','Balmond','Saber','Alice','Nana','Tigreal','Alucard','Karina','Akai','Franco',
             'Bane','Bruno','Clint','Rafaela','Eudora','Zilong','Fanny','Layla','Minotaur','Lolita',
@@ -24,12 +22,12 @@ class MobileLegendsHeroesSeeder extends Seeder
             'Guinevere','Khufra','Esmeralda','Granger','Terizla','Dyrroth','Lylia','X.Borg','Masha',
             'Baxia','Ling','Wanwan','Cecilion','Popol and Kupa','Luoyi','Yu Zhong','Khaleed','Barats',
             'Atlas','Mathilda','Edith','Novaria','Cici','Chip','Yve','Beatrix','Phoveus','Natan',
-            'Aamon','Valentina','Suyou','Lukas','Zetian'
+            'Aamon','Valentina','Suyou','Lukas','Zetian', 'Joy', 'Zhuxin',
         ];
 
         foreach ($heroNames as $name) {
             Hero::updateOrCreate(
-                ['game_id' => $game->id, 'name' => $name],
+                ['game_id' => 2, 'name' => $name],
                 []
             );
         }
