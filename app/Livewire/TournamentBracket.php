@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Matches;
+use App\Models\Series;
 use App\Models\Tournament;
 use App\Models\Team;
 
@@ -29,9 +29,9 @@ class TournamentBracket extends Component
         $this->tournament_id = $tournament->id;
     }
 
-    public function getMatchesProperty()
+    public function getSeriesProperty()
     {
-        return Matches::with(['teamA', 'teamB', 'winner'])
+        return Series::with(['teamA', 'teamB', 'winner'])
             ->where('tournament_id', $this->tournament->id)
             ->orderBy('stage')
             ->orderBy('group')
@@ -47,7 +47,7 @@ class TournamentBracket extends Component
 
     public function editMatch($matchId)
     {
-        $match = Matches::findOrFail($matchId);
+        $match = Series::findOrFail($matchId);
 
         $this->editingMatch = $match->id;
         $this->team1_id = $match->team1_id;
@@ -69,7 +69,7 @@ class TournamentBracket extends Component
 
     public function updateMatch()
     {
-        $match = Matches::findOrFail($this->editingMatch);
+        $match = Series::findOrFail($this->editingMatch);
 
         $match->update([
             'team1_id' => $this->team1_id,
@@ -89,7 +89,7 @@ class TournamentBracket extends Component
     public function deleteMatch()
     {
         if ($this->editingMatch) {
-            $match = Matches::find($this->editingMatch);
+            $match = Series::find($this->editingMatch);
             if ($match) {
                 $match->delete();
                 $this->cancelEdit();
@@ -100,7 +100,7 @@ class TournamentBracket extends Component
 
     public function createMatch()
     {
-        Matches::create([
+        Series::create([
             'tournament_id' => $this->tournament_id,
             'team1_id' => $this->team1_id,
             'team2_id' => $this->team2_id,
@@ -120,7 +120,7 @@ class TournamentBracket extends Component
     {
         return view('livewire.tournament-bracket', [
             'teams' => $this->teams,
-            'matches' => $this->matches,
+            'Series' => $this->Series,
         ]);
     }
 }

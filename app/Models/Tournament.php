@@ -18,8 +18,8 @@ class Tournament extends Model
         return $this->belongsToMany(Team::class);
     }
 
-    public function matches()
+    public function series()
     {
-        return $this->hasMany(Matches::class);
+        return $this->hasMany(Series::class);
     }
 }

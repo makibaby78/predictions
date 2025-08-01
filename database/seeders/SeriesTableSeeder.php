@@ -2,19 +2,19 @@
 
 namespace Database\Seeders;
 
-use App\Models\Matches;
+use App\Models\Series;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class MatchesTableSeeder extends Seeder
+class SeriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Matches::insert([
+        Series::insert([
             [
                 'tournament_id' => 1,
                 'team1_id' => 3,

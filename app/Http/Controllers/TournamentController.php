@@ -13,8 +13,8 @@ class TournamentController extends Controller
         $tournament->load([
             'game',
             'teams.players',
-            'matches.teamA',
-            'matches.teamB'
+            'series.teamA',
+            'series.teamB'
         ]);
 
         return view('tournaments.show', compact('tournament'));

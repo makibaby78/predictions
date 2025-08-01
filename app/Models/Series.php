@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Matches extends Model
+class Series extends Model
 {
-    protected $table = 'matches';
+    protected $table = 'series';
 
     protected $fillable = [
         'tournament_id',

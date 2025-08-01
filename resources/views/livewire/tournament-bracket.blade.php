@@ -1,18 +1,18 @@
 @php
-    $stages = $this->matches->groupBy('stage');
+    $stages = $this->series->groupBy('stage');
 @endphp
 
 <div class="space-y-10">
 
     <button wire:click="$set('isCreating', true)" class="bg-green-500 text-white px-3 py-1 rounded">Add Match</button>
 
-    @foreach ($stages as $stage => $stageMatches)
+    @foreach ($stages as $stage => $stageSeries)
         <div>
             <h1 class="text-2xl font-bold mb-6 dark:text-white">{{ ucfirst($stage) }} Stage</h1>
 
             @php
-                $hasGroup = $stageMatches->pluck('group')->filter()->isNotEmpty();
-                $hasBracket = $stageMatches->pluck('bracket')->filter()->isNotEmpty();
+                $hasGroup = $stageSeries->pluck('group')->filter()->isNotEmpty();
+                $hasBracket = $stageSeries->pluck('bracket')->filter()->isNotEmpty();
             @endphp
 
             @if ($hasGroup && $hasBracket)
@@ -23,23 +23,23 @@
 
                             @foreach (['upper', 'lower'] as $bracket)
                                 @php
-                                    $groupMatches = $stageMatches
+                                    $groupSeries = $stageSeries
                                         ->where('group', $group)
                                         ->where('bracket', $bracket);
 
-                                    $groupedRounds = $groupMatches->groupBy('round');
+                                    $groupedRounds = $groupSeries->groupBy('round');
                                 @endphp
 
                                 <div class="mb-6">
                                     <h3 class="text-lg font-semibold mb-2 capitalize dark:text-white">{{ $bracket }} Bracket</h3>
 
                                     <div class="grid grid-cols-3 gap-2 items-center">
-                                        @foreach ($groupedRounds as $round => $matches)
+                                        @foreach ($groupedRounds as $round => $series)
                                             <div class="mb-4">
                                                 <h4 class="text-md font-bold mb-2 dark:text-white">Round {{ $round }}</h4>
 
                                                 <div class="space-y-3">
-                                                    @foreach ($matches as $match)
+                                                    @foreach ($series as $match)
                                                         <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
                                                             <div class="p-2">
                                                                 {{ $match->teamA->name ?? 'TBD' }}
@@ -79,16 +79,16 @@
             @else
                 {{-- Render a flat list without brackets or groups --}}
                 @php
-                    $groupedRounds = $stageMatches->groupBy('round');
+                    $groupedRounds = $stageSeries->groupBy('round');
                 @endphp
 
                 <div class="grid grid-cols-3 gap-2 items-center">
-                    @foreach ($groupedRounds as $round => $matches)
+                    @foreach ($groupedRounds as $round => $series)
                         <div class="mb-4">
                             <h4 class="text-md font-bold mb-2 dark:text-white">Round {{ $round }}</h4>
 
                             <div class="space-y-3">
-                                @foreach ($matches as $match)
+                                @foreach ($series as $match)
                                     <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
                                         <div class="p-2">
                                             {{ $match->teamA->name ?? 'TBD' }}

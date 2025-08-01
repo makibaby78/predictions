@@ -5,7 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Team;
 use App\Models\Game;
-use App\Models\Matches;
+use App\Models\Series;
 
 class GameTeams extends Component
 {
@@ -29,11 +29,11 @@ class GameTeams extends Component
         $teams = Team::where('game_id', $this->game->id)->get();
 
         $this->teams = $teams->map(function ($team) {
-            $total = Matches::where(function ($q) use ($team) {
+            $total = Series::where(function ($q) use ($team) {
                 $q->where('team1_id', $team->id)->orWhere('team2_id', $team->id);
             })->whereNotNull('winner_id')->count();
 
-            $wins = Matches::where('winner_id', $team->id)->count();
+            $wins = Series::where('winner_id', $team->id)->count();
 
             $team->winrate = $total > 0 ? round(($wins / $total) * 100, 2) : 0;
 
