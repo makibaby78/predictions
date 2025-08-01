@@ -20,5 +20,12 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2025-07-10',
             'end_date' => '2025-08-02',
         ]);
+
+        Tournament::create([
+            'name' => 'Clavision Masters 2025: Snow-Ruyi (超维视界大师赛2025)',
+            'game_id' => 1,
+            'start_date' => '2025-07-28',
+            'end_date' => '2025-08-03',
+        ]);
     }
 }

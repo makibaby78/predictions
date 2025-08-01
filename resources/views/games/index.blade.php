@@ -10,7 +10,6 @@
                 <div class="bg-white shadow rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <h2 class="text-xl font-semibold text-gray-900">{{ $game->name }}</h2>
-                        <p class="text-sm text-gray-500">Game ID: {{ $game->id }}</p>
                     </div>
 
                     <div class="mt-4">

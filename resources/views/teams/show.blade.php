@@ -19,9 +19,55 @@
             </div>
         @endif
 
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold mb-2">Add Player</h2>
+            <form method="POST" action="{{ route('players.store', $team->id) }}" class="space-y-2">
+                @csrf
+                <div>
+                    <label class="block text-sm font-medium">Name</label>
+                    <input type="text" name="name" class="w-full border rounded p-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">Position (optional)</label>
+                    <input type="text" name="position" class="w-full border rounded p-2">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Add Player
+                </button>
+            </form>
+        </div>        
+
         <a href="{{ url()->previous() }}" class="text-blue-600 hover:underline text-sm">
             ← Back to Teams
         </a>
+
+        @if($team->players->isNotEmpty())
+            <div class="mt-6">
+                <h2 class="text-xl font-semibold mb-2">Players</h2>
+                <ul class="space-y-2">
+                    @foreach ($team->players as $player)
+                        <li class="bg-gray-100 p-4 rounded shadow-sm">
+                            <p class="text-gray-800 font-medium">{{ $player->name }}</p>
+                            <p class="text-sm text-gray-500">Position: {{ $player->position ?? 'N/A' }}</p>
+
+                            <form method="POST" action="{{ route('players.destroy', $player->id) }}" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 text-sm hover:underline"
+                                    onclick="return confirm('Remove this player?')">
+                                    Remove
+                                </button>
+                            </form>
+                            
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @else
+            <div class="mt-6">
+                <p class="text-gray-500 italic">No players added to this team yet.</p>
+            </div>
+        @endif
     </div>
 </div>
 @endsection
