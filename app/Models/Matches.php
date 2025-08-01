@@ -14,7 +14,7 @@ class Matches extends Model
         'team2_id',
         'scheduled_at',
         'winner_id',
-        // add other relevant fields
+        'match_number',
     ];
 
     public function series()

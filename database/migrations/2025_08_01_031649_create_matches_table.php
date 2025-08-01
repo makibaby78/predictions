@@ -14,9 +14,6 @@ return new class extends Migration
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
             $table->foreignId('series_id')->constrained()->onDelete('cascade');
-            $table->foreignId('game_id')->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('team1_id')->nullable();
-            $table->unsignedBigInteger('team2_id')->nullable();
             $table->timestamp('scheduled_at')->nullable();
             $table->integer('match_number')->nullable();
             $table->foreignId('winner_id')->nullable()->constrained('teams')->onDelete('set null');

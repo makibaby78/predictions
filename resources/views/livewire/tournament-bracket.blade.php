@@ -63,7 +63,17 @@
                                                             @endif
 
                                                             <div class="p-2 border-t border-gray-200">
-                                                                <button wire:click="editSeries({{ $serie->id }})" class="text-blue-600 hover:underline text-xs cursor-pointer">Edit</button>
+
+                                                                <a href="{{ route('tournament.series.show', ['tournament' => $serie->tournament_id, 'series' => $serie->id]) }}"
+                                                                    class="text-blue-600 hover:underline text-xs cursor-pointer">
+                                                                     View Series
+                                                                 </a>
+
+                                                                <button 
+                                                                    wire:click="editSeries({{ $serie->id }})" 
+                                                                    class="text-blue-600 hover:underline text-xs cursor-pointer">
+                                                                        Edit
+                                                                </button>
                                                             </div>
                                                         </div>                                                        
                                                     @endforeach

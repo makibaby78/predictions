@@ -50,11 +50,12 @@ class TournamentController extends Controller
 
     public function showSeries(Tournament $tournament, Series $series)
     {
-        // Optional: Validate that the series belongs to the tournament
-        if ($series->tournament_id !== $tournament->id) {
-            abort(404); // or redirect or throw an exception
-        }
-
+        // Optionally confirm series belongs to tournament
+        abort_unless($series->tournament_id === $tournament->id, 404);
+    
+        // Eager load matches and teams
+        $series->load('matches.team1', 'matches.team2', 'matches.winner');
+    
         return view('tournaments.series.show', compact('tournament', 'series'));
     }
 }
