@@ -4,7 +4,7 @@
 
 <div class="space-y-10">
 
-    <button wire:click="$set('isCreating', true)" class="bg-green-500 text-white px-3 py-1 rounded">Add Match</button>
+    <button wire:click="$set('isCreating', true)" class="bg-green-500 text-white px-3 py-1 rounded">Add serie</button>
 
     @foreach ($stages as $stage => $stageSeries)
         <div>
@@ -39,31 +39,31 @@
                                                 <h4 class="text-md font-bold mb-2 dark:text-white">Round {{ $round }}</h4>
 
                                                 <div class="space-y-3">
-                                                    @foreach ($series as $match)
+                                                    @foreach ($series as $serie)
                                                         <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
                                                             <div class="p-2">
-                                                                {{ $match->teamA->name ?? 'TBD' }}
-                                                                @if ($match->teamA)
-                                                                    T - ({{ $match->teamA->winRate($match->tournament_id) }}%) |
-                                                                    A - ({{ $match->teamA->winRate(null) }}%)
+                                                                {{ $serie->teamA->name ?? 'TBD' }}
+                                                                @if ($serie->teamA)
+                                                                    T - ({{ $serie->teamA->winRate($serie->tournament_id) }}%) |
+                                                                    A - ({{ $serie->teamA->winRate(null) }}%)
                                                                 @endif
                                                             </div>
 
                                                             <div class="p-2 border-t border-gray-200">
-                                                                {{ $match->teamB->name ?? 'TBD' }}
-                                                                @if ($match->teamB)
-                                                                    T - ({{ $match->teamB->winRate($match->tournament_id) }}%) |
-                                                                    A - ({{ $match->teamB->winRate(null) }}%)
+                                                                {{ $serie->teamB->name ?? 'TBD' }}
+                                                                @if ($serie->teamB)
+                                                                    T - ({{ $serie->teamB->winRate($serie->tournament_id) }}%) |
+                                                                    A - ({{ $serie->teamB->winRate(null) }}%)
                                                                 @endif
                                                             </div>
-                                                            @if ($match->winner && is_object($match->winner))
+                                                            @if ($serie->winner && is_object($serie->winner))
                                                                 <div class="p-2 border-t border-gray-200 text-green-600">
-                                                                    Winner: {{ $match->winner->name }}
+                                                                    Winner: {{ $serie->winner->name }}
                                                                 </div>
                                                             @endif
 
                                                             <div class="p-2 border-t border-gray-200">
-                                                                <button wire:click="editMatch({{ $match->id }})" class="text-blue-600 hover:underline text-xs cursor-pointer">Edit</button>
+                                                                <button wire:click="editSeries({{ $serie->id }})" class="text-blue-600 hover:underline text-xs cursor-pointer">Edit</button>
                                                             </div>
                                                         </div>                                                        
                                                     @endforeach
@@ -88,31 +88,31 @@
                             <h4 class="text-md font-bold mb-2 dark:text-white">Round {{ $round }}</h4>
 
                             <div class="space-y-3">
-                                @foreach ($series as $match)
+                                @foreach ($series as $serie)
                                     <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
                                         <div class="p-2">
-                                            {{ $match->teamA->name ?? 'TBD' }}
-                                            @if ($match->teamA)
-                                                T - ({{ $match->teamA->winRate($match->tournament_id) }}%) |
-                                                A - ({{ $match->teamA->winRate(null) }}%)
+                                            {{ $serie->teamA->name ?? 'TBD' }}
+                                            @if ($serie->teamA)
+                                                T - ({{ $serie->teamA->winRate($serie->tournament_id) }}%) |
+                                                A - ({{ $serie->teamA->winRate(null) }}%)
                                             @endif
                                         </div>
 
                                         <div class="p-2 border-t border-gray-200">
-                                            {{ $match->teamB->name ?? 'TBD' }}
-                                            @if ($match->teamB)
-                                                T - ({{ $match->teamB->winRate($match->tournament_id) }}%) |
-                                                A - ({{ $match->teamB->winRate(null) }}%)
+                                            {{ $serie->teamB->name ?? 'TBD' }}
+                                            @if ($serie->teamB)
+                                                T - ({{ $serie->teamB->winRate($serie->tournament_id) }}%) |
+                                                A - ({{ $serie->teamB->winRate(null) }}%)
                                             @endif
                                         </div>
 
-                                        @if ($match->winner && is_object($match->winner))
+                                        @if ($serie->winner && is_object($serie->winner))
                                             <div class="p-2 border-t border-gray-200 text-green-600">
-                                                Winner: {{ $match->winner->name }}
+                                                Winner: {{ $serie->winner->name }}
                                             </div>
                                         @endif
                                         <div class="p-2 border-t border-gray-200">
-                                            <button wire:click="editMatch({{ $match->id }})" class="text-blue-600 hover:underline text-xs cursor-pointer">Edit</button>
+                                            <button wire:click="editSeries({{ $serie->id }})" class="text-blue-600 hover:underline text-xs cursor-pointer">Edit</button>
                                         </div>
                                     </div>
                                 @endforeach
@@ -124,10 +124,10 @@
         </div>
     @endforeach
 
-    @if ($editingMatch)
+    @if ($editingSeries)
         <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-lg w-full max-w-md">
-                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Edit Match</h2>
+                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Edit serie</h2>
 
                 <select wire:model="team1_id" class="w-full mt-1 p-2 border rounded dark:bg-white">
                     <option value="">-- Select Team A --</option>
@@ -167,10 +167,10 @@
                 </div>                                   
 
                 <div class="flex justify-between items-center mt-6">
-                    <button wire:click="deleteMatch" class="px-3 py-1 cursor-pointer bg-red-600 text-white rounded">Delete</button>
+                    <button wire:click="deleteSeries" class="px-3 py-1 cursor-pointer bg-red-600 text-white rounded">Delete</button>
                     <div class="flex space-x-2">
                         <button wire:click="cancelEdit" class="px-3 py-1 cursor-pointer bg-gray-300 rounded">Cancel</button>
-                        <button wire:click="updateMatch" class="px-3 py-1 cursor-pointer bg-blue-600 text-white rounded">Save</button>
+                        <button wire:click="updateSeries" class="px-3 py-1 cursor-pointer bg-blue-600 text-white rounded">Save</button>
                     </div>
                 </div>                    
             </div>
@@ -180,7 +180,7 @@
     @if ($isCreating)
         <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div class="bg-white p-6 rounded w-full max-w-lg space-y-4">
-                <h2 class="text-lg font-bold">Create Match</h2>
+                <h2 class="text-lg font-bold">Create serie</h2>
 
                 <div>
                     <label>Tournament</label>
@@ -230,7 +230,7 @@
 
                 <div class="flex justify-between items-center mt-6">
                     <button wire:click="$set('isCreating', false)" class="px-3 py-1 bg-gray-300 rounded">Cancel</button>
-                    <button wire:click="createMatch" class="px-3 py-1 bg-blue-600 text-white rounded">Create</button>
+                    <button wire:click="createSeries" class="px-3 py-1 bg-blue-600 text-white rounded">Create</button>
                 </div>
             </div>
         </div>

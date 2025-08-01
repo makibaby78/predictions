@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tournament;
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Models\Series;
 
 class TournamentController extends Controller
 {
@@ -45,5 +46,15 @@ class TournamentController extends Controller
         Tournament::create($validated);
 
         return redirect()->route('tournament.index')->with('success', 'Tournament created successfully!');
+    }
+
+    public function showSeries(Tournament $tournament, Series $series)
+    {
+        // Optional: Validate that the series belongs to the tournament
+        if ($series->tournament_id !== $tournament->id) {
+            abort(404); // or redirect or throw an exception
+        }
+
+        return view('tournaments.series.show', compact('tournament', 'series'));
     }
 }

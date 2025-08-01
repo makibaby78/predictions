@@ -11,7 +11,7 @@ class TournamentBracket extends Component
 {
     public Tournament $tournament;
 
-    public $editingMatch = null;
+    public $editingSeries = null;
     public $isCreating = false;
 
     public $team1_id;
@@ -45,33 +45,33 @@ class TournamentBracket extends Component
         return Team::where('game_id', $this->tournament->game_id)->orderBy('name')->get();
     }
 
-    public function editMatch($matchId)
+    public function editSeries($seriesId)
     {
-        $match = Series::findOrFail($matchId);
+        $series = Series::findOrFail($seriesId);
 
-        $this->editingMatch = $match->id;
-        $this->team1_id = $match->team1_id;
-        $this->team2_id = $match->team2_id;
-        $this->winner_id = $match->winner_id;
-        $this->round = $match->round;
-        $this->bracket = $match->bracket;
-        $this->group = $match->group;
-        $this->stage = $match->stage;
+        $this->editingSeries = $series->id;
+        $this->team1_id = $series->team1_id;
+        $this->team2_id = $series->team2_id;
+        $this->winner_id = $series->winner_id;
+        $this->round = $series->round;
+        $this->bracket = $series->bracket;
+        $this->group = $series->group;
+        $this->stage = $series->stage;
     }
 
     public function cancelEdit()
     {
         $this->reset([
-            'editingMatch', 'team1_id', 'team2_id', 'winner_id',
+            'editingSeries', 'team1_id', 'team2_id', 'winner_id',
             'round', 'bracket', 'group', 'stage',
         ]);
     }
 
-    public function updateMatch()
+    public function updateSeries()
     {
-        $match = Series::findOrFail($this->editingMatch);
+        $series = Series::findOrFail($this->editingSeries);
 
-        $match->update([
+        $series->update([
             'team1_id' => $this->team1_id,
             'team2_id' => $this->team2_id,
             'winner_id' => $this->winner_id,
@@ -83,22 +83,22 @@ class TournamentBracket extends Component
 
         $this->cancelEdit();
 
-        session()->flash('success', 'Match updated successfully.');
+        session()->flash('success', 'Series updated successfully.');
     }
 
-    public function deleteMatch()
+    public function deleteSeries()
     {
-        if ($this->editingMatch) {
-            $match = Series::find($this->editingMatch);
-            if ($match) {
-                $match->delete();
+        if ($this->editingSeries) {
+            $series = Series::find($this->editingSeries);
+            if ($series) {
+                $series->delete();
                 $this->cancelEdit();
-                session()->flash('message', 'Match deleted successfully.');
+                session()->flash('message', 'Series deleted successfully.');
             }
         }
     }
 
-    public function createMatch()
+    public function createSeries()
     {
         Series::create([
             'tournament_id' => $this->tournament_id,
@@ -113,7 +113,7 @@ class TournamentBracket extends Component
 
         $this->reset(['isCreating', 'team1_id', 'team2_id', 'round', 'bracket', 'group', 'stage', 'winner_id']);
 
-        session()->flash('message', 'Match created successfully.');
+        session()->flash('message', 'Series created successfully.');
     }
 
     public function render()

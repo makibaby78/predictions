@@ -30,3 +30,6 @@ Route::get('/tournaments/create', [TournamentController::class, 'create'])->name
 Route::post('/tournaments', [TournamentController::class, 'store'])->name('tournament.store');
 
 Route::get('/tournament/{tournament}', [TournamentController::class, 'show'])->name('tournament.show');
+
+Route::get('/tournament/{tournament}/series/{series}', [TournamentController::class, 'showSeries'])
+    ->name('tournament.series.show');
