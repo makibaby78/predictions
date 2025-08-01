@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('bracket')->nullable();
             $table->string('group')->nullable();
             $table->string('stage')->nullable();
-            $table->foreignId('winner_id')->nullable()->constrained('teams')->nullOnDelete();
+            $table->foreignId('winner_id')->nullable()->constrained('teams')->onDelete('set null');
             $table->timestamps();
             $table->index(['tournament_id', 'stage', 'group', 'bracket']);
         });

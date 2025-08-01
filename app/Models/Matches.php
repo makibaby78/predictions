@@ -4,32 +4,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Series extends Model
+class Matches extends Model
 {
-    protected $table = 'series';
+    protected $table = 'matches'; // explicitly define table name since model name is plural
 
     protected $fillable = [
-        'tournament_id',
+        'series_id',
         'team1_id',
         'team2_id',
-        'round',
+        'scheduled_at',
         'winner_id',
-        'bracket',
-        'stage',
-        'group',
+        // add other relevant fields
     ];
 
-    public function tournament()
+    public function series()
     {
-        return $this->belongsTo(Tournament::class);
+        return $this->belongsTo(Series::class);
     }
 
-    public function teamA()
+    public function team1()
     {
         return $this->belongsTo(Team::class, 'team1_id');
     }
 
-    public function teamB()
+    public function team2()
     {
         return $this->belongsTo(Team::class, 'team2_id');
     }
@@ -37,10 +35,5 @@ class Series extends Model
     public function winner()
     {
         return $this->belongsTo(Team::class, 'winner_id');
-    }
-
-    public function matches()
-    {
-        return $this->hasMany(Matches::class);
     }
 }
