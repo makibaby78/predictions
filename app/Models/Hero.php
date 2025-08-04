@@ -15,4 +15,17 @@ class Hero extends Model
     {
         return $this->belongsTo(Game::class);
     }
+
+    public function picks()
+    {
+        return $this->hasMany(MatchHeroPick::class);
+    }
+
+    public function getWinRateAttribute()
+    {
+        if ($this->total_picks > 0) {
+            return round(($this->wins / $this->total_picks) * 100, 1);
+        }
+        return null;
+    }
 }

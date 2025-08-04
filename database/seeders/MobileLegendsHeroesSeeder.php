@@ -22,13 +22,12 @@ class MobileLegendsHeroesSeeder extends Seeder
             'Guinevere','Khufra','Esmeralda','Granger','Terizla','Dyrroth','Lylia','X.Borg','Masha',
             'Baxia','Ling','Wanwan','Cecilion','Popol and Kupa','Luoyi','Yu Zhong','Khaleed','Barats',
             'Atlas','Mathilda','Edith','Novaria','Cici','Chip','Yve','Beatrix','Phoveus','Natan',
-            'Aamon','Valentina','Suyou','Lukas','Zetian', 'Joy', 'Zhuxin',
+            'Aamon','Valentina','Suyou','Lukas','Zetian', 'Joy', 'Zhuxin', 'Arlott', 'Zetian',
         ];
 
         foreach ($heroNames as $name) {
             Hero::updateOrCreate(
                 ['game_id' => 2, 'name' => $name],
-                []
             );
         }
     }
