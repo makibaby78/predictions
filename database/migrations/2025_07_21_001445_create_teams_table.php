@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('game_id');
             $table->string('name');
             $table->string('country')->nullable();
+            $table->integer('elo_rating')->default(1500);
             $table->timestamps();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
         });

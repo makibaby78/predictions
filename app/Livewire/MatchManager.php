@@ -60,6 +60,11 @@ class MatchManager extends Component
             ]
         );
     
+        // ✅ Update Elo ratings if winner is set
+        if ($this->winner_id) {
+            $this->updateTeamEloRatings($match);
+        }
+    
         // Save hero picks
         if (!empty($this->heroPicks)) {
             MatchHeroPick::where('match_id', $match->id)->delete();
@@ -71,7 +76,6 @@ class MatchManager extends Component
     
             foreach ($playerIds as $index => $playerId) {
                 $heroId = $this->heroPicks[$playerId];
-    
                 $teamId = $index < 5 ? $team1Id : $team2Id;
     
                 if ($heroId) {
@@ -89,7 +93,28 @@ class MatchManager extends Component
         $this->loadMatches();
     }
     
-    
+    protected function updateTeamEloRatings(Matches $match)
+    {
+        $K = 24;
+
+        $team1 = $this->series->team1;
+        $team2 = $this->series->team2;
+
+        $elo1 = $team1->elo_rating ?? 1500;
+        $elo2 = $team2->elo_rating ?? 1500;
+
+        $expected1 = 1 / (1 + pow(10, ($elo2 - $elo1) / 400));
+        $expected2 = 1 - $expected1;
+
+        $score1 = ($this->winner_id == $team1->id) ? 1 : 0;
+        $score2 = 1 - $score1;
+
+        $newElo1 = round($elo1 + $K * ($score1 - $expected1));
+        $newElo2 = round($elo2 + $K * ($score2 - $expected2));
+
+        $team1->update(['elo_rating' => $newElo1]);
+        $team2->update(['elo_rating' => $newElo2]);
+    }
 
     public function editMatch($id)
     {
