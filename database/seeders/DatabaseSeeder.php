@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             SeriesTableSeeder::class,
             MobileLegendsHeroesSeeder::class,
             DotaHeroesSeeder::class,
+            MatchesTableSeeder::class,
+            HeroPickSeeder::class,
         ]);
     }
 }

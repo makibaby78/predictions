@@ -21,11 +21,19 @@ class Hero extends Model
         return $this->hasMany(MatchHeroPick::class);
     }
 
-    public function getWinRateAttribute()
+    public function winrate()
     {
-        if ($this->total_picks > 0) {
-            return round(($this->wins / $this->total_picks) * 100, 1);
+        $picks = $this->picks()->with('match')->get();
+    
+        $totalPicks = $picks->count();
+        $wins = 0;
+    
+        foreach ($picks as $pick) {
+            if ($pick->match && $pick->match->winner_id === $pick->team_id) {
+                $wins++;
+            }
         }
-        return null;
-    }
+    
+        return $totalPicks > 0 ? round(($wins / $totalPicks) * 100, 1) : null;
+    }     
 }

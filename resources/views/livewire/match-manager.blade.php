@@ -34,7 +34,7 @@
         @if ($series)
             <div class="mt-8 border-t pt-4"></div>
             <h3 class="text-lg font-semibold text-gray-700 mb-4">Hero Picks</h3>
-            <div class="flex gap-x-4 justify-between">
+            <div class="flex gap-x-4 justify-between flex-col md:flex-row">
                 @foreach ([$series->teamA, $series->teamB] as $team)
                     @if ($team)
                         <div class="mb-6">
@@ -100,13 +100,16 @@
                     <!-- Hero Picks Row -->
                     <tr class="border-b bg-gray-50">
                         <td colspan="4" class="px-4 py-3">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div class="text-sm" style="column-count: 2;">
                                 @forelse ($match->matchHeroPicks as $pick)
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2 overflow-hidden">
                                         <span class="font-medium text-gray-800">{{ $pick->player->name ?? 'Unknown' }}</span>
-                                        <span class="text-gray-500">picked</span>
+                                        <span class="text-gray-500"> - </span>
                                         <span class="text-blue-600 font-semibold">{{ $pick->hero->name ?? 'Unknown Hero' }}</span>
-                                        <span class="text-gray-400 text-xs">({{ $pick->team->name ?? 'Unknown Team' }})</span>
+                                        <span class="text-gray-500"> - </span>
+                                        <span class="text-blue-600 font-semibold">
+                                            A - {{ $pick->hero->winrate() }}%
+                                        </span>
                                     </div>
                                 @empty
                                     <span class="text-gray-500">No hero picks recorded.</span>
