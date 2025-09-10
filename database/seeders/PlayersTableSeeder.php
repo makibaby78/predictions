@@ -176,6 +176,55 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 26, 'game_id' => 1, 'name' => 'Beyond', 'country' => 'China', 'position' => 'Offlane'],
             ['team_id' => 26, 'game_id' => 1, 'name' => 'Oli', 'country' => 'China', 'position' => 'Support'],
             ['team_id' => 26, 'game_id' => 1, 'name' => 'BoBoKa', 'country' => 'China', 'position' => 'Support'],
+
+            // Team Liquid
+            ['team_id' => 27, 'game_id' => 1, 'name' => 'miCKe', 'country' => 'China', 'position' => 'Carry'],
+            ['team_id' => 27, 'game_id' => 1, 'name' => 'Nisha', 'country' => 'China', 'position' => 'Mid'],
+            ['team_id' => 27, 'game_id' => 1, 'name' => 'SaberLight', 'country' => 'China', 'position' => 'Offlane'],
+            ['team_id' => 27, 'game_id' => 1, 'name' => 'Boxi', 'country' => 'China', 'position' => 'Support'],
+            ['team_id' => 27, 'game_id' => 1, 'name' => 'Insania', 'country' => 'China', 'position' => 'Support'],
+
+            // Team Spirit
+            ['team_id' => 28, 'game_id' => 1, 'name' => 'Yatoro', 'country' => 'China', 'position' => 'Carry'],
+            ['team_id' => 28, 'game_id' => 1, 'name' => 'Larl', 'country' => 'China', 'position' => 'Mid'],
+            ['team_id' => 28, 'game_id' => 1, 'name' => 'Collapse', 'country' => 'China', 'position' => 'Offlane'],
+            ['team_id' => 28, 'game_id' => 1, 'name' => 'rue', 'country' => 'China', 'position' => 'Support'],
+            ['team_id' => 28, 'game_id' => 1, 'name' => 'Miposhka', 'country' => 'China', 'position' => 'Support'],
+
+            // Team Falcons
+            ['team_id' => 29, 'game_id' => 1, 'name' => 'skiter', 'country' => 'China', 'position' => 'Carry'],
+            ['team_id' => 29, 'game_id' => 1, 'name' => 'Malr1ne', 'country' => 'China', 'position' => 'Mid'],
+            ['team_id' => 29, 'game_id' => 1, 'name' => 'ATF', 'country' => 'China', 'position' => 'Offlane'],
+            ['team_id' => 29, 'game_id' => 1, 'name' => 'Cr1t-', 'country' => 'China', 'position' => 'Support'],
+            ['team_id' => 29, 'game_id' => 1, 'name' => 'Sneyking', 'country' => 'China', 'position' => 'Support'],
+
+            // Natus Vincere
+            ['team_id' => 30, 'game_id' => 1, 'name' => 'gotthejuice', 'country' => 'Ukraine', 'position' => 'Carry'],
+            ['team_id' => 30, 'game_id' => 1, 'name' => 'Niku', 'country' => 'Ukraine', 'position' => 'Mid'],
+            ['team_id' => 30, 'game_id' => 1, 'name' => 'pma', 'country' => 'Ukraine', 'position' => 'Offlane'],
+            ['team_id' => 30, 'game_id' => 1, 'name' => 'Zayac', 'country' => 'Kyrgystan', 'position' => 'Support'],
+            ['team_id' => 30, 'game_id' => 1, 'name' => 'Riddys', 'country' => 'Ukraine', 'position' => 'Support'],
+
+            // Team Nemesis
+            ['team_id' => 31, 'game_id' => 1, 'name' => 'Akashi', 'country' => 'Philippines', 'position' => 'Carry'],
+            ['team_id' => 31, 'game_id' => 1, 'name' => 'Mac', 'country' => 'Philippines', 'position' => 'Mid'],
+            ['team_id' => 31, 'game_id' => 1, 'name' => 'Raven', 'country' => 'Philippines', 'position' => 'Offlane'],
+            ['team_id' => 31, 'game_id' => 1, 'name' => 'Jing-', 'country' => 'Philippines', 'position' => 'Support'],
+            ['team_id' => 31, 'game_id' => 1, 'name' => 'Erice', 'country' => 'Philippines', 'position' => 'Support'],
+
+            // Wildcard
+            ['team_id' => 32, 'game_id' => 1, 'name' => 'Yamsun', 'country' => 'USA', 'position' => 'Carry'],
+            ['team_id' => 32, 'game_id' => 1, 'name' => 'RCY', 'country' => 'USA', 'position' => 'Mid'],
+            ['team_id' => 32, 'game_id' => 1, 'name' => 'Fayde', 'country' => 'USA', 'position' => 'Offlane'],
+            ['team_id' => 32, 'game_id' => 1, 'name' => 'Bignum-', 'country' => 'Ukraine', 'position' => 'Support'],
+            ['team_id' => 32, 'game_id' => 1, 'name' => 'Speeed', 'country' => 'USA', 'position' => 'Support'],
+
+            // Heroic
+            ['team_id' => 33, 'game_id' => 1, 'name' => 'Yuma', 'country' => 'Nicaragua', 'position' => 'Carry'],
+            ['team_id' => 33, 'game_id' => 1, 'name' => '4nalog', 'country' => 'Brazil', 'position' => 'Mid'],
+            ['team_id' => 33, 'game_id' => 1, 'name' => 'Wisper', 'country' => 'Bolivia', 'position' => 'Offlane'],
+            ['team_id' => 33, 'game_id' => 1, 'name' => 'Scofield', 'country' => 'Peru', 'position' => 'Support'],
+            ['team_id' => 33, 'game_id' => 1, 'name' => 'KJ', 'country' => 'Brazil', 'position' => 'Support'],
         ];
             
 

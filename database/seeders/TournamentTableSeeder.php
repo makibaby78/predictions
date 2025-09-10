@@ -29,5 +29,13 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2025-07-28',
             'end_date' => '2025-08-03',
         ]);
+
+        Tournament::create([
+            'name' => 'The International 2025',
+            'game_id' => 1,
+            'prize_pool' => 2555650.00,
+            'start_date' => '2025-09-04',
+            'end_date' => '2025-09-14',
+        ]);
     }
 }

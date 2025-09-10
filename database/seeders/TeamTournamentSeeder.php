@@ -26,5 +26,14 @@ class TeamTournamentSeeder extends Seeder
                 'team_id' => $teamId,
             ]);
         }
+
+        $ti2025 = [17, 18, 19, 20, 21, 22, 24, 26, 27, 28, 29, 30, 31, 32, 33];
+
+        foreach ($ti2025 as $teamId) {
+            DB::table('team_tournament')->insert([
+                'tournament_id' => 3,
+                'team_id' => $teamId,
+            ]);
+        }
     }
 }

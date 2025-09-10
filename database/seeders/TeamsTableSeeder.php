@@ -40,6 +40,13 @@ class TeamsTableSeeder extends Seeder
             ['name' => 'Team Tidebound', 'game_id' => 1, 'country' => 'China'],
             ['name' => 'Team Yandex', 'game_id' => 1, 'country' => 'Russia'],
             ['name' => "Yakult Brothers", 'game_id' => 1, 'country' => 'Asia'],
+            ['name' => "Team Liquid", 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => "Team Spirit", 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => "Team Falcons", 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => "Natus Vincere", 'game_id' => 1, 'country' => 'Europe'],
+            ['name' => "Team Nemesis", 'game_id' => 1, 'country' => 'Philippines'],
+            ['name' => "Wildcard", 'game_id' => 1, 'country' => 'North America'],
+            ['name' => "Heroic", 'game_id' => 1, 'country' => 'North America'],
         ]);
     }
 }
