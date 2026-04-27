@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Team;
 use App\Models\Game;
 use App\Models\Series;
+use App\Models\Country;
 
 class GameTeams extends Component
 {
@@ -13,7 +14,7 @@ class GameTeams extends Component
     public $teams;
     public $name;
     public $editingTeam = null;
-    public $country;
+    public $countries;
     public $filterCountry = null;
 
     protected $rules = [
@@ -24,6 +25,14 @@ class GameTeams extends Component
     {
         $this->game = $game;
         $this->loadTeams();
+        $this->loadCountries();
+    }
+
+    public function loadCountries()
+    {
+        return $this->countries = Country::whereHas('teams', function ($query) {
+            $query->where('game_id', $this->game->id);
+        })->orderBy('name')->get();
     }
 
     public function loadTeams()
@@ -31,8 +40,7 @@ class GameTeams extends Component
         $query = Team::where('game_id', $this->game->id);
 
         if ($this->filterCountry) {
-
-            $query->where('country', $this->filterCountry);
+            $query->where('country_id', $this->filterCountry);
         }
 
         $teams = $query->get();
@@ -93,10 +101,12 @@ class GameTeams extends Component
         $this->name = '';
     }
 
-    // public function updatedFilterCountry()
-    // {
-    //     $this->loadTeams();
-    // }
+    public function updated($property)
+    {
+        if ($property === 'filterCountry') {
+            $this->loadTeams();
+        }
+    }
 
     public function render()
     {

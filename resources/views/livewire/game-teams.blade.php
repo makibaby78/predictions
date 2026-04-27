@@ -23,13 +23,12 @@
     </div>
 
     <div class="mb-4">
-        <select wire:model="filterCountry"
+        <select wire:model.live="filterCountry"
             class="border border-gray-300 rounded px-3 py-2 dark:bg-gray-800 dark:text-white">
-            
             <option value="">All Countries</option>
-            <option value="Philippines">Philippines</option>
-            <option value="USA">USA</option>
-            <option value="Korea">Korea</option>
+            @foreach ($countries as $country)
+                <option value="{{ $country->id }}">{{ $country->name }}</option>
+            @endforeach
         </select>
     </div>
 
