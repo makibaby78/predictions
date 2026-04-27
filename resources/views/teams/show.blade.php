@@ -6,7 +6,7 @@
         <h1 class="text-2xl font-bold mb-4">{{ $team->name }}</h1>
 
         <div class="mb-4">
-            <p class="text-gray-700"><strong>Country:</strong> {{ $team->country }}</p>
+            <p class="text-gray-700"><strong>Country:</strong> {{ $team->country->name }}</p>
             <p class="text-gray-700">
                 <strong>Created At:</strong>
                 {{ $team->created_at ? $team->created_at->format('F j, Y') : 'N/A' }}

@@ -13,6 +13,8 @@ class GameTeams extends Component
     public $teams;
     public $name;
     public $editingTeam = null;
+    public $country;
+    public $filterCountry = null;
 
     protected $rules = [
         'name' => 'required|string|max:255',
@@ -26,7 +28,14 @@ class GameTeams extends Component
 
     public function loadTeams()
     {
-        $teams = Team::where('game_id', $this->game->id)->get();
+        $query = Team::where('game_id', $this->game->id);
+
+        if ($this->filterCountry) {
+
+            $query->where('country', $this->filterCountry);
+        }
+
+        $teams = $query->get();
 
         $this->teams = $teams->map(function ($team) {
             $total = Series::where(function ($q) use ($team) {
@@ -84,16 +93,10 @@ class GameTeams extends Component
         $this->name = '';
     }
 
-    public function getTeamsProperty()
-    {
-        return Team::all()
-            ->map(function ($team) {
-                $team->calculated_winrate = getTeamWinRate($team->id)['winrate'];
-                return $team;
-            })
-            ->sortByDesc('calculated_winrate')
-            ->values();
-    }
+    // public function updatedFilterCountry()
+    // {
+    //     $this->loadTeams();
+    // }
 
     public function render()
     {

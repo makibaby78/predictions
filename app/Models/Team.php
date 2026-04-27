@@ -37,5 +37,10 @@ class Team extends Model
         return $this->belongsToMany(Player::class, 'player_team')
             ->withPivot(['joined_at', 'left_at'])
             ->withTimestamps();
-    }    
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

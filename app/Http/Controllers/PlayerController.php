@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
+    public function show($id)
+    {
+        $player = Player::findOrFail($id);
+        
+        return view('player.show', compact('player'));
+    }
+
     public function store(Request $request, Team $team)
     {
         $validated = $request->validate([

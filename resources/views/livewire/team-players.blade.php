@@ -29,7 +29,9 @@
                 @foreach ($activePlayers as $player)
                     <li class="bg-gray-100 p-4 rounded shadow-sm flex justify-between items-start">
                         <div>
-                            <p class="text-gray-800 font-medium">{{ $player->name }}</p>
+                            <a href="{{ url('player/' . $player->id) }}">
+                                <p class="text-gray-800 font-medium">{{ $player->name }}</p>
+                            </a>
                             <p class="text-sm text-gray-500">Position: {{ $player->position ?? 'N/A' }}</p>
                             <p class="text-sm text-green-600 font-semibold mt-1">Status: Active</p>
                         </div>

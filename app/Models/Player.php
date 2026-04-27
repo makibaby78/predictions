@@ -39,6 +39,17 @@ class Player extends Model
         }
     
         return $totalPicks > 0 ? round(($wins / $totalPicks) * 100, 1) : null;
-    }   
+    }
+
+    
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
 
 }

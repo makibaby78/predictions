@@ -1,28 +1,40 @@
-<div class="max-w-3xl mx-auto">
+<div class="mx-auto">
     <h2 class="text-2xl dark:text-white font-bold mb-6">Teams for {{ $game->name }}</h2>
+    <div class="max-w-3xl">
+        <form wire:submit.prevent="{{ $editingTeam ? 'update' : 'create' }}" class="mb-6">
+            <div class="flex gap-4 items-center">
+                <input type="text" wire:model.defer="name" placeholder="Team Name"
+                    class="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800 dark:text-white" required>
 
-    <form wire:submit.prevent="{{ $editingTeam ? 'update' : 'create' }}" class="mb-6">
-        <div class="flex gap-4 items-center">
-            <input type="text" wire:model.defer="name" placeholder="Team Name"
-                   class="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800 dark:text-white" required>
-
-            <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-                {{ $editingTeam ? 'Update' : 'Add Team' }}
-            </button>
-
-            @if($editingTeam)
-                <button type="button" wire:click="cancelEdit"
-                        class="ml-2 text-gray-500 hover:text-gray-700">
-                    Cancel
+                <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                    {{ $editingTeam ? 'Update' : 'Add Team' }}
                 </button>
-            @endif
-        </div>
-        @error('name') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
-    </form>
+
+                @if($editingTeam)
+                    <button type="button" wire:click="cancelEdit"
+                            class="ml-2 text-gray-500 hover:text-gray-700">
+                        Cancel
+                    </button>
+                @endif
+            </div>
+            @error('name') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+        </form>
+    </div>
+
+    <div class="mb-4">
+        <select wire:model="filterCountry"
+            class="border border-gray-300 rounded px-3 py-2 dark:bg-gray-800 dark:text-white">
+            
+            <option value="">All Countries</option>
+            <option value="Philippines">Philippines</option>
+            <option value="USA">USA</option>
+            <option value="Korea">Korea</option>
+        </select>
+    </div>
 
     @if($teams->count())
-        <ul class="space-y-4">
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             @foreach ($teams as $team)
                 <li class="flex justify-between items-center p-4 bg-white rounded shadow">
                     <div>

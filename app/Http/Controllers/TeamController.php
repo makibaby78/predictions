@@ -12,6 +12,8 @@ class TeamController extends Controller
     public function show($id)
     {
         $team = Team::findOrFail($id);
+        $team->load('country');
+        
         return view('teams.show', compact('team'));
     }
 }
