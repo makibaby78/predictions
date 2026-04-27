@@ -13,9 +13,7 @@ Route::get('/games/{game}/heroes', [GameController::class, 'heroes']);
 
 Route::get('/games/{game}/players', [GameController::class, 'players']);
 
-Route::get('/games/{game}/teams', function (\App\Models\Game $game) {
-    return view('games.teams', compact('game'));
-})->name('games.teams.index');
+Route::get('/games/{game}/teams', [GameController::class, 'tournament'])->name('games.teams.index');
 
 Route::get('/player/{player}', [PlayerController::class, 'show']);
 

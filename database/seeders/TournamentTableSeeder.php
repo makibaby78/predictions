@@ -37,5 +37,13 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2025-09-04',
             'end_date' => '2025-09-14',
         ]);
+
+        Tournament::create([
+            'name' => 'MPL Philippines Season 17',
+            'game_id' => 2,
+            'prize_pool' => 150000.00,
+            'start_date' => '2026-03-20',
+            'end_date' => '2026-05-31',
+        ]);
     }
 }

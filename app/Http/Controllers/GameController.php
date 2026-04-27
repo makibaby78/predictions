@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Hero;
 use App\Models\Game;
+use App\Models\Tournament;
 use App\Models\Player;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class GameController extends Controller
 {
@@ -15,6 +15,17 @@ class GameController extends Controller
         $games = Game::all();
 
         return view('games.index', compact('games'));
+    }
+
+    public function tournament($id)
+    {
+        $game = Game::findOrFail($id);
+
+        $tournaments = Tournament::where('game_id', $game->id)
+        ->where('end_date', '>=', Carbon::today())
+        ->get();
+
+        return view('games.teams', compact('game', 'tournaments'));
     }
 
     public function heroes($game)
