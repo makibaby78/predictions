@@ -200,7 +200,7 @@
                 
                 <div>
                     <label>Team 1</label>
-                    <select wire:model="team1_id" class="w-full border rounded p-2">
+                    <select wire:model.change="team1_id" class="w-full border rounded p-2">
                         <option value="">--</option>
                         @foreach($teams as $team)
                             <option value="{{ $team->id }}">{{ $team->name }}</option>
@@ -210,7 +210,7 @@
 
                 <div>
                     <label>Team 2</label>
-                    <select wire:model="team2_id" class="w-full border rounded p-2">
+                    <select wire:model.change="team2_id" class="w-full border rounded p-2">
                         <option value="">--</option>
                         @foreach($teams as $team)
                             <option value="{{ $team->id }}">{{ $team->name }}</option>
@@ -232,8 +232,16 @@
                     <label>Winner</label>
                     <select wire:model="winner_id" class="w-full border rounded p-2">
                         <option value="">--</option>
-                        @foreach($teams as $team)
-                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                        @foreach($this->participant_ids as $id)
+                            @php
+                                $team = $teams->firstWhere('id', $id);
+                            @endphp
+
+                            @if($team)
+                                <option value="{{ $team->id }}">
+                                    {{ $team->name }}
+                                </option>
+                            @endif
                         @endforeach
                     </select>
                 </div>

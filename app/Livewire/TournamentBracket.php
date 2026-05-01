@@ -17,6 +17,7 @@ class TournamentBracket extends Component
     public $team1_id;
     public $team2_id;
     public $winner_id;
+    public $participant_ids = [];
     public $round;
     public $bracket;
     public $group;
@@ -27,6 +28,21 @@ class TournamentBracket extends Component
     {
         $this->tournament = $tournament;
         $this->tournament_id = $tournament->id;
+    }
+
+    public function updated($property)
+    {
+        if (in_array($property, ['team1_id', 'team2_id'])) {
+            $this->syncWinnerIds();
+        }
+    }
+
+    protected function syncWinnerIds()
+    {
+        $this->participant_ids = [
+            $this->team1_id,
+            $this->team2_id,
+        ];
     }
 
     public function getSeriesProperty()
@@ -42,7 +58,17 @@ class TournamentBracket extends Component
 
     public function getTeamsProperty()
     {
-        return Team::where('game_id', $this->tournament->game_id)->orderBy('name')->get();
+        return $this->teams();
+    }
+
+    public function teams()
+    {
+        return Team::where('game_id', $this->tournament->game_id)
+            ->whereHas('tournaments', function ($query) {
+                $query->where('tournament_id', $this->tournament->id);
+            })
+            ->orderBy('name')
+            ->get();
     }
 
     public function editSeries($seriesId)
@@ -120,7 +146,7 @@ class TournamentBracket extends Component
     {
         return view('livewire.tournament-bracket', [
             'teams' => $this->teams,
-            'Series' => $this->Series,
+            'Series' => $this->series,
         ]);
     }
 }

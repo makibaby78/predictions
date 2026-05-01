@@ -225,6 +225,48 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 33, 'game_id' => 1, 'name' => 'Wisper', 'country_id' => 2, 'position' => 'Offlane'],
             ['team_id' => 33, 'game_id' => 1, 'name' => 'Scofield', 'country_id' => 2, 'position' => 'Support'],
             ['team_id' => 33, 'game_id' => 1, 'name' => 'KJ', 'country_id' => 1, 'position' => 'Support'],
+
+            // AP.Bren
+            ['team_id' => 34, 'game_id' => 2, 'name' => 'Kielvj', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 34, 'game_id' => 2, 'name' => 'Jamespangks', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 34, 'game_id' => 2, 'name' => 'Aqua', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 34, 'game_id' => 2, 'name' => 'Shizou', 'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 34, 'game_id' => 2, 'name' => 'Nova', 'country_id' => 1, 'position' => 'Roamer'],
+
+            // Aurora PH
+            ['team_id' => 35, 'game_id' => 2, 'name' => 'Light', 'country_id' => 1, 'position' => 'Roamer'],
+            ['team_id' => 35, 'game_id' => 2, 'name' => 'Edward', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 35, 'game_id' => 2, 'name' => 'Demonkite', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 35, 'game_id' => 2, 'name' => 'Yue', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 35, 'game_id' => 2, 'name' => 'Domengkite', 'country_id' => 1, 'position' => 'Gold Laner'],
+
+            // Omega Esports
+            ['team_id' => 36, 'game_id' => 2, 'name' => 'Jeymz', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 36, 'game_id' => 2, 'name' => 'Raizen', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 36, 'game_id' => 2, 'name' => 'Minguin', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 36, 'game_id' => 2, 'name' => 'Nets', 'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 36, 'game_id' => 2, 'name' => 'Perkziva', 'country_id' => 1, 'position' => 'Roamer'],
+
+            // Team Falcons PH
+            ['team_id' => 37, 'game_id' => 2, 'name' => 'Flap', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 37, 'game_id' => 2, 'name' => 'Kyle', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 37, 'game_id' => 2, 'name' => 'Hadji', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 37, 'game_id' => 2, 'name' => 'Super Marco', 'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 37, 'game_id' => 2, 'name' => 'Owgwen', 'country_id' => 1, 'position' => 'Roamer'],
+            
+            // TNC Pro Team
+            ['team_id' => 38, 'game_id' => 2, 'name' => '3Mar', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 38, 'game_id' => 2, 'name' => 'Zaida', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 38, 'game_id' => 2, 'name' => 'LanceCy', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 38, 'game_id' => 2, 'name' => 'Bennyqt', 'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 38, 'game_id' => 2, 'name' => 'Ch4knu', 'country_id' => 1, 'position' => 'Roamer'],
+                        
+            // Twisted Minds PH
+            ['team_id' => 39, 'game_id' => 2, 'name' => 'Lansu', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 39, 'game_id' => 2, 'name' => 'MP the King', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 39, 'game_id' => 2, 'name' => 'Sionnn', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 39, 'game_id' => 2, 'name' => 'Owl', 'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 39, 'game_id' => 2, 'name' => 'Caloy', 'country_id' => 1, 'position' => 'Roamer'],
         ];
             
 

@@ -47,6 +47,12 @@ class TeamsTableSeeder extends Seeder
             ['name' => "Team Nemesis", 'game_id' => 1, 'country_id' => '1'],
             ['name' => "Wildcard", 'game_id' => 1, 'country_id' => '13'],
             ['name' => "Heroic", 'game_id' => 1, 'country_id' => '13'],
+            ['name' => "AP.Bren", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Aurora PH", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Omega Esports", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Team Falcons PH", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "TNC Pro Team", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Twisted Minds PH", 'game_id' => 2, 'country_id' => '1'],
         ]);
     }
 }
