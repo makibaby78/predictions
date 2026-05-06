@@ -4,7 +4,12 @@
 
 <div class="space-y-10">
 
-    <button wire:click="$set('isCreating', true)" class="bg-green-500 text-white px-3 py-1 rounded">Add serie</button>
+    <button 
+        wire:click="$set('isCreating', true)" 
+        class="cursor-pointer bg-green-500 text-white px-3 py-1 rounded"
+    >
+        Add serie
+    </button>
 
     @foreach ($stages as $stage => $stageSeries)
         <div>
@@ -202,7 +207,7 @@
                     <label>Team 1</label>
                     <select wire:model.change="team1_id" class="w-full border rounded p-2">
                         <option value="">--</option>
-                        @foreach($teams as $team)
+                        @foreach($this->filteredFirstTeams as $team)
                             <option value="{{ $team->id }}">{{ $team->name }}</option>
                         @endforeach
                     </select>
@@ -212,7 +217,7 @@
                     <label>Team 2</label>
                     <select wire:model.change="team2_id" class="w-full border rounded p-2">
                         <option value="">--</option>
-                        @foreach($teams as $team)
+                        @foreach($this->filteredSecondTeams as $team)
                             <option value="{{ $team->id }}">{{ $team->name }}</option>
                         @endforeach
                     </select>
@@ -247,8 +252,8 @@
                 </div>
 
                 <div class="flex justify-between items-center mt-6">
-                    <button wire:click="$set('isCreating', false)" class="px-3 py-1 bg-gray-300 rounded">Cancel</button>
-                    <button wire:click="createSeries" class="px-3 py-1 bg-blue-600 text-white rounded">Create</button>
+                    <button wire:click="$set('isCreating', false)" class="cursor-pointer px-3 py-1 bg-gray-300 rounded">Cancel</button>
+                    <button wire:click="createSeries" class="cursor-pointer px-3 py-1 bg-blue-600 text-white rounded">Create</button>
                 </div>
             </div>
         </div>

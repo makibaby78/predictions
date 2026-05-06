@@ -37,12 +37,22 @@ class TournamentBracket extends Component
         }
     }
 
+    public function getFilteredFirstTeamsProperty()
+    {
+        return $this->teams->where('id', '!=', $this->team2_id);
+    }
+
+    public function getFilteredSecondTeamsProperty()
+    {
+        return $this->teams->where('id', '!=', $this->team1_id);
+    }
+
     protected function syncWinnerIds()
     {
-        $this->participant_ids = [
+        $this->participant_ids = array_values(array_filter([
             $this->team1_id,
             $this->team2_id,
-        ];
+        ]));
     }
 
     public function getSeriesProperty()
