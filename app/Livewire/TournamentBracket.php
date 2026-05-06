@@ -18,11 +18,13 @@ class TournamentBracket extends Component
     public $team2_id;
     public $winner_id;
     public $participant_ids = [];
-    public $round;
-    public $bracket;
-    public $group;
-    public $stage;
     public $tournament_id;
+
+    protected $rules = [
+        'team1_id' => 'required|exists:teams,id',
+        'team2_id' => 'required|exists:teams,id',
+        'winner_id' => 'required|exists:teams,id',
+    ];
 
     public function mount(Tournament $tournament)
     {
@@ -61,13 +63,21 @@ class TournamentBracket extends Component
 
     public function getSeriesProperty()
     {
-        return Series::with(['teamA', 'teamB', 'winner'])
+        $series = Series::with(['teamA', 'teamB', 'winner'])
             ->where('tournament_id', $this->tournament->id)
-            ->orderBy('stage')
-            ->orderBy('group')
-            ->orderBy('bracket')
-            ->orderBy('round')
+            ->orderBy('match_date')
             ->get();
+
+        // Group by Week → Day
+        $grouped = $series->groupBy(function ($item) {
+            return \Carbon\Carbon::parse($item->match_date)->format('W'); // Week number
+        })->map(function ($week) {
+            return $week->groupBy(function ($item) {
+                return \Carbon\Carbon::parse($item->match_date)->format('Y-m-d'); // Day
+            });
+        });
+
+        return $grouped;
     }
 
     public function getTeamsProperty()
@@ -93,17 +103,12 @@ class TournamentBracket extends Component
         $this->team1_id = $series->team1_id;
         $this->team2_id = $series->team2_id;
         $this->winner_id = $series->winner_id;
-        $this->round = $series->round;
-        $this->bracket = $series->bracket;
-        $this->group = $series->group;
-        $this->stage = $series->stage;
     }
 
     public function cancelEdit()
     {
         $this->reset([
             'editingSeries', 'team1_id', 'team2_id', 'winner_id',
-            'round', 'bracket', 'group', 'stage',
         ]);
     }
 
@@ -115,10 +120,6 @@ class TournamentBracket extends Component
             'team1_id' => $this->team1_id,
             'team2_id' => $this->team2_id,
             'winner_id' => $this->winner_id,
-            'round' => $this->round,
-            'bracket' => $this->bracket,
-            'group' => $this->group,
-            'stage' => $this->stage,
         ]);
 
         $this->cancelEdit();
@@ -140,18 +141,16 @@ class TournamentBracket extends Component
 
     public function createSeries()
     {
+        $this->validate();
+
         Series::create([
             'tournament_id' => $this->tournament_id,
             'team1_id' => $this->team1_id,
             'team2_id' => $this->team2_id,
-            'round' => $this->round,
-            'bracket' => $this->bracket,
-            'group' => $this->group,
-            'stage' => $this->stage,
             'winner_id' => $this->winner_id,
         ]);
 
-        $this->reset(['isCreating', 'team1_id', 'team2_id', 'round', 'bracket', 'group', 'stage', 'winner_id']);
+        $this->reset(['isCreating', 'team1_id', 'team2_id', 'winner_id']);
 
         session()->flash('message', 'Series created successfully.');
     }
@@ -160,7 +159,7 @@ class TournamentBracket extends Component
     {
         return view('livewire.tournament-bracket', [
             'teams' => $this->teams,
-            'Series' => $this->series,
+            'series' => $this->series,
         ]);
     }
 }

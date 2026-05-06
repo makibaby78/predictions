@@ -12,11 +12,7 @@ class Series extends Model
         'tournament_id',
         'team1_id',
         'team2_id',
-        'round',
         'winner_id',
-        'bracket',
-        'stage',
-        'group',
     ];
 
     public function tournament()

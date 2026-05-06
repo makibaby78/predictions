@@ -1,7 +1,3 @@
-@php
-    $stages = $this->series->groupBy('stage');
-@endphp
-
 <div class="space-y-10">
 
     <button 
@@ -11,133 +7,73 @@
         Add serie
     </button>
 
-    @foreach ($stages as $stage => $stageSeries)
-        <div>
-            <h1 class="text-2xl font-bold mb-6 dark:text-white">{{ ucfirst($stage) }} Stage</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+@foreach ($series as $weekNumber => $days)
+    <div class="mb-8">
 
-            @php
-                $hasGroup = $stageSeries->pluck('group')->filter()->isNotEmpty();
-                $hasBracket = $stageSeries->pluck('bracket')->filter()->isNotEmpty();
-            @endphp
-
-            @if ($hasGroup && $hasBracket)
-                <div>
-                    @foreach (['A', 'B'] as $group)
-                        <div>
-                            <h2 class="text-xl font-bold mb-4 dark:text-white">Group {{ $group }}</h2>
-
-                            @foreach (['upper', 'lower'] as $bracket)
-                                @php
-                                    $groupSeries = $stageSeries
-                                        ->where('group', $group)
-                                        ->where('bracket', $bracket);
-
-                                    $groupedRounds = $groupSeries->groupBy('round');
-                                @endphp
-
-                                <div class="mb-6">
-                                    <h3 class="text-lg font-semibold mb-2 capitalize dark:text-white">{{ $bracket }} Bracket</h3>
-
-                                    <div class="grid grid-cols-3 gap-2 items-center">
-                                        @foreach ($groupedRounds as $round => $series)
-                                            <div class="mb-4">
-                                                <h4 class="text-md font-bold mb-2 dark:text-white">Round {{ $round }}</h4>
-
-                                                <div class="space-y-3">
-                                                    @foreach ($series as $serie)
-                                                        <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
-                                                            <div class="p-2">
-                                                                {{ $serie->teamA->name ?? 'TBD' }}
-                                                                @if ($serie->teamA)
-                                                                    T - ({{ $serie->teamA->winRate($serie->tournament_id) }}%) |
-                                                                    A - ({{ $serie->teamA->winRate(null) }}%)
-                                                                @endif
-                                                            </div>
-
-                                                            <div class="p-2 border-t border-gray-200">
-                                                                {{ $serie->teamB->name ?? 'TBD' }}
-                                                                @if ($serie->teamB)
-                                                                    T - ({{ $serie->teamB->winRate($serie->tournament_id) }}%) |
-                                                                    A - ({{ $serie->teamB->winRate(null) }}%)
-                                                                @endif
-                                                            </div>
-                                                            @if ($serie->winner && is_object($serie->winner))
-                                                                <div class="p-2 border-t border-gray-200 text-green-600">
-                                                                    Winner: {{ $serie->winner->name }}
-                                                                </div>
-                                                            @endif
-
-                                                            <div class="p-2 border-t border-gray-200">
-
-                                                                <a href="{{ route('tournament.series.show', ['tournament' => $serie->tournament_id, 'series' => $serie->id]) }}"
-                                                                    class="text-blue-600 hover:underline text-xs cursor-pointer">
-                                                                     View Series
-                                                                 </a>
-
-                                                                <button 
-                                                                    wire:click="editSeries({{ $serie->id }})" 
-                                                                    class="text-blue-600 hover:underline text-xs cursor-pointer">
-                                                                        Edit
-                                                                </button>
-                                                            </div>
-                                                        </div>                                                        
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    @endforeach
-                </div>
-            @else
-                {{-- Render a flat list without brackets or groups --}}
-                @php
-                    $groupedRounds = $stageSeries->groupBy('round');
-                @endphp
-
-                <div class="grid grid-cols-3 gap-2 items-center">
-                    @foreach ($groupedRounds as $round => $series)
-                        <div class="mb-4">
-                            <h4 class="text-md font-bold mb-2 dark:text-white">Round {{ $round }}</h4>
-
-                            <div class="space-y-3">
-                                @foreach ($series as $serie)
-                                    <div class="border border-gray-300 bg-white rounded shadow-sm overflow-hidden text-sm">
-                                        <div class="p-2">
-                                            {{ $serie->teamA->name ?? 'TBD' }}
-                                            @if ($serie->teamA)
-                                                T - ({{ $serie->teamA->winRate($serie->tournament_id) }}%) |
-                                                A - ({{ $serie->teamA->winRate(null) }}%)
-                                            @endif
-                                        </div>
-
-                                        <div class="p-2 border-t border-gray-200">
-                                            {{ $serie->teamB->name ?? 'TBD' }}
-                                            @if ($serie->teamB)
-                                                T - ({{ $serie->teamB->winRate($serie->tournament_id) }}%) |
-                                                A - ({{ $serie->teamB->winRate(null) }}%)
-                                            @endif
-                                        </div>
-
-                                        @if ($serie->winner && is_object($serie->winner))
-                                            <div class="p-2 border-t border-gray-200 text-green-600">
-                                                Winner: {{ $serie->winner->name }}
-                                            </div>
-                                        @endif
-                                        <div class="p-2 border-t border-gray-200">
-                                            <button wire:click="editSeries({{ $serie->id }})" class="text-blue-600 hover:underline text-xs cursor-pointer">Edit</button>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @endif
+        {{-- WEEK HEADER --}}
+        <div class="bg-gray-800 text-white px-4 py-2 rounded-t flex justify-between">
+            <span>Week {{ $weekNumber }}</span>
         </div>
-    @endforeach
+
+        <div class="border border-gray-700">
+
+            @foreach ($days as $date => $matches)
+                
+                {{-- DAY HEADER --}}
+                <div class="bg-gray-900 text-white px-4 py-2 text-sm">
+                    Day {{ \Carbon\Carbon::parse($date)->format('d M Y') }}
+                </div>
+
+                {{-- MATCH LIST --}}
+                @foreach ($matches as $serie)
+                    <div class="flex items-center justify-between px-4 py-2 border-t border-gray-700 text-sm">
+
+                        {{-- TEAM 1 --}}
+                        <div class="flex items-center gap-2 w-1/3">
+                            {{ $serie->teamA->name ?? 'TBD' }}
+                        </div>
+
+                        {{-- SCORE / VS --}}
+                        <div class="text-center w-1/3 text-gray-400">
+                            {{ $serie->winner_id ? 'FINISHED' : 'VS' }}
+                        </div>
+
+                        {{-- TEAM 2 --}}
+                        <div class="flex items-center justify-end gap-2 w-1/3">
+                            {{ $serie->teamB->name ?? 'TBD' }}
+                        </div>
+
+                    </div>
+
+                    <div class="p-2 border-t border-gray-700">
+                        <div class="text-center text-gray-400">
+                            Winner {{ $serie->winner->name }}
+                        </div>
+
+                    </div>
+
+                    <div class="p-2 border-t border-gray-700">
+
+                        <a href="{{ route('tournament.series.show', ['tournament' => $serie->tournament_id, 'series' => $serie->id]) }}"
+                            class="text-blue-600 hover:underline text-xs cursor-pointer">
+                                View Series
+                            </a>
+
+                        <button 
+                            wire:click="editSeries({{ $serie->id }})" 
+                            class="text-blue-600 hover:underline text-xs cursor-pointer">
+                                Edit
+                        </button>
+                    </div>
+                @endforeach
+
+            @endforeach
+
+        </div>
+    </div>
+@endforeach
+</div>
 
     @if ($editingSeries)
         <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -213,6 +149,10 @@
                             </option>
                         @endforeach
                     </select>
+
+                    @error('team1_id')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
@@ -225,22 +165,16 @@
                             </option>
                         @endforeach
                     </select>
-                </div>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" wire:model="bracket" placeholder="Bracket" class="border rounded p-2">
-                    <input type="text" wire:model="group" placeholder="Group" class="border rounded p-2">
+                    @error('team2_id')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
                 </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" wire:model="stage" placeholder="Stage" class="border rounded p-2">
-                    <input type="number" wire:model="round" placeholder="Round" class="border rounded p-2">
-                </div>
-
+                
                 <div>
                     <label>Winner</label>
                     <select wire:model="winner_id" class="w-full border rounded p-2">
-                        <option value="">--</option>
+                        <option value="" disabled>-- Select Team --</option>
                         @foreach($this->participant_ids as $id)
                             @php
                                 $team = $teams->firstWhere('id', $id);
@@ -253,6 +187,10 @@
                             @endif
                         @endforeach
                     </select>
+
+                    @error('winner_id')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="flex justify-between items-center mt-6">
