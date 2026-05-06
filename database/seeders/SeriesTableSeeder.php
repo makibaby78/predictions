@@ -354,6 +354,110 @@ class SeriesTableSeeder extends Seeder
                 'winner_id' => null,
                 'match_date' => '2026-05-01',
             ],
+            // MPL PH 17
+            [
+                'tournament_id' => 4,
+                'team1_id' => 3,
+                'team2_id' => 34,
+                'winner_id' => 3,
+                'match_date' => '2026-05-03',
+            ],
+            [
+                'tournament_id' => 4,
+                'team1_id' => 37,
+                'team2_id' => 35,
+                'winner_id' => 37,
+                'match_date' => '2026-05-03',
+            ],
+
+            [
+                'tournament_id' => 4,
+                'team1_id' => 35,
+                'team2_id' => 39,
+                'winner_id' => 39,
+                'match_date' => '2026-05-02',
+            ],
+            [
+                'tournament_id' => 4,
+                'team1_id' => 36,
+                'team2_id' => 38,
+                'winner_id' => 36,
+                'match_date' => '2026-05-02',
+            ],            
+            [
+                'tournament_id' => 4,
+                'team1_id' => 37,
+                'team2_id' => 3,
+                'winner_id' => 37,
+                'match_date' => '2026-05-02',
+            ],
+
+            [
+                'tournament_id' => 4,
+                'team1_id' => 4,
+                'team2_id' => 38,
+                'winner_id' => 4,
+                'match_date' => '2026-05-01',
+            ],            
+            [
+                'tournament_id' => 4,
+                'team1_id' => 36,
+                'team2_id' => 39,
+                'winner_id' => 36,
+                'match_date' => '2026-05-01',
+            ],
+
+            [
+                'tournament_id' => 4,
+                'team1_id' => 4,
+                'team2_id' => 37,
+                'winner_id' => 37,
+                'match_date' => '2026-04-26',
+            ],            
+            [
+                'tournament_id' => 4,
+                'team1_id' => 34,
+                'team2_id' => 38,
+                'winner_id' => 34,
+                'match_date' => '2026-04-26',
+            ],
+
+            [
+                'tournament_id' => 4,
+                'team1_id' => 35,
+                'team2_id' => 38,
+                'winner_id' => 38,
+                'match_date' => '2026-04-25',
+            ],            
+            [
+                'tournament_id' => 4,
+                'team1_id' => 36,
+                'team2_id' => 34,
+                'winner_id' => 36,
+                'match_date' => '2026-04-25',
+            ],
+            [
+                'tournament_id' => 4,
+                'team1_id' => 3,
+                'team2_id' => 39,
+                'winner_id' => 3,
+                'match_date' => '2026-04-25',
+            ],
+
+            [
+                'tournament_id' => 4,
+                'team1_id' => 4,
+                'team2_id' => 39,
+                'winner_id' => 4,
+                'match_date' => '2026-04-24',
+            ],
+            [
+                'tournament_id' => 4,
+                'team1_id' => 3,
+                'team2_id' => 35,
+                'winner_id' => 3,
+                'match_date' => '2026-04-24',
+            ],
         ]);
     }
 }

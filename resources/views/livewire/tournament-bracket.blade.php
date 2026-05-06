@@ -8,71 +8,86 @@
     </button>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-@foreach ($series as $weekNumber => $days)
-    <div class="mb-8">
+    @foreach ($series as $weekNumber => $days)
+        <div class="mb-10">
 
-        {{-- WEEK HEADER --}}
-        <div class="bg-gray-800 text-white px-4 py-2 rounded-t flex justify-between">
-            <span>Week {{ $weekNumber }}</span>
-        </div>
+            {{-- WEEK HEADER --}}
+            <div class="bg-gray-800 text-white px-5 py-3 rounded-t-lg">
+                <span class="font-semibold">Week {{ $weekNumber }}</span>
+            </div>
 
-        <div class="border border-gray-700">
+            <div class="border border-gray-700 rounded-b-lg overflow-hidden">
 
-            @foreach ($days as $date => $matches)
-                
-                {{-- DAY HEADER --}}
-                <div class="bg-gray-900 text-white px-4 py-2 text-sm">
-                    Day {{ \Carbon\Carbon::parse($date)->format('d M Y') }}
-                </div>
+                @foreach ($days as $date => $matches)
 
-                {{-- MATCH LIST --}}
-                @foreach ($matches as $serie)
-                    <div class="flex items-center justify-between px-4 py-2 border-t border-gray-700 text-sm">
-
-                        {{-- TEAM 1 --}}
-                        <div class="flex items-center gap-2 w-1/3">
-                            {{ $serie->teamA->name ?? 'TBD' }}
-                        </div>
-
-                        {{-- SCORE / VS --}}
-                        <div class="text-center w-1/3 text-gray-400">
-                            {{ $serie->winner_id ? 'FINISHED' : 'VS' }}
-                        </div>
-
-                        {{-- TEAM 2 --}}
-                        <div class="flex items-center justify-end gap-2 w-1/3">
-                            {{ $serie->teamB->name ?? 'TBD' }}
-                        </div>
-
+                    {{-- DAY HEADER --}}
+                    <div class="bg-gray-900 text-gray-300 px-5 py-2 text-xs uppercase tracking-wide">
+                        {{ \Carbon\Carbon::parse($date)->format('d M Y') }}
                     </div>
 
-                    <div class="p-2 border-t border-gray-700">
-                        <div class="text-center text-gray-400">
-                            Winner {{ $serie->winner->name }}
+                    @foreach ($matches as $serie)
+
+                        <div class="px-5 py-4 border-t border-gray-700 bg-gray-800/30">
+
+                            <div class="flex items-center justify-between gap-4">
+
+                                {{-- TEAM 1 --}}
+                                <div class="w-1/3 flex items-center gap-2">
+                                    <span class="
+                                        font-medium
+                                        {{ $serie->winner_id === $serie->team1_id ? 'text-green-400 font-bold' : 'text-white' }}
+                                    ">
+                                        {{ $serie->teamA->name ?? 'TBD' }}
+                                    </span>
+                                </div>
+
+                                {{-- STATUS --}}
+                                <div class="w-1/3 text-center">
+                                    @if ($serie->winner_id)
+                                        <span class="text-green-400 text-xs px-2 py-1 rounded bg-green-500/10">
+                                            FINISHED
+                                        </span>
+                                    @else
+                                        <span class="text-gray-400 text-xs">VS</span>
+                                    @endif
+                                </div>
+
+                                {{-- TEAM 2 --}}
+                                <div class="w-1/3 flex justify-end items-center gap-2">
+                                    <span class="
+                                        font-medium
+                                        {{ $serie->winner_id === $serie->team2_id ? 'text-green-400 font-bold' : 'text-white' }}
+                                    ">
+                                        {{ $serie->teamB->name ?? 'TBD' }}
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            {{-- ACTIONS --}}
+                            <div class="mt-3 flex justify-end gap-4 text-xs">
+
+                                <a href="{{ route('tournament.series.show', ['tournament' => $serie->tournament_id, 'series' => $serie->id]) }}"
+                                class="text-blue-400 hover:text-blue-300">
+                                    View Series
+                                </a>
+
+                                <button wire:click="editSeries({{ $serie->id }})"
+                                        class="text-yellow-400 hover:text-yellow-300">
+                                    Edit
+                                </button>
+
+                            </div>
+
                         </div>
 
-                    </div>
+                    @endforeach
 
-                    <div class="p-2 border-t border-gray-700">
-
-                        <a href="{{ route('tournament.series.show', ['tournament' => $serie->tournament_id, 'series' => $serie->id]) }}"
-                            class="text-blue-600 hover:underline text-xs cursor-pointer">
-                                View Series
-                            </a>
-
-                        <button 
-                            wire:click="editSeries({{ $serie->id }})" 
-                            class="text-blue-600 hover:underline text-xs cursor-pointer">
-                                Edit
-                        </button>
-                    </div>
                 @endforeach
 
-            @endforeach
-
+            </div>
         </div>
-    </div>
-@endforeach
+    @endforeach
 </div>
 
     @if ($editingSeries)
@@ -131,14 +146,30 @@
     @if ($isCreating)
         <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div class="bg-white p-6 rounded w-full max-w-lg space-y-4">
+
                 <h2 class="text-lg font-bold">Create serie</h2>
 
+                {{-- TOURNAMENT --}}
                 <div>
                     <label>Tournament</label>
-                    <input type="text" class="w-full border rounded p-2 bg-gray-100" value="{{ $tournament->name }}" disabled>
+                    <input type="text" class="w-full border rounded p-2 bg-gray-100"
+                        value="{{ $tournament->name }}" disabled>
                     <input type="hidden" wire:model="tournament_id">
                 </div>
-                
+
+                {{-- MATCH DATE --}}
+                <div>
+                    <label>Match Date</label>
+                    <input type="datetime-local"
+                        wire:model="match_date"
+                        class="w-full border rounded p-2">
+
+                    @error('match_date')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                {{-- TEAM 1 --}}
                 <div>
                     <label>Team 1</label>
                     <select wire:model.change="team1_id" class="w-full border rounded p-2">
@@ -155,6 +186,7 @@
                     @enderror
                 </div>
 
+                {{-- TEAM 2 --}}
                 <div>
                     <label>Team 2</label>
                     <select wire:model.change="team2_id" class="w-full border rounded p-2">
@@ -170,7 +202,8 @@
                         <span class="text-red-500 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
-                
+
+                {{-- WINNER --}}
                 <div>
                     <label>Winner</label>
                     <select wire:model="winner_id" class="w-full border rounded p-2">
@@ -193,10 +226,19 @@
                     @enderror
                 </div>
 
+                {{-- ACTIONS --}}
                 <div class="flex justify-between items-center mt-6">
-                    <button wire:click="$set('isCreating', false)" class="cursor-pointer px-3 py-1 bg-gray-300 rounded">Cancel</button>
-                    <button wire:click="createSeries" class="cursor-pointer px-3 py-1 bg-blue-600 text-white rounded">Create</button>
+                    <button wire:click="$set('isCreating', false)"
+                            class="cursor-pointer px-3 py-1 bg-gray-300 rounded">
+                        Cancel
+                    </button>
+
+                    <button wire:click="createSeries"
+                            class="cursor-pointer px-3 py-1 bg-blue-600 text-white rounded">
+                        Create
+                    </button>
                 </div>
+
             </div>
         </div>
     @endif

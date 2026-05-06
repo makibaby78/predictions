@@ -13,6 +13,7 @@ class Series extends Model
         'team1_id',
         'team2_id',
         'winner_id',
+        'match_date',
     ];
 
     public function tournament()

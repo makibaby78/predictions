@@ -17,6 +17,7 @@ class TournamentBracket extends Component
     public $team1_id;
     public $team2_id;
     public $winner_id;
+    public $match_date;
     public $participant_ids = [];
     public $tournament_id;
 
@@ -144,13 +145,14 @@ class TournamentBracket extends Component
         $this->validate();
 
         Series::create([
+            'match_date' => $this->match_date,
             'tournament_id' => $this->tournament_id,
             'team1_id' => $this->team1_id,
             'team2_id' => $this->team2_id,
             'winner_id' => $this->winner_id,
         ]);
 
-        $this->reset(['isCreating', 'team1_id', 'team2_id', 'winner_id']);
+        $this->reset(['isCreating', 'team1_id', 'team2_id', 'winner_id', 'match_date']);
 
         session()->flash('message', 'Series created successfully.');
     }
