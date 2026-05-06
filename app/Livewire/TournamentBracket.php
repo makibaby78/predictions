@@ -39,12 +39,16 @@ class TournamentBracket extends Component
 
     public function getFilteredFirstTeamsProperty()
     {
-        return $this->teams->where('id', '!=', $this->team2_id);
+        return $this->teams
+            ->where('id', '!=', $this->team2_id)
+            ->values(); // 👈 reindex
     }
 
     public function getFilteredSecondTeamsProperty()
     {
-        return $this->teams->where('id', '!=', $this->team1_id);
+        return $this->teams
+            ->where('id', '!=', $this->team1_id)
+            ->values(); // 👈 reindex
     }
 
     protected function syncWinnerIds()

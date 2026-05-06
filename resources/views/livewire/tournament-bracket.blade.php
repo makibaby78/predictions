@@ -208,7 +208,9 @@
                     <select wire:model.change="team1_id" class="w-full border rounded p-2">
                         <option value="">--</option>
                         @foreach($this->filteredFirstTeams as $team)
-                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                            <option wire:key="team1-{{ $team->id }}" value="{{ $team->id }}">
+                                {{ $team->name }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
@@ -218,7 +220,9 @@
                     <select wire:model.change="team2_id" class="w-full border rounded p-2">
                         <option value="">--</option>
                         @foreach($this->filteredSecondTeams as $team)
-                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                            <option wire:key="team2-{{ $team->id }}" value="{{ $team->id }}">
+                                {{ $team->name }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
