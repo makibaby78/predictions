@@ -73,7 +73,7 @@
                                 </a>
 
                                 <button wire:click="editSeries({{ $serie->id }})"
-                                        class="text-yellow-400 hover:text-yellow-300">
+                                        class="text-yellow-400 hover:text-yellow-300 cursor-pointer">
                                     Edit
                                 </button>
 
@@ -91,38 +91,70 @@
 </div>
 
     @if ($editingSeries)
-        <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-lg w-full max-w-md">
-                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Edit serie</h2>
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white p-6 rounded w-full max-w-lg space-y-4">
+                <h2 class="text-lg font-bold">Edit serie</h2>
 
-                <select wire:model="team1_id" class="w-full mt-1 p-2 border rounded dark:bg-white">
-                    <option value="">-- Select Team A --</option>
-                    @if ($team1_id && ! $teams->pluck('id')->contains($team1_id))
-                        <option value="{{ $team1_id }}" selected>
-                            {{ \App\Models\Team::find($team1_id)?->name ?? 'Unknown Team A' }}
-                        </option>
-                    @endif
-                    @foreach ($teams as $team)
-                        <option value="{{ $team->id }}">{{ $team->name }}</option>
-                    @endforeach
-                </select>
+                {{-- TOURNAMENT --}}
+                <div>
+                    <label>Tournament</label>
+                    <input type="text" class="w-full border rounded p-2 bg-gray-100"
+                        value="{{ $tournament->name }}" disabled>
+                    <input type="hidden" wire:model="tournament_id">
+                </div>
+
+                 {{-- MATCH DATE --}}
+                <div>
+                    <label>Match Date</label>
+                    <input type="datetime-local"
+                        wire:model="match_date"
+                        class="w-full border rounded p-2">
+
+                    @error('match_date')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                {{-- TEAM 1 --}}
+                <div>
+                    <label>Team 1</label>
+                    <select wire:model.change="team1_id" class="w-full border rounded p-2">
+                        <option value="">--</option>
+                        @foreach($this->filteredFirstTeams as $team)
+                            <option wire:key="team1-{{ $team->id }}" value="{{ $team->id }}">
+                                {{ $team->name }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    @error('team1_id')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
+
                 
-                <select wire:model="team2_id" class="w-full mt-1 p-2 border rounded dark:bg-white">
-                    <option value="">-- Select Team B --</option>
-                    @if ($team2_id && ! $teams->pluck('id')->contains($team2_id))
-                        <option value="{{ $team2_id }}" selected>
-                            {{ \App\Models\Team::find($team2_id)?->name ?? 'Unknown Team B' }}
-                        </option>
-                    @endif
-                    @foreach ($teams as $team)
-                        <option value="{{ $team->id }}">{{ $team->name }}</option>
-                    @endforeach
-                </select>
+                {{-- TEAM 2 --}}
+                <div>
+                    <label>Team 2</label>
+                    <select wire:model.change="team2_id" class="w-full border rounded p-2">
+                        <option value="">--</option>
+                        @foreach($this->filteredSecondTeams as $team)
+                            <option wire:key="team2-{{ $team->id }}" value="{{ $team->id }}">
+                                {{ $team->name }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    @error('team2_id')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
                 
-                <div class="mb-4">
-                    <label class="block text-sm font-medium dark:text-white mt-4">Winner</label>
-                    <select wire:model="winner_id" class="w-full mt-1 p-2 border rounded dark:bg-white">
-                        <option value="">-- Select Winner --</option>
+                {{-- WINNER --}}
+                <div>
+                    <label>Winner {{ $winner_id }}</label>
+                    <select wire:model="winner_id" class="w-full border rounded p-2">
+                        <option value="" disabled>-- Select Team --</option>
                         @if ($team1_id)
                             <option value="{{ $team1_id }}">{{ \App\Models\Team::find($team1_id)?->name ?? 'Team A' }}</option>
                         @endif
@@ -130,7 +162,11 @@
                             <option value="{{ $team2_id }}">{{ \App\Models\Team::find($team2_id)?->name ?? 'Team B' }}</option>
                         @endif
                     </select>
-                </div>                                   
+
+                    @error('winner_id')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
 
                 <div class="flex justify-between items-center mt-6">
                     <button wire:click="deleteSeries" class="px-3 py-1 cursor-pointer bg-red-600 text-white rounded">Delete</button>

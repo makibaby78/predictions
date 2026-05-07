@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Series;
 use App\Models\Tournament;
 use App\Models\Team;
+use Carbon\Carbon;
 
 class TournamentBracket extends Component
 {
@@ -25,6 +26,7 @@ class TournamentBracket extends Component
         'team1_id' => 'required|exists:teams,id',
         'team2_id' => 'required|exists:teams,id',
         'winner_id' => 'required|exists:teams,id',
+        'match_date' => 'required',
     ];
 
     public function mount(Tournament $tournament)
@@ -100,6 +102,7 @@ class TournamentBracket extends Component
     {
         $series = Series::findOrFail($seriesId);
 
+        $this->match_date = Carbon::parse($series->match_date)->format('Y-m-d\TH:i');
         $this->editingSeries = $series->id;
         $this->team1_id = $series->team1_id;
         $this->team2_id = $series->team2_id;
@@ -121,6 +124,7 @@ class TournamentBracket extends Component
             'team1_id' => $this->team1_id,
             'team2_id' => $this->team2_id,
             'winner_id' => $this->winner_id,
+            'match_date' => $this->match_date,
         ]);
 
         $this->cancelEdit();

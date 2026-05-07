@@ -12,7 +12,6 @@ class Matches extends Model
         'series_id',
         'team1_id',
         'team2_id',
-        'scheduled_at',
         'winner_id',
         'match_number',
     ];

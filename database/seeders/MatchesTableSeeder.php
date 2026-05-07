@@ -17,7 +17,6 @@ class MatchesTableSeeder extends Seeder
             [
                 'id' => 1,
                 'series_id' => 1,
-                'scheduled_at' => '2025-07-23 14:06:00',
                 'match_number' => 1,
                 'winner_id' => 3,
                 'started_at' => null,
