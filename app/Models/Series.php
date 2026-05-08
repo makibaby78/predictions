@@ -38,6 +38,6 @@ class Series extends Model
 
     public function matches()
     {
-        return $this->hasMany(Matches::class);
+        return $this->hasMany(Matches::class)->orderBy('match_number');
     }
 }

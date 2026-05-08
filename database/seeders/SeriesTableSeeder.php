@@ -654,6 +654,13 @@ class SeriesTableSeeder extends Seeder
                 'winner_id' => 3,
                 'match_date' => '2026-03-20',
             ],
+            [
+                'tournament_id' => 5,
+                'team1_id' => 1,
+                'team2_id' => 41,
+                'winner_id' => 1,
+                'match_date' => '2026-01-10',
+            ],
         ]);
     }
 }

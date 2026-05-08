@@ -7,14 +7,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Match Number</label>
-                <input type="number" wire:model="match_number"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-            </div>
-
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Scheduled At</label>
-                <input type="datetime-local" wire:model="scheduled_at"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                <input 
+                    type="number" 
+                    wire:model="match_number"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                >
+                @error('match_number')
+                    <span class="text-red-500 text-xs">{{ $message }}</span>
+                @enderror
             </div>
         </div>
 
@@ -28,6 +28,10 @@
                     <option value="{{ $series->team2_id }}">{{ $series->teamB->name ?? 'Team 2' }}</option>
                 @endif
             </select>
+
+            @error('winner_id')
+                <span class="text-red-500 text-xs">{{ $message }}</span>
+            @enderror
         </div>
 
         <!-- Hero Picks -->
@@ -50,6 +54,10 @@
                                                 <option value="{{ $hero->id }}">{{ $hero->name }}</option>
                                             @endforeach
                                         </select>
+
+                                        @error('heroPicks.' . $player->id)
+                                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 @endforeach
                             </div>

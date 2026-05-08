@@ -27,7 +27,7 @@
 
                     @foreach ($matches as $serie)
 
-                        <div class="px-5 py-4 border-t border-gray-700 bg-gray-800/30">
+                        <div class="px-3 py-3 border-t border-gray-700 bg-gray-800/30">
 
                             <div class="flex items-center justify-between gap-4">
 
@@ -100,29 +100,40 @@
                                     </summary>
 
                                     {{-- STATIC MATCH LIST --}}
-                                    <div class="mt-3 w-auto rounded-lg border border-gray-700 bg-gray-900 overflow-hidden">
+                                    <div class="mt-3 w-auto border border-gray-700 bg-gray-900 overflow-hidden">
 
                                         <div class="px-3 py-2 border-b border-gray-700 text-gray-300 text-xs font-semibold">
                                             Match List
                                         </div>
 
                                         <div class="divide-y divide-gray-700 text-xs">
+                                            
+                                            @foreach ($serie->matches as $match)
+                                                <div class="px-3 py-2 flex justify-between items-center">
 
-                                            <div class="px-3 py-2 flex justify-between items-center">
-                                                <span class="text-white">
-                                                    {{ $serie->teamA->name ?? 'TBD' }}
-                                                </span>
+                                                    <span class="text-white">
+                                                        {{ $match->match_number}}
+                                                    </span>
 
-                                                <span class="text-gray-400">
-                                                    2 - 1
-                                                </span>
+                                                    <span class="text-white">
+                                                        <span class="{{ $match->winner_id == $serie->teamA->id ? 'text-green-600' : 'text-red-600' }}">
+                                                            {{ $match->winner_id == $serie->teamA->id ? 'W' : 'L' }} 
+                                                        </span>
 
-                                                <span class="text-white">
-                                                    {{ $serie->teamB->name ?? 'TBD' }}
-                                                </span>
-                                            </div>
+                                                        {{ $serie->teamA->name ?? 'TBD' }}
+                                                    </span>
 
-                                            <div class="px-3 py-2 flex justify-between items-center">
+                                                    <span class="text-white">
+                                                        <span class="{{ $match->winner_id == $serie->teamB->id ? 'text-green-600' : 'text-red-600' }}">
+                                                            {{ $match->winner_id == $serie->teamB->id  ? 'W' : 'L'; }} 
+                                                        </span>
+
+                                                        {{ $serie->teamB->name ?? 'TBD' }}
+                                                    </span>
+                                                </div>
+                                            @endforeach
+
+                                            {{-- <div class="px-3 py-2 flex justify-between items-center">
                                                 <span class="text-white">
                                                     {{ $serie->teamA->name ?? 'TBD' }}
                                                 </span>
@@ -148,7 +159,7 @@
                                                 <span class="text-white">
                                                     {{ $serie->teamB->name ?? 'TBD' }}
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 

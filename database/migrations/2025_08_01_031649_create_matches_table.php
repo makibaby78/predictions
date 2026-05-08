@@ -16,8 +16,6 @@ return new class extends Migration
             $table->foreignId('series_id')->constrained()->onDelete('cascade');
             $table->integer('match_number')->nullable();
             $table->foreignId('winner_id')->nullable()->constrained('teams')->onDelete('set null');
-            $table->timestamp('started_at')->nullable();
-            $table->timestamp('ended_at')->nullable();
             $table->timestamps();
         });
     }

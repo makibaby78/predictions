@@ -10,8 +10,6 @@ class Matches extends Model
 
     protected $fillable = [
         'series_id',
-        'team1_id',
-        'team2_id',
         'winner_id',
         'match_number',
     ];
