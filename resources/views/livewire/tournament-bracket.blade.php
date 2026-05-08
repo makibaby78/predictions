@@ -64,7 +64,7 @@
 
                             </div>
 
-                            {{-- ACTIONS --}}
+                            {{-- RIGHT ACTIONS --}}
                             <div class="mt-3 flex justify-end gap-4 text-xs">
 
                                 <a href="{{ route('tournament.series.show', ['tournament' => $serie->tournament_id, 'series' => $serie->id]) }}"
@@ -76,6 +76,84 @@
                                         class="text-yellow-400 hover:text-yellow-300 cursor-pointer">
                                     Edit
                                 </button>
+
+                            </div>
+
+                            {{-- ACTIONS --}}
+                            <div class="mt-3 flex justify-between items-center">
+
+                                {{-- MATCH DROPDOWN --}}
+                                <details class="group w-full text-xs">
+                                    <summary class="cursor-pointer text-gray-400 hover:text-white list-none flex items-center gap-2">
+                                        <span>Matches</span>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="w-4 h-4 transition-transform group-open:rotate-180"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </summary>
+
+                                    {{-- STATIC MATCH LIST --}}
+                                    <div class="mt-3 w-auto rounded-lg border border-gray-700 bg-gray-900 overflow-hidden">
+
+                                        <div class="px-3 py-2 border-b border-gray-700 text-gray-300 text-xs font-semibold">
+                                            Match List
+                                        </div>
+
+                                        <div class="divide-y divide-gray-700 text-xs">
+
+                                            <div class="px-3 py-2 flex justify-between items-center">
+                                                <span class="text-white">
+                                                    {{ $serie->teamA->name ?? 'TBD' }}
+                                                </span>
+
+                                                <span class="text-gray-400">
+                                                    2 - 1
+                                                </span>
+
+                                                <span class="text-white">
+                                                    {{ $serie->teamB->name ?? 'TBD' }}
+                                                </span>
+                                            </div>
+
+                                            <div class="px-3 py-2 flex justify-between items-center">
+                                                <span class="text-white">
+                                                    {{ $serie->teamA->name ?? 'TBD' }}
+                                                </span>
+
+                                                <span class="text-gray-400">
+                                                    0 - 2
+                                                </span>
+
+                                                <span class="text-white">
+                                                    {{ $serie->teamB->name ?? 'TBD' }}
+                                                </span>
+                                            </div>
+
+                                            <div class="px-3 py-2 flex justify-between items-center">
+                                                <span class="text-white">
+                                                    {{ $serie->teamA->name ?? 'TBD' }}
+                                                </span>
+
+                                                <span class="text-gray-400">
+                                                    1 - 0
+                                                </span>
+
+                                                <span class="text-white">
+                                                    {{ $serie->teamB->name ?? 'TBD' }}
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </details>
 
                             </div>
 
