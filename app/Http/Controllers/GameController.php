@@ -21,11 +21,17 @@ class GameController extends Controller
     {
         $game = Game::findOrFail($id);
 
-        $tournaments = Tournament::where('game_id', $game->id)
+        $ongoingTournaments  = Tournament::where('game_id', $game->id)
         ->where('end_date', '>=', Carbon::today())
+        ->orderBy('start_date', 'asc')
         ->get();
 
-        return view('games.teams', compact('game', 'tournaments'));
+        $pastTournaments = Tournament::where('game_id', $game->id)
+        ->where('end_date', '<', Carbon::today())
+        ->orderBy('end_date', 'desc')
+        ->get();
+
+        return view('games.teams', compact('game', 'ongoingTournaments', 'pastTournaments'));
     }
 
     public function heroes($game)

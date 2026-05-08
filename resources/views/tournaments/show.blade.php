@@ -12,7 +12,13 @@
     <ul class="mb-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         @foreach ($tournament->teams as $team)
             <li class="border p-3 rounded shadow bg-white">
-                <h3 class="font-bold">{{ $team->name }}</h3>
+                <h3 class="text-xl font-bold mb-2">{{ $team->name }}</h3>
+                <p class="text-sm font-semibold">
+                    Overall Series Winrate: {{ $team->winrate() }}
+                </p>
+                <p class="text-sm font-semibold">
+                    Tournament Series Winrate: {{ $team->winrate($tournament->id) }}
+                </p>
                 <ul class="text-sm mt-1 text-gray-600">
                     @foreach ($team->players as $player)
                         <li>{{ $player->name }}</li>

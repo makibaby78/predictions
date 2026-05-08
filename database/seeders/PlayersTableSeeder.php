@@ -267,6 +267,20 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 39, 'game_id' => 2, 'name' => 'Sionnn', 'country_id' => 1, 'position' => 'Mid Laner'],
             ['team_id' => 39, 'game_id' => 2, 'name' => 'Owl', 'country_id' => 1, 'position' => 'Gold Laner'],
             ['team_id' => 39, 'game_id' => 2, 'name' => 'Caloy', 'country_id' => 1, 'position' => 'Roamer'],
+
+            // Alter Ego
+            ['team_id' => 40, 'game_id' => 2, 'name' => 'Nino', 'country_id' => 2, 'position' => 'EXP Laner'],
+            ['team_id' => 40, 'game_id' => 2, 'name' => 'Yazukee', 'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 40, 'game_id' => 2, 'name' => 'Hijumee', 'country_id' => 2, 'position' => 'Mid Laner'],
+            ['team_id' => 40, 'game_id' => 2, 'name' => 'Arfy', 'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 40, 'game_id' => 2, 'name' => 'alekk', 'country_id' => 2, 'position' => 'Roamer'],
+            
+            // Boostgate Esports
+            ['team_id' => 41, 'game_id' => 2, 'name' => 'Eksi', 'country_id' => 12, 'position' => 'EXP Laner'],
+            ['team_id' => 41, 'game_id' => 2, 'name' => 'Kazue', 'country_id' => 12, 'position' => 'Jungler'],
+            ['team_id' => 41, 'game_id' => 2, 'name' => 'Identity', 'country_id' => 12, 'position' => 'Mid Laner'],
+            ['team_id' => 41, 'game_id' => 2, 'name' => 'Rx', 'country_id' => 12, 'position' => 'Gold Laner'],
+            ['team_id' => 41, 'game_id' => 2, 'name' => 'Wackter', 'country_id' => 12, 'position' => 'Roamer'],
         ];
             
 

@@ -53,6 +53,8 @@ class TeamsTableSeeder extends Seeder
             ['name' => "Team Falcons PH", 'game_id' => 2, 'country_id' => '1'],
             ['name' => "TNC Pro Team", 'game_id' => 2, 'country_id' => '1'],
             ['name' => "Twisted Minds PH", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Alter Ego", 'game_id' => 2, 'country_id' => '2'],
+            ['name' => "Boostgate Esports", 'game_id' => 2, 'country_id' => '12'],
         ]);
     }
 }

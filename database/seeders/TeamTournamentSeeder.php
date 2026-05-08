@@ -44,5 +44,14 @@ class TeamTournamentSeeder extends Seeder
                 'team_id' => $teamId,
             ]);
         }
+
+        $m7 = [1, 40, 3, 5, 11, 15, 12, 35, 41];
+
+        foreach ($m7 as $teamId) {
+            DB::table('team_tournament')->insert([
+                'tournament_id' => 5,
+                'team_id' => $teamId,
+            ]);
+        }
     }
 }

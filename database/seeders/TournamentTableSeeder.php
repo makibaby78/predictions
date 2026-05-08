@@ -45,5 +45,13 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2026-03-20',
             'end_date' => '2026-05-31',
         ]);
+
+        Tournament::create([
+            'name' => 'M7 World Championship',
+            'game_id' => 2,
+            'prize_pool' => 1000000.00,
+            'start_date' => '2026-01-03',
+            'end_date' => '2026-01-25',
+        ]);
     }
 }
