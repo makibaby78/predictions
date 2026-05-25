@@ -60,5 +60,7 @@
     <livewire:game-teams :game="$game" />
 
     <livewire:game-heroes :game="$game" />
+
+    <livewire:game-players :game="$game" />
 </div>
 @endsection

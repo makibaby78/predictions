@@ -100,7 +100,7 @@ class HeroPickSeeder extends Seeder
             [
                 'match_id' => 2,
                 'team_id' => 3,
-                'hero_id' => 97,
+                'hero_id' => 4,
                 'player_id' => 45,
                 'created_at' => $now,
                 'updated_at' => $now,

@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     protected $fillable = ['name', 'position', 'country'];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
     
     public function teams()
     {
