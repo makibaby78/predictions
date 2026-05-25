@@ -1,5 +1,5 @@
 <div class="mx-auto">
-    <h2 class="text-2xl dark:text-white font-bold mb-6">Teams for {{ $game->name }}</h2>
+    <h2 class="text-2xl dark:text-white font-bold mb-6">Teams</h2>
     <div class="max-w-3xl">
         <form wire:submit.prevent="{{ $editingTeam ? 'update' : 'create' }}" class="mb-6">
             <div class="flex gap-4 items-center">

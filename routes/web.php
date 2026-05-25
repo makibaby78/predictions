@@ -9,11 +9,11 @@ use App\Http\Controllers\PlayerTeamController;
 
 Route::get('/', [GameController::class, 'index'])->name('games.index');
 
-Route::get('/games/{game}/heroes', [GameController::class, 'heroes']);
+Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 Route::get('/games/{game}/players', [GameController::class, 'players']);
 
-Route::get('/games/{game}/teams', [GameController::class, 'tournament'])->name('games.teams.index');
+Route::get('/game/{game}/overview', [GameController::class, 'overview'])->name('games.overview.index');
 
 Route::get('/player/{player}', [PlayerController::class, 'show']);
 

@@ -17,7 +17,7 @@ class GameController extends Controller
         return view('games.index', compact('games'));
     }
 
-    public function tournament($id)
+    public function overview($id)
     {
         $game = Game::findOrFail($id);
 
@@ -31,33 +31,7 @@ class GameController extends Controller
         ->orderBy('end_date', 'desc')
         ->get();
 
-        return view('games.teams', compact('game', 'ongoingTournaments', 'pastTournaments'));
-    }
-
-    public function heroes($game)
-    {
-        $heroes = Hero::where('game_id', $game)
-            ->withCount([
-                'picks as total_picks',
-                'picks as wins' => function ($query) {
-                    $query->whereIn('match_id', function ($subQuery) {
-                        $subQuery->select('id')
-                            ->from('matches')
-                            ->whereColumn('matches.winner_id', 'match_hero_picks.team_id');
-                    });
-                }
-            ])
-            ->get();
-    
-        // Calculate win rate and sort heroes
-        $heroes = $heroes->sortByDesc(function ($hero) {
-            if ($hero->total_picks > 0) {
-                return $hero->wins / $hero->total_picks;
-            }
-            return -1; // Put heroes with 0 picks at the bottom
-        })->values(); // Re-index collection
-    
-        return view('games.heroes', compact('heroes'));
+        return view('games.overview', compact('game', 'ongoingTournaments', 'pastTournaments'));
     }
 
     public function players($game)

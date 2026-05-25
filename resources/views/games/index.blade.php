@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <a href="{{ route('games.teams.index', $game) }}"
+                        <a href="{{ route('games.overview.index', $game) }}"
                            class="inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
                             View Teams
                         </a>

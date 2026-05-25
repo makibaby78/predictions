@@ -17,7 +17,6 @@ class HeroPickSeeder extends Seeder
 
         DB::table('match_hero_picks')->insert([
             [
-                'id' => 1,
                 'match_id' => 1,
                 'team_id' => 3,
                 'hero_id' => 104,
@@ -26,7 +25,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 2,
                 'match_id' => 1,
                 'team_id' => 3,
                 'hero_id' => 47,
@@ -35,7 +33,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 3,
                 'match_id' => 1,
                 'team_id' => 3,
                 'hero_id' => 52,
@@ -44,7 +41,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 4,
                 'match_id' => 1,
                 'team_id' => 3,
                 'hero_id' => 81,
@@ -53,7 +49,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 5,
                 'match_id' => 1,
                 'team_id' => 3,
                 'hero_id' => 41,
@@ -62,7 +57,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 6,
                 'match_id' => 1,
                 'team_id' => 9,
                 'hero_id' => 113,
@@ -71,7 +65,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 7,
                 'match_id' => 1,
                 'team_id' => 9,
                 'hero_id' => 9,
@@ -80,7 +73,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 8,
                 'match_id' => 1,
                 'team_id' => 9,
                 'hero_id' => 110,
@@ -89,7 +81,6 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 9,
                 'match_id' => 1,
                 'team_id' => 9,
                 'hero_id' => 70,
@@ -98,9 +89,17 @@ class HeroPickSeeder extends Seeder
                 'updated_at' => $now,
             ],
             [
-                'id' => 10,
                 'match_id' => 1,
                 'team_id' => 9,
+                'hero_id' => 97,
+                'player_id' => 45,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+
+            [
+                'match_id' => 2,
+                'team_id' => 3,
                 'hero_id' => 97,
                 'player_id' => 45,
                 'created_at' => $now,
