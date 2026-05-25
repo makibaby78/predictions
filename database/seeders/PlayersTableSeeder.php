@@ -281,6 +281,8 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 41, 'game_id' => 2, 'name' => 'Identity', 'country_id' => 12, 'position' => 'Mid Laner'],
             ['team_id' => 41, 'game_id' => 2, 'name' => 'Rx', 'country_id' => 12, 'position' => 'Gold Laner'],
             ['team_id' => 41, 'game_id' => 2, 'name' => 'Wackter', 'country_id' => 12, 'position' => 'Roamer'],
+
+            ['team_id' => 3, 'game_id' => 2, 'name' => 'Teddy', 'country_id' => 1, 'position' => 'Gold Laner'],
         ];
             
 

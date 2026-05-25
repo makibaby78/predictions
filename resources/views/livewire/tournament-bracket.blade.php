@@ -84,8 +84,11 @@
 
                                 {{-- MATCH DROPDOWN --}}
                                 <details class="group w-full text-xs">
-                                    <summary class="cursor-pointer text-gray-400 hover:text-white list-none flex items-center gap-2">
-                                        <span>Matches</span>
+                                    <summary class="cursor-pointer text-gray-400 hover:text-white list-none flex items-center justify-between">
+                                        
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-semibold tracking-wide">Matches</span>
+                                        </div>
 
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="w-4 h-4 transition-transform group-open:rotate-180"
@@ -97,72 +100,96 @@
                                                 stroke-width="2"
                                                 d="M19 9l-7 7-7-7" />
                                         </svg>
+
                                     </summary>
 
                                     {{-- MATCH LIST --}}
-                                    <div class="mt-3 w-auto border border-gray-700 bg-gray-900 overflow-hidden">
+                                    <div class="mt-3 w-full border border-gray-700 bg-gray-900 rounded-lg overflow-hidden">
 
-                                        <div class="px-3 py-2 border-b border-gray-700 text-gray-300 text-xs font-semibold">
+                                        {{-- HEADER --}}
+                                        <div class="px-3 py-2 border-b border-gray-700 text-gray-300 text-xs font-semibold bg-gray-800">
                                             Match List
                                         </div>
 
-                                        <div class="divide-y divide-gray-700 text-xs">
-                                            
-                                        @foreach ($serie->matches as $match)
-                                            <div class="px-3 py-2 border-b border-gray-700">
+                                        <div class="divide-y divide-gray-800">
 
-                                                {{-- MATCH ROW --}}
-                                                <div class="flex justify-between items-center">
+                                            @foreach ($serie->matches as $match)
+                                                <div class="px-3 py-3 space-y-2">
 
-                                                    <span class="text-white">
-                                                        {{ $match->match_number }}
-                                                    </span>
+                                                    {{-- MATCH ROW --}}
+                                                    <div class="flex items-center justify-between">
 
-                                                    <span class="text-white">
-                                                        <span class="{{ $match->winner_id == $serie->teamA->id ? 'text-green-600' : 'text-red-600' }}">
-                                                            {{ $match->winner_id == $serie->teamA->id ? 'W' : 'L' }}
+                                                        {{-- MATCH NUMBER --}}
+                                                        <span class="text-gray-200 font-semibold">
+                                                            #{{ $match->match_number }}
                                                         </span>
-                                                        {{ $serie->teamA->name }}
-                                                    </span>
 
-                                                    <span class="text-white">
-                                                        <span class="{{ $match->winner_id == $serie->teamB->id ? 'text-green-600' : 'text-red-600' }}">
-                                                            {{ $match->winner_id == $serie->teamB->id ? 'W' : 'L' }}
-                                                        </span>
-                                                        {{ $serie->teamB->name }}
-                                                    </span>
+                                                        {{-- TEAM A --}}
+                                                        <div class="flex items-center gap-1">
+                                                            <span class="{{ $match->winner_id == $serie->teamA->id ? 'text-green-500' : 'text-red-500' }}">
+                                                                {{ $match->winner_id == $serie->teamA->id ? 'W' : 'L' }}
+                                                            </span>
+                                                            <span class="text-white">
+                                                                {{ $serie->teamA->name }}
+                                                            </span>
+                                                        </div>
 
-                                                </div>
+                                                        {{-- VS --}}
+                                                        <span class="text-gray-500 text-[10px] px-2">VS</span>
 
-                                                {{-- HERO PICKS --}}
-                                                @if ($match->matchHeroPicks->count())
-                                                    <div class="mt-2 pl-4 text-sm text-gray-300">
-
-                                                        <div class="flex flex-wrap gap-2">
-
-                                                            @foreach ($match->matchHeroPicks as $pick)
-                                                                <span class="px-2 py-1 rounded bg-gray-800 text-white text-xs">
-
-                                                                    {{-- optional: team indicator --}}
-                                                                    <span class="text-gray-400">
-                                                                        {{ $pick->team_id == $serie->teamA->id ? 'A' : 'B' }}:
-                                                                    </span>
-
-                                                                    {{ $pick->hero->name ?? $pick->hero_name }}
-
-                                                                </span>
-                                                            @endforeach
-
+                                                        {{-- TEAM B --}}
+                                                        <div class="flex items-center gap-1">
+                                                            <span class="{{ $match->winner_id == $serie->teamB->id ? 'text-green-500' : 'text-red-500' }}">
+                                                                {{ $match->winner_id == $serie->teamB->id ? 'W' : 'L' }}
+                                                            </span>
+                                                            <span class="text-white">
+                                                                {{ $serie->teamB->name }}
+                                                            </span>
                                                         </div>
 
                                                     </div>
-                                                @endif
 
-                                            </div>
-                                        @endforeach
+                                                    {{-- HERO PICKS --}}
+                                                    @if ($match->matchHeroPicks->count())
+                                                        <div class="mt-2 grid grid-cols-2 gap-3 text-xs">
+
+                                                            {{-- TEAM A HEROES --}}
+                                                            <div class="bg-gray-800/60 border border-gray-700 rounded p-2">
+
+                                                                <div class="flex flex-wrap gap-1">
+                                                                    @foreach ($match->matchHeroPicks->where('team_id', $serie->teamA->id) as $pick)
+                                                                        <span class="px-2 py-1 rounded bg-gray-900 text-white text-[11px]">
+                                                                            {{ $pick->hero->name ?? $pick->hero_name }}
+                                                                            <span class="text-gray-400">
+                                                                                • {{ $pick->player->name ?? $pick->player_name }}
+                                                                            </span>
+                                                                        </span>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+
+                                                            {{-- TEAM B HEROES --}}
+                                                            <div class="bg-gray-800/60 border border-gray-700 rounded p-2">
+
+                                                                <div class="flex flex-wrap gap-1">
+                                                                    @foreach ($match->matchHeroPicks->where('team_id', $serie->teamB->id) as $pick)
+                                                                        <span class="px-2 py-1 rounded bg-gray-900 text-white text-[11px]">
+                                                                            {{ $pick->hero->name ?? $pick->hero_name }}
+                                                                            <span class="text-gray-400">
+                                                                                • {{ $pick->player->name ?? $pick->player_name }}
+                                                                            </span>
+                                                                        </span>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    @endif
+
+                                                </div>
+                                            @endforeach
 
                                         </div>
-
                                     </div>
                                 </details>
 

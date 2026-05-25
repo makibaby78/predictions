@@ -22,7 +22,7 @@
         </form>
     </div>
 
-    <div class="mb-4">
+    <div class="flex gap-x-4 justify-between mb-4">
         <select wire:model.live="filterCountry"
             class="border border-gray-300 rounded px-3 py-2 dark:bg-gray-800 dark:text-white">
             <option value="">All Countries</option>
@@ -30,6 +30,15 @@
                 <option value="{{ $country->id }}">{{ $country->name }}</option>
             @endforeach
         </select>
+
+        <input
+            type="text"
+            wire:model.live.debounce.300ms="search"
+            placeholder="Search by ID or name..."
+            class="px-4 py-2 border border-gray-300 rounded-xl
+                    focus:ring-2 focus:ring-blue-500 focus:outline-none
+                    dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+        >
     </div>
 
     @if($teams->count())
@@ -37,7 +46,7 @@
             @foreach ($teams as $team)
                 <li class="flex justify-between items-center p-4 bg-white rounded shadow">
                     <div>
-                        <span class="text-lg font-semibold">{{ $team->name }}</span>
+                        <span class="text-lg font-semibold">ID - {{ $team->id }} {{ $team->name }}</span>
                         <p class="text-sm text-gray-500">Win Rate: {{ $team->winRate() }}%</p>
                     </div>
                     <div class="space-x-2 flex items-center">

@@ -16,6 +16,7 @@ class GameTeams extends Component
     public $editingTeam = null;
     public $countries;
     public $filterCountry = null;
+    public $search = '';
 
     protected $rules = [
         'name' => 'required|string|max:255',
@@ -41,6 +42,13 @@ class GameTeams extends Component
 
         if ($this->filterCountry) {
             $query->where('country_id', $this->filterCountry);
+        }
+
+        if ($this->search) {
+            $query->where(function ($q) {
+                $q->where('id', $this->search)
+                ->orWhere('name', 'like', '%' . $this->search . '%');
+            });
         }
 
         $teams = $query->get();
@@ -106,6 +114,11 @@ class GameTeams extends Component
         if ($property === 'filterCountry') {
             $this->loadTeams();
         }
+    }
+
+    public function updatedSearch()
+    {
+        $this->loadTeams();
     }
 
     public function render()
