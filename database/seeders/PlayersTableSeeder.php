@@ -27,7 +27,7 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 3, 'game_id' => 2, 'name' => 'Sanford', 'country_id' => 1, 'position' => 'EXP Laner'],
             ['team_id' => 3, 'game_id' => 2, 'name' => 'KarlTzy', 'country_id' => 1, 'position' => 'Jungler'],
             ['team_id' => 3, 'game_id' => 2, 'name' => 'Sanji', 'country_id' => 1, 'position' => 'Mid Laner'],
-            ['team_id' => 3, 'game_id' => 2, 'name' => 'Oheb', 'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 3, 'game_id' => 2, 'name' => 'Oheb', 'country_id' => 1, 'position' => 'Gold Laner', 'is_active' => false],
             ['team_id' => 3, 'game_id' => 2, 'name' => 'Jaypee', 'country_id' => 1, 'position' => 'Roamer'],
         
             ['team_id' => 4, 'game_id' => 2, 'name' => 'Kirk', 'country_id' => 2, 'position' => 'EXP Laner'],
@@ -295,6 +295,7 @@ class PlayersTableSeeder extends Seeder
                 'name' => $data['name'],
                 'country_id' => $data['country_id'],
                 'position' => $data['position'],
+                'is_active'  => $data['is_active'] ?? true,
             ]);
 
             $player->teams()->attach($team->id, [

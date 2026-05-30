@@ -28,6 +28,20 @@ class MatchHeroPick extends Model
         return $this->belongsTo(Hero::class);
     }
 
+    public function winnerTeam()
+    {
+        return $this->belongsTo(Team::class, 'winner_id');
+    }
+
+    public function getIsWinAttribute(): ?bool
+    {
+        if (!$this->match?->winner_id) {
+            return null;
+        }
+
+        return $this->team_id === $this->match->winner_id;
+    }
+
     public function player()
     {
         return $this->belongsTo(Player::class);

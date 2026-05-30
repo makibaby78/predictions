@@ -34,6 +34,8 @@
     <div class="space-y-3">
         <livewire:tournament-bracket :tournament="$tournament" />
 
+        <livewire:team-hero-draft-picker :tournament="$tournament" />
+
         <livewire:hero-winrate-calculator :tournament="$tournament" />
     </div>
 </div>
