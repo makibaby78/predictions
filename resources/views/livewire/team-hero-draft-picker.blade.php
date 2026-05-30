@@ -35,7 +35,7 @@
                     <option value="">Select Team</option>
                     @foreach($teams as $team)
                         <option value="{{ $team->id }}" @disabled($team->id == $team2Id)>
-                            {{ $team->name }}
+                            {{ $team->id }} {{ $team->name }}
                         </option>
                     @endforeach
                 </select>
@@ -53,7 +53,7 @@
                             <div class="flex items-center gap-6 py-1">
 
                                 <div class="w-52 text-sm font-medium text-gray-700">
-                                    {{ $player->name }}
+                                    {{ $player->id }} {{ $player->name }}
                                 </div>
 
                                 <select
@@ -69,7 +69,7 @@
                                                 && ($team1Picks[$player->id] ?? null) != $hero->id
                                             )
                                         >
-                                            {{ $hero->name }}
+                                            {{ $hero->id }} {{ $hero->name }}
                                         </option>
                                     @endforeach
                                 </select>

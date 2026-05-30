@@ -15,7 +15,7 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 1, 'game_id' => 2, 'name' => 'Lutpiii', 'country_id' => 2, 'position' => 'EXP Laner'],
             ['team_id' => 1, 'game_id' => 2, 'name' => 'Kairi', 'country_id' => 1, 'position' => 'Jungler'],
             ['team_id' => 1, 'game_id' => 2, 'name' => 'Sanz', 'country_id' => 2, 'position' => 'Mid Laner'],
-            ['team_id' => 1, 'game_id' => 2, 'name' => 'Savero', 'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 1, 'game_id' => 2, 'name' => 'Savero', 'country_id' => 2, 'position' => 'Gold Laner', 'joined_at' => '2025-02-28', 'left_at' => '2026-02-23' ],
             ['team_id' => 1, 'game_id' => 2, 'name' => 'Kiboy', 'country_id' => 2, 'position' => 'Roamer'],
         
             ['team_id' => 2, 'game_id' => 2, 'name' => 'Dyrennn', 'country_id' => 1, 'position' => 'EXP Laner'],
@@ -30,11 +30,11 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 3, 'game_id' => 2, 'name' => 'Oheb', 'country_id' => 1, 'position' => 'Gold Laner', 'is_active' => false],
             ['team_id' => 3, 'game_id' => 2, 'name' => 'Jaypee', 'country_id' => 1, 'position' => 'Roamer'],
         
-            ['team_id' => 4, 'game_id' => 2, 'name' => 'Kirk', 'country_id' => 2, 'position' => 'EXP Laner'],
-            ['team_id' => 4, 'game_id' => 2, 'name' => 'Kingkong', 'country_id' => 2, 'position' => 'Jungler'],
-            ['team_id' => 4, 'game_id' => 2, 'name' => 'Super Frince', 'country_id' => 2, 'position' => 'Mid Laner'],
-            ['team_id' => 4, 'game_id' => 2, 'name' => 'Kelra', 'country_id' => 2, 'position' => 'Gold Laner'],
-            ['team_id' => 4, 'game_id' => 2, 'name' => 'Brusko', 'country_id' => 2, 'position' => 'Roamer'],
+            ['team_id' => 4, 'game_id' => 2, 'name' => 'Kirk', 'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 4, 'game_id' => 2, 'name' => 'Kingkong', 'country_id' => 1, 'position' => 'Jungler'],
+            ['team_id' => 4, 'game_id' => 2, 'name' => 'Super Frince', 'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 4, 'game_id' => 2, 'name' => 'Kelra', 'country_id' => 1, 'position' => 'Gold Laner', 'joined_at' => '2024-02-14', 'left_at' => '2026-02-06'],
+            ['team_id' => 4, 'game_id' => 2, 'name' => 'Brusko', 'country_id' => 1, 'position' => 'Roamer'],
         
             ['team_id' => 5, 'game_id' => 2, 'name' => 'Kramm', 'country_id' => 2, 'position' => 'EXP Laner'],
             ['team_id' => 5, 'game_id' => 2, 'name' => 'Sekys', 'country_id' => 2, 'position' => 'Jungler'],
@@ -291,6 +291,11 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 42, 'game_id' => 1, 'name' => 'TORONTOTOKYO', 'country_id' => 1, 'position' => 'Offlane'],
             ['team_id' => 42, 'game_id' => 1, 'name' => 'TIMS', 'country_id' => 1, 'position' => 'Support'],
             ['team_id' => 42, 'game_id' => 1, 'name' => 'skem', 'country_id' => 1, 'position' => 'Support'],
+
+            //kelra transfer
+            ['team_id' => 1, 'game_id' => 2, 'name' => 'Kelra', 'country_id' => 1, 'position' => 'Gold Laner','is_active' => true, 'joined_at' => '2026-02-06', 'left_at' => null ],
+
+            ['team_id' => 4, 'game_id' => 2, 'name' => 'Savero', 'country_id' => 2, 'position' => 'Gold Laner', 'joined_at' => '2026-02-24', 'left_at' => null ],
         ];
             
 
@@ -298,16 +303,31 @@ class PlayersTableSeeder extends Seeder
             $team = Team::find($data['team_id']);
             if (!$team) continue;
 
-            $player = Player::create([
-                'game_id' => $data['game_id'], 
-                'name' => $data['name'],
-                'country_id' => $data['country_id'],
-                'position' => $data['position'],
-                'is_active'  => $data['is_active'] ?? true,
-            ]);
+            // Use firstOrCreate to find the existing Kelra instead of creating a brand new row
+            $player = Player::firstOrCreate(
+                [
+                    'name' => $data['name'],
+                    'game_id' => $data['game_id'],
+                ],
+                [
+                    'country_id' => $data['country_id'],
+                    'position' => $data['position'],
+                ]
+            );
 
+            // If the player already existed, ensure their global profile status updates 
+            // to match the latest record context (e.g., setting them active again)
+            if (isset($data['is_active'])) {
+                $player->update(['is_active' => $data['is_active']]);
+            }
+
+            $joinedAt = isset($data['joined_at']) ? Carbon::parse($data['joined_at']) : Carbon::now();
+            $leftAt = isset($data['left_at']) ? Carbon::parse($data['left_at']) : null;
+
+            // Attach the new team relationship record to the pivot table
             $player->teams()->attach($team->id, [
-                'joined_at' => Carbon::now()
+                'joined_at' => $joinedAt,
+                'left_at'   => $leftAt,
             ]);
         }
     }

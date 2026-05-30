@@ -13,7 +13,10 @@ class TournamentController extends Controller
     {
         $tournament->load([
             'game',
-            'teams.players',
+            'teams.players' => function ($query) {
+                $query->where('players.is_active', true)
+                    ->wherePivotNull('left_at'); // Ensures they haven't left the team
+            },
             'series.teamA',
             'series.teamB'
         ]);

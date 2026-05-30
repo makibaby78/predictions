@@ -46,6 +46,14 @@ class MatchesTableSeeder extends Seeder
                 'created_at' => '2025-08-04 06:07:33',
                 'updated_at' => '2025-08-04 06:07:33',
             ],
+            [
+                'series_id' => 97,
+                'tournament_id' => 4,
+                'match_number' => 1,
+                'winner_id' => 4,
+                'created_at' => '2025-08-04 06:07:33',
+                'updated_at' => '2025-08-04 06:07:33',
+            ],
         ]);
     }
 }

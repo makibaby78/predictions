@@ -119,6 +119,7 @@ class TeamHeroDraftPicker extends Component
 
         return $team->players()
             ->where('is_active', true)
+            ->wherePivotNull('left_at')
             ->orderBy('name')
             ->get();
     }
