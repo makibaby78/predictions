@@ -22,7 +22,7 @@ class MobileLegendsHeroesSeeder extends Seeder
             'Guinevere','Khufra','Esmeralda','Granger','Terizla','Dyrroth','Lylia','X.Borg','Masha',
             'Baxia','Ling','Wanwan','Cecilion','Popol and Kupa','Luoyi','Yu Zhong','Khaleed','Barats',
             'Atlas','Mathilda','Edith','Novaria','Cici','Chip','Yve','Beatrix','Phoveus','Natan',
-            'Aamon','Valentina','Suyou','Lukas','Zetian', 'Joy', 'Zhuxin', 'Arlott', 'Zetian', 'Kalea', 'Sora', 'Gloo',
+            'Aamon','Valentina','Suyou','Lukas','Zetian', 'Joy', 'Zhuxin', 'Arlott', 'Zetian', 'Kalea', 'Sora', 'Gloo', 'Paquito',
         ];
 
         foreach ($heroNames as $name) {

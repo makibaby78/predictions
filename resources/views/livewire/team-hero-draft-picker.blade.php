@@ -35,7 +35,7 @@
                     <option value="">Select Team</option>
                     @foreach($teams as $team)
                         <option value="{{ $team->id }}" @disabled($team->id == $team2Id)>
-                            {{ $team->id }} {{ $team->name }}
+                            {{ $team->name }} {{ $team->id }}
                         </option>
                     @endforeach
                 </select>
@@ -53,7 +53,7 @@
                             <div class="flex items-center gap-6 py-1">
 
                                 <div class="w-52 text-sm font-medium text-gray-700">
-                                    {{ $player->id }} {{ $player->name }}
+                                    {{ $player->name }} {{ $player->id }}
                                 </div>
 
                                 <select
@@ -69,7 +69,7 @@
                                                 && ($team1Picks[$player->id] ?? null) != $hero->id
                                             )
                                         >
-                                            {{ $hero->id }} {{ $hero->name }}
+                                            {{ $hero->name }} {{ $hero->id }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -96,7 +96,7 @@
                     <option value="">Select Team</option>
                     @foreach($teams as $team)
                         <option value="{{ $team->id }}" @disabled($team->id == $team1Id)>
-                            {{ $team->name }}
+                            {{ $team->name }} {{ $team->id }}
                         </option>
                     @endforeach
                 </select>
@@ -114,7 +114,7 @@
                             <div class="flex items-center gap-6 py-1">
 
                                 <div class="w-52 text-sm font-medium text-gray-700">
-                                    {{ $player->name }}
+                                    {{ $player->name }} {{ $player->id }}
                                 </div>
 
                                 <select
@@ -130,7 +130,7 @@
                                                 && ($team2Picks[$player->id] ?? null) != $hero->id
                                             )
                                         >
-                                            {{ $hero->name }}
+                                            {{ $hero->name }} {{ $hero->id }}
                                         </option>
                                     @endforeach
                                 </select>
