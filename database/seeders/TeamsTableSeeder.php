@@ -55,6 +55,7 @@ class TeamsTableSeeder extends Seeder
             ['name' => "Twisted Minds PH", 'game_id' => 2, 'country_id' => '1'],
             ['name' => "Alter Ego", 'game_id' => 2, 'country_id' => '2'],
             ['name' => "Boostgate Esports", 'game_id' => 2, 'country_id' => '12'],
+            ['name' => "OG", 'game_id' => 1, 'country_id' => '1'],
         ]);
     }
 }

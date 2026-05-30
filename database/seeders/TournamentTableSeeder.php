@@ -53,5 +53,13 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2026-01-03',
             'end_date' => '2026-01-25',
         ]);
+
+        Tournament::create([
+            'name' => 'BLAST Slam VII',
+            'game_id' => 1,
+            'prize_pool' => 1000000.00,
+            'start_date' => '2026-05-26',
+            'end_date' => '2026-06-07',
+        ]);
     }
 }

@@ -282,7 +282,15 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 41, 'game_id' => 2, 'name' => 'Rx', 'country_id' => 12, 'position' => 'Gold Laner'],
             ['team_id' => 41, 'game_id' => 2, 'name' => 'Wackter', 'country_id' => 12, 'position' => 'Roamer'],
 
+            // liquid ph new gold laner
             ['team_id' => 3, 'game_id' => 2, 'name' => 'Teddy', 'country_id' => 1, 'position' => 'Gold Laner'],
+
+            // OG
+            ['team_id' => 42, 'game_id' => 1, 'name' => 'Natsumi', 'country_id' => 1, 'position' => 'Carry'],
+            ['team_id' => 42, 'game_id' => 1, 'name' => 'Yopaj-', 'country_id' => 1, 'position' => 'Mid'],
+            ['team_id' => 42, 'game_id' => 1, 'name' => 'TORONTOTOKYO', 'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 42, 'game_id' => 1, 'name' => 'TIMS', 'country_id' => 1, 'position' => 'Support'],
+            ['team_id' => 42, 'game_id' => 1, 'name' => 'skem', 'country_id' => 1, 'position' => 'Support'],
         ];
             
 
