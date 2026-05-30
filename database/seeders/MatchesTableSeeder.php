@@ -16,6 +16,7 @@ class MatchesTableSeeder extends Seeder
         DB::table('matches')->insert([
             [
                 'series_id' => 1,
+                'tournament_id' => 1,
                 'match_number' => 1,
                 'winner_id' => 3,
                 'created_at' => '2025-08-04 06:07:33',
@@ -23,6 +24,7 @@ class MatchesTableSeeder extends Seeder
             ],
             [
                 'series_id' => 89,
+                'tournament_id' => 4,
                 'match_number' => 1,
                 'winner_id' => 3,
                 'created_at' => '2025-08-04 06:07:33',
@@ -30,6 +32,7 @@ class MatchesTableSeeder extends Seeder
             ],
             [
                 'series_id' => 89,
+                'tournament_id' => 4,
                 'match_number' => 2,
                 'winner_id' => 35,
                 'created_at' => '2025-08-04 06:07:33',
@@ -37,6 +40,7 @@ class MatchesTableSeeder extends Seeder
             ],
             [
                 'series_id' => 89,
+                'tournament_id' => 4,
                 'match_number' => 3,
                 'winner_id' => 3,
                 'created_at' => '2025-08-04 06:07:33',

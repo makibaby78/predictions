@@ -31,8 +31,10 @@
     <hr class="my-4">
 
     <h2 class="text-xl font-semibold mb-2 dark:text-white">Series</h2>
-    <ul class="space-y-3">
+    <div class="space-y-3">
         <livewire:tournament-bracket :tournament="$tournament" />
-    </ul>
+
+        <livewire:hero-winrate-calculator :tournament="$tournament" />
+    </div>
 </div>
 @endsection
