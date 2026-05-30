@@ -44,27 +44,28 @@ class TeamHeroDraftPicker extends Component
             ->orderBy('name')
             ->get();
 
-        $this->team1Id = 3;
-        $this->team2Id = 35;
+        // for testing only
+        // $this->team1Id = 3;
+        // $this->team2Id = 35;
 
-        $this->team1Players = $this->loadPlayers($this->team1Id);
-        $this->team2Players = $this->loadPlayers($this->team2Id);
+        // $this->team1Players = $this->loadPlayers($this->team1Id);
+        // $this->team2Players = $this->loadPlayers($this->team2Id);
 
-        $this->team1Picks = [];
+        // $this->team1Picks = [];
 
-        $heroIds1 = [94, 69, 4, 102, 31];
+        // $heroIds1 = [94, 69, 4, 102, 31];
 
-        foreach ($this->team1Players as $index => $player) {
-            $this->team1Picks[$player->id] = $heroIds1[$index] ?? null;
-        }
+        // foreach ($this->team1Players as $index => $player) {
+        //     $this->team1Picks[$player->id] = $heroIds1[$index] ?? null;
+        // }
 
-        $this->team2Picks = [];
+        // $this->team2Picks = [];
 
-        $heroIds2 = [2, 65, 37, 44, 112];
+        // $heroIds2 = [2, 65, 37, 44, 112];
 
-        foreach ($this->team2Players as $index => $player) {
-            $this->team2Picks[$player->id] = $heroIds2[$index] ?? null;
-        }
+        // foreach ($this->team2Players as $index => $player) {
+        //     $this->team2Picks[$player->id] = $heroIds2[$index] ?? null;
+        // }
     }
 
     public function getPickedHeroesProperty(): array
@@ -137,23 +138,78 @@ class TeamHeroDraftPicker extends Component
         }
 
         $results = $this->calculateMatchups();
-
-        $this->dispatch('calculated', $results);
     }
 
     public function calculateMatchups(): array
     {
-        $picks = MatchHeroPick::with('match')->get();
+        // Eager load relationships to keep collection filters lightning fast
+        $groupedPicks = MatchHeroPick::with('match.matchHeroPicks')->get()->groupBy('hero_id');
 
-        foreach ($picks as $pick) {
-            dump([
-                'hero_id' => $pick->hero_id,
-                'team_id' => $pick->team_id,
-                'is_win' => $pick->is_win,
-            ]);
+        $alliedHeroProbabilities = [];
+        $playerProbabilitiesSum = 0;
+        $playerCount = 0;
+
+        foreach ($this->team1Picks as $playerOneId => $heroOneId) {
+
+            $heroPicks = $groupedPicks->get($heroOneId, collect());
+
+            $enemyWinRates = [];
+            $activeMatchupCount = 0;
+
+            foreach ($this->team2Picks as $playerTwoId => $heroTwoId) {
+
+                // Get all matches where Hero One played AGAINST Hero Two
+                $matchupPicks = $heroPicks->filter(function ($pick) use ($heroTwoId) {
+                    return $pick->match?->matchHeroPicks->contains(function ($otherPick) use ($pick, $heroTwoId) {
+                        return $otherPick->hero_id === $heroTwoId 
+                            && $otherPick->team_id !== $pick->team_id;
+                    });
+                });
+
+                $matchupCount = $matchupPicks->count();
+
+                // Only factor into the win probability if a historical matchup exists
+                if ($matchupCount > 0) {
+                    $matchupWins = $matchupPicks->filter(function ($pick) {
+                        return $pick->is_win === true;
+                    })->count();
+
+                    $matchupWinRate = ($matchupWins / $matchupCount) * 100;
+
+                    $enemyWinRates[] = $matchupWinRate;
+                    $activeMatchupCount++;
+                }
+            }
+
+            // Calculate individual dynamic average (neutral 50% baseline fallback)
+            $winProbability = $activeMatchupCount > 0 
+                ? array_sum($enemyWinRates) / $activeMatchupCount 
+                : 50.0;
+
+            // Accumulate individual probabilities for the overall team average calculation
+            $playerProbabilitiesSum += $winProbability;
+            $playerCount++;
+
+            // Store player specific breakdown
+            $alliedHeroProbabilities[$playerOneId] = [
+                'hero_id'                  => $heroOneId,
+                'active_matchups_counted'  => $activeMatchupCount,
+                'win_probability'          => round($winProbability, 2),
+                'win_probability_formatted'=> round($winProbability, 2) . '%'
+            ];
         }
-    }
 
+        // Calculate Team 1's combined average draft win probability
+        $teamCombinedProbability = $playerCount > 0 ? $playerProbabilitiesSum / $playerCount : 50.0;
+
+        dd($teamCombinedProbability);
+
+        return [
+            'team_win_probability'           => round($teamCombinedProbability, 2),
+            'team_win_probability_formatted' => round($teamCombinedProbability, 2) . '%',
+            'players'                        => $alliedHeroProbabilities
+        ];
+    }
 
     public function render()
     {
