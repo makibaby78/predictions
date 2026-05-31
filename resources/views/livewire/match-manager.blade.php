@@ -1,6 +1,5 @@
 <div class="space-y-8 p-6 bg-white rounded-lg shadow-md">
 
-    <!-- Match Form -->
     <form wire:submit.prevent="saveMatch" class="space-y-6">
         <h2 class="text-2xl font-semibold text-gray-800">Create / Edit Match</h2>
 
@@ -34,7 +33,6 @@
             @enderror
         </div>
 
-        <!-- Hero Picks -->
         @if ($series)
             <div class="mt-8 border-t pt-4"></div>
             <h3 class="text-lg font-semibold text-gray-700 mb-4">Hero Picks</h3>
@@ -44,7 +42,7 @@
                         <div class="mb-6">
                             <h4 class="font-medium text-gray-800 mb-2">{{ $team->name }}</h4>
                             <div class="space-y-2">
-                                @foreach ($team->players as $player)
+                                @foreach ($team->activePlayers as $player)
                                     <div class="flex items-center gap-4">
                                         <span class="w-48 text-sm text-gray-700">{{ $player->name }}</span>
                                         <select wire:model="heroPicks.{{ $player->id }}"
@@ -77,7 +75,6 @@
 
     <hr class="border-t border-gray-200">
 
-    <!-- Matches Table -->
     <div class="overflow-x-auto">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">Match List</h2>
 
@@ -85,17 +82,16 @@
             <thead class="bg-gray-100 text-gray-700">
                 <tr>
                     <th class="px-4 py-2 text-left">#</th>
-                    <th class="px-4 py-2 text-left">Scheduled</th>
+                    <th class="px-4 py-2 text-left">Match ID</th>
                     <th class="px-4 py-2 text-left">Winner</th>
                     <th class="px-4 py-2 text-left">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($matches as $match)
-                    <!-- Match Row -->
                     <tr class="border-t hover:bg-gray-50">
                         <td class="px-4 py-2">{{ $match->match_number }}</td>
-                        <td class="px-4 py-2">{{ \Carbon\Carbon::parse($match->scheduled_at)->format('Y-m-d H:i') }}</td>
+                        <td class="px-4 py-2">{{ $match->id }}</td>
                         <td class="px-4 py-2">{{ $match->winner->name ?? 'TBD' }}</td>
                         <td class="px-4 py-2 space-x-2">
                             <button wire:click="editMatch({{ $match->id }})"
@@ -105,18 +101,27 @@
                         </td>
                     </tr>
 
-                    <!-- Hero Picks Row -->
                     <tr class="border-b bg-gray-50">
-                        <td colspan="4" class="px-4 py-3">
+                        <td colspan="5" class="px-4 py-3">
                             <div class="text-sm" style="column-count: 2;">
                                 @forelse ($match->matchHeroPicks as $pick)
-                                    <div class="flex items-center gap-2 overflow-hidden">
+                                    <div class="flex items-center gap-2 overflow-hidden mb-1">
                                         <span class="font-medium text-gray-800">{{ $pick->player->name ?? 'Unknown' }}</span>
                                         <span class="text-gray-500"> - </span>
                                         <span class="text-blue-600 font-semibold">{{ $pick->hero->name ?? 'Unknown Hero' }}</span>
                                         <span class="text-gray-500"> - </span>
                                         <span class="text-blue-600 font-semibold">
-                                            A - {{ $pick->hero->winrate() }}%
+                                            A - {{ method_exists($pick->hero, 'winrate') ? $pick->hero->winrate() : '0' }}%
+                                        </span>
+                                        <span>
+                                            [
+                                                'match_id' => {{ $match->id }},
+                                                'team_id' => {{ $pick->player->currentTeam()->id}},
+                                                'hero_id' => {{ $pick->hero->id }},
+                                                'player_id' => {{ $pick->player->id}},
+                                                'created_at' => $now,
+                                                'updated_at' => $now,
+                                            ],
                                         </span>
                                     </div>
                                 @empty
@@ -127,7 +132,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4" class="px-4 py-4 text-center text-gray-500">No matches found.</td>
+                        <td colspan="5" class="px-4 py-4 text-center text-gray-500">No matches found.</td>
                     </tr>
                 @endforelse
             </tbody>

@@ -39,6 +39,13 @@ class Team extends Model
             ->withTimestamps();
     }
 
+    public function activePlayers()
+    {
+        return $this->belongsToMany(Player::class)
+            ->where('players.is_active', true)
+            ->wherePivotNull('left_at');
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);

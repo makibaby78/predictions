@@ -25,7 +25,6 @@ class MatchManager extends Component
     {
         $this->series = $series;
         $this->seriesId = $series->id;
-        $this->series->tournament->game_id;
         $this->loadMatches();
     }
 
@@ -34,13 +33,13 @@ class MatchManager extends Component
         $this->matches = Matches::with([
             'winner',
             'matchHeroPicks.hero',
-            'matchHeroPicks.player',
+            'matchHeroPicks.player', // Keeps old picks visible in historical list view even if they left later
             'matchHeroPicks.team'
         ])
         ->where('series_id', $this->seriesId)
         ->orderBy('match_number')
         ->get();
-    }    
+    }
 
     public function saveMatch()
     {
@@ -114,7 +113,7 @@ class MatchManager extends Component
 
     public function render()
     {
-        $heroes = Hero::where('game_id', $this->series->tournament->game_id)->get();
+        $heroes = Hero::where('game_id', $this->series->tournament->game_id)->orderBy('name')->get();
     
         return view('livewire.match-manager', compact('heroes'));
     }    
