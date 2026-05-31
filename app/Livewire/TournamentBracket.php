@@ -107,12 +107,15 @@ class TournamentBracket extends Component
         $this->team1_id = $series->team1_id;
         $this->team2_id = $series->team2_id;
         $this->winner_id = $series->winner_id;
+        
+        // Explicitly sync participants immediately upon opening edit modal
+        $this->syncWinnerIds();
     }
 
     public function cancelEdit()
     {
         $this->reset([
-            'editingSeries', 'team1_id', 'team2_id', 'winner_id',
+            'editingSeries', 'team1_id', 'team2_id', 'winner_id', 'participant_ids'
         ]);
     }
 

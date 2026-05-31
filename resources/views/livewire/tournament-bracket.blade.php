@@ -149,43 +149,40 @@
 
                                                     </div>
 
-                                                    {{-- HERO PICKS --}}
-                                                    @if ($match->matchHeroPicks->count())
-                                                        <div class="mt-2 grid grid-cols-2 gap-3 text-xs">
+{{-- HERO PICKS --}}
+@if ($match->matchHeroPicks->count())
+    <div class="mt-2 grid grid-cols-2 gap-3 text-xs">
 
-                                                            {{-- TEAM A HEROES --}}
-                                                            <div class="bg-gray-800/60 border border-gray-700 rounded p-2">
+        {{-- TEAM 1 HEROES (Left Side) --}}
+        <div class="bg-gray-800/60 border border-gray-700 rounded p-2">
+            <div class="flex flex-wrap gap-1">
+                @foreach ($match->matchHeroPicks->where('team_id', $serie->team1_id) as $pick)
+                    <span class="px-2 py-1 rounded bg-gray-900 text-white text-[11px]">
+                        {{ $pick->hero->name ?? $pick->hero_name }}
+                        <span class="text-gray-400">
+                            • {{ $pick->player->name ?? $pick->player_name }}
+                        </span>
+                    </span>
+                @endforeach
+            </div>
+        </div>
 
-                                                                <div class="flex flex-wrap gap-1">
-                                                                    @foreach ($match->matchHeroPicks->where('team_id', $serie->teamA->id) as $pick)
-                                                                        <span class="px-2 py-1 rounded bg-gray-900 text-white text-[11px]">
-                                                                            {{ $pick->hero->name ?? $pick->hero_name }}
-                                                                            <span class="text-gray-400">
-                                                                                • {{ $pick->player->name ?? $pick->player_name }}
-                                                                            </span>
-                                                                        </span>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
+        {{-- TEAM 2 HEROES (Right Side) --}}
+        <div class="bg-gray-800/60 border border-gray-700 rounded p-2">
+            <div class="flex flex-wrap gap-1">
+                @foreach ($match->matchHeroPicks->where('team_id', $serie->team2_id) as $pick)
+                    <span class="px-2 py-1 rounded bg-gray-900 text-white text-[11px]">
+                        {{ $pick->hero->name ?? $pick->hero_name }}
+                        <span class="text-gray-400">
+                            • {{ $pick->player->name ?? $pick->player_name }}
+                        </span>
+                    </span>
+                @endforeach
+            </div>
+        </div>
 
-                                                            {{-- TEAM B HEROES --}}
-                                                            <div class="bg-gray-800/60 border border-gray-700 rounded p-2">
-
-                                                                <div class="flex flex-wrap gap-1">
-                                                                    @foreach ($match->matchHeroPicks->where('team_id', $serie->teamB->id) as $pick)
-                                                                        <span class="px-2 py-1 rounded bg-gray-900 text-white text-[11px]">
-                                                                            {{ $pick->hero->name ?? $pick->hero_name }}
-                                                                            <span class="text-gray-400">
-                                                                                • {{ $pick->player->name ?? $pick->player_name }}
-                                                                            </span>
-                                                                        </span>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    @endif
-
+    </div>
+@endif
                                                 </div>
                                             @endforeach
 
