@@ -53,6 +53,7 @@ class MatchManager extends Component
         $match = Matches::updateOrCreate(
             ['id' => $this->match_id],
             [
+                'tournament_id'=> $this->series->tournament_id,
                 'series_id'    => $this->series->id,
                 'match_number' => $this->match_number,
                 'winner_id'    => $this->winner_id,

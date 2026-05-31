@@ -12,6 +12,7 @@ class Matches extends Model
         'series_id',
         'winner_id',
         'match_number',
+        'tournament_id',
     ];
 
     public function series()

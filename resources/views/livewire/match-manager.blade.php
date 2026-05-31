@@ -92,7 +92,7 @@
                     <tr class="border-t hover:bg-gray-50">
                         <td class="px-4 py-2">{{ $match->match_number }}</td>
                         <td class="px-4 py-2">{{ $match->id }}</td>
-                        <td class="px-4 py-2">{{ $match->winner->name ?? 'TBD' }}</td>
+                        <td class="px-4 py-2">{{ $match->winner->id ?? 'TBD' }} {{ $match->winner->name ?? 'TBD' }}</td>
                         <td class="px-4 py-2 space-x-2">
                             <button wire:click="editMatch({{ $match->id }})"
                                 class="text-blue-600 hover:underline">Edit</button>
@@ -105,15 +105,14 @@
                         <td colspan="5" class="px-4 py-3">
                             <div class="text-sm" style="column-count: 2;">
                                 @forelse ($match->matchHeroPicks as $pick)
-                                    <div class="flex items-center gap-2 overflow-hidden mb-1">
+                                    {{-- <div class="flex items-center gap-2 overflow-hidden mb-1">
                                         <span class="font-medium text-gray-800">{{ $pick->player->name ?? 'Unknown' }}</span>
                                         <span class="text-gray-500"> - </span>
                                         <span class="text-blue-600 font-semibold">{{ $pick->hero->name ?? 'Unknown Hero' }}</span>
                                         <span class="text-gray-500"> - </span>
                                         <span class="text-blue-600 font-semibold">
                                             A - {{ method_exists($pick->hero, 'winrate') ? $pick->hero->winrate() : '0' }}%
-                                        </span>
-                                        <span>
+                                        </span> --}}
                                             [
                                                 'match_id' => {{ $match->id }},
                                                 'team_id' => {{ $pick->player->currentTeam()->id}},
@@ -122,8 +121,7 @@
                                                 'created_at' => $now,
                                                 'updated_at' => $now,
                                             ],
-                                        </span>
-                                    </div>
+                                    {{-- </div> --}}
                                 @empty
                                     <span class="text-gray-500">No hero picks recorded.</span>
                                 @endforelse
