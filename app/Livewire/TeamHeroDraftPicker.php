@@ -27,7 +27,6 @@ class TeamHeroDraftPicker extends Component
 
     public ?array $results = null;
     public bool $isReversed = false;
-    public ?float $forwardProbability = null; // anchors the complement calculation
 
     public function mount(Tournament $tournament)
     {
@@ -144,7 +143,6 @@ class TeamHeroDraftPicker extends Component
 
         $this->isReversed = false;
         $this->results = $this->calculateMatchups($this->team1Picks, $this->team2Picks);
-        $this->forwardProbability = $this->results['team_win_probability'];
     }
 
     public function reverse(): void
@@ -164,16 +162,8 @@ class TeamHeroDraftPicker extends Component
 
         $this->isReversed = !$this->isReversed;
 
-        // Recalculate per-player breakdown from new team1's perspective,
-        // but pin the overall to the complement to avoid the fallback asymmetry
+        // Recalculate from the new team1's perspective — overall stays in sync with the breakdown
         $this->results = $this->calculateMatchups($this->team1Picks, $this->team2Picks);
-
-        $overall = $this->isReversed
-            ? round(100 - $this->forwardProbability, 2)
-            : round($this->forwardProbability, 2);
-
-        $this->results['team_win_probability']           = $overall;
-        $this->results['team_win_probability_formatted'] = $overall . '%';
     }
 
     public function calculateMatchups(array $teamAPicks, array $teamBPicks)
