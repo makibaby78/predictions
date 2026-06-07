@@ -61,5 +61,13 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2026-05-26',
             'end_date' => '2026-06-07',
         ]);
+
+        Tournament::create([
+            'name' => 'MPL MY S17',
+            'game_id' => 2,
+            'prize_pool' => 1000000.00,
+            'start_date' => '2026-05-26',
+            'end_date' => '2026-06-07',
+        ]);
     }
 }

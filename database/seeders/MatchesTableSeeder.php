@@ -161,6 +161,71 @@ class MatchesTableSeeder extends Seeder
                 'created_at' => '2025-08-04 06:07:33',
                 'updated_at' => '2025-08-04 06:07:33',
             ],
+            [
+                'series_id' => null,
+                'tournament_id' => 7,
+                'match_number' => 1,
+                'winner_id' => 43,
+                'created_at' => '2025-08-04 06:07:33',
+                'updated_at' => '2025-08-04 06:07:33',
+            ],
+            [
+                'series_id' => null,
+                'tournament_id' => 7,
+                'match_number' => 2,
+                'winner_id' => 43,
+                'created_at' => '2025-08-04 06:07:33',
+                'updated_at' => '2025-08-04 06:07:33',
+            ],
+            [
+                'series_id' => null,
+                'tournament_id' => 7,
+                'match_number' => 3,
+                'winner_id' => 43,
+                'created_at' => '2025-08-04 06:07:33',
+                'updated_at' => '2025-08-04 06:07:33',
+            ],
+
+            // MPL MY S17 – Series 2: Invictus Gaming 3:2 Team Vamos (match_ids 22–26)
+            // Per-game winner verified via winner_side (blue→iG=47, red→VMS=43)
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 1, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 2, 'winner_id' => 47, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 3, 'winner_id' => 47, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 4, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 5, 'winner_id' => 47, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            // MPL MY S17 – Series 3: Team Rey 0:3 Bigetron (match_ids 27–29)
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 1, 'winner_id' => 46, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 2, 'winner_id' => 46, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 3, 'winner_id' => 46, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            // MPL MY S17 – Series 4: Selangor Red Giants 3:2 Bigetron (match_ids 30–34)
+            // Per-game winner verified via winner_side (blue→SRG=48, red→BTRM=46)
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 1, 'winner_id' => 46, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 2, 'winner_id' => 48, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 3, 'winner_id' => 48, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 4, 'winner_id' => 46, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 5, 'winner_id' => 48, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            // MPL MY S17 – Series 5: Invictus Gaming 1:3 Selangor Red Giants (match_ids 35–38)
+            // TODO: verify per-game winner_id (scraper winner_side data inconsistent for this series)
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 1, 'winner_id' => 48, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 2, 'winner_id' => 48, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 3, 'winner_id' => 47, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 4, 'winner_id' => 48, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            // MPL MY S17 – Series 6: Team Vamos 3:1 Bigetron (match_ids 39–42)
+            // TODO: verify per-game winner_id (scraper winner_side data inconsistent for this series)
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 1, 'winner_id' => 46, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 2, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 3, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 4, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            // MPL MY S17 – Series 7: Invictus Gaming 0:4 Team Vamos (match_ids 43–46)
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 1, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 2, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 3, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => null, 'tournament_id' => 7, 'match_number' => 4, 'winner_id' => 43, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
         ]);
     }
 }

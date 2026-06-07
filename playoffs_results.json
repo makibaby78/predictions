@@ -1,0 +1,1496 @@
+{
+  "tournament": "MPL Malaysia Season 17",
+  "stage": "Playoffs",
+  "source": "https://liquipedia.net/mobilelegends/MPL/Malaysia/Season_17/Playoffs",
+  "scraped_at": "2026-06-07T08:23:03.962544+00:00",
+  "total_matches": 8,
+  "matches": [
+    {
+      "match_number": 1,
+      "team_a": {
+        "name": "Team Vamos",
+        "abbreviation": "VMS"
+      },
+      "team_b": {
+        "name": "RRQ Tora",
+        "abbreviation": "RRQT"
+      },
+      "score_a": 3,
+      "score_b": 0,
+      "winner": null,
+      "date": "June 3, 2026 - 15:00",
+      "format": "Bo5",
+      "games": [
+        {
+          "game": 1,
+          "map": "Dangerous Grass",
+          "duration": "19:32",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Paquito",
+            "Guinevere",
+            "Valentina",
+            "Karrie",
+            "Atlas"
+          ],
+          "loser_picks": [
+            "Esmeralda",
+            "Nolan",
+            "Zhuxin",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Guinevere",
+            "Valentina",
+            "Karrie",
+            "Atlas"
+          ],
+          "red_picks": [
+            "Esmeralda",
+            "Nolan",
+            "Zhuxin",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Guinevere",
+            "Valentina",
+            "Karrie",
+            "Atlas"
+          ],
+          "team_b_picks": [
+            "Esmeralda",
+            "Nolan",
+            "Zhuxin",
+            "Claude",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Broken Walls",
+          "duration": "11:55",
+          "winner_side": "red",
+          "winner_picks": [
+            "Phoveus",
+            "Guinevere",
+            "Yve",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "loser_picks": [
+            "Terizla",
+            "Yi Sun-shin",
+            "Zhuxin",
+            "Obsidia",
+            "Kalea"
+          ],
+          "blue_picks": [
+            "Terizla",
+            "Yi Sun-shin",
+            "Zhuxin",
+            "Obsidia",
+            "Kalea"
+          ],
+          "red_picks": [
+            "Phoveus",
+            "Guinevere",
+            "Yve",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Terizla",
+            "Yi Sun-shin",
+            "Zhuxin",
+            "Obsidia",
+            "Kalea"
+          ],
+          "team_b_picks": [
+            "Phoveus",
+            "Guinevere",
+            "Yve",
+            "Claude",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Flying Cloud",
+          "duration": "10:52",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Paquito",
+            "Suyou",
+            "Zetian",
+            "Obsidia",
+            "Chou"
+          ],
+          "loser_picks": [
+            "Arlott",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Hilda"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Suyou",
+            "Zetian",
+            "Obsidia",
+            "Chou"
+          ],
+          "red_picks": [
+            "Arlott",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Hilda"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Suyou",
+            "Zetian",
+            "Obsidia",
+            "Chou"
+          ],
+          "team_b_picks": [
+            "Arlott",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Hilda"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 2,
+      "team_a": {
+        "name": "Invictus Gaming",
+        "abbreviation": "iG"
+      },
+      "team_b": {
+        "name": "Team Vamos",
+        "abbreviation": "VMS"
+      },
+      "score_a": 3,
+      "score_b": 2,
+      "winner": null,
+      "date": "June 4, 2026 - 15:00",
+      "format": "Bo5",
+      "games": [
+        {
+          "game": 1,
+          "map": "Broken Walls",
+          "duration": "12:56",
+          "winner_side": "red",
+          "winner_picks": [
+            "Arlott",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Hylos"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Leomord",
+            "Yve",
+            "Harith",
+            "Gatotkaca"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Leomord",
+            "Yve",
+            "Harith",
+            "Gatotkaca"
+          ],
+          "red_picks": [
+            "Arlott",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Hylos"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Leomord",
+            "Yve",
+            "Harith",
+            "Gatotkaca"
+          ],
+          "team_b_picks": [
+            "Arlott",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Hylos"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Dangerous Grass",
+          "duration": "17:29",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Sora",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Gloo"
+          ],
+          "loser_picks": [
+            "Alice",
+            "Leomord",
+            "Yve",
+            "Harith",
+            "Kalea"
+          ],
+          "blue_picks": [
+            "Sora",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Alice",
+            "Leomord",
+            "Yve",
+            "Harith",
+            "Kalea"
+          ],
+          "team_a_picks": [
+            "Sora",
+            "Guinevere",
+            "Zhuxin",
+            "Claude",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Alice",
+            "Leomord",
+            "Yve",
+            "Harith",
+            "Kalea"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Dangerous Grass",
+          "duration": "24:09",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Paquito",
+            "Baxia",
+            "Yve",
+            "Claude",
+            "Marcel"
+          ],
+          "loser_picks": [
+            "Arlott",
+            "Leomord",
+            "Zhuxin",
+            "Clint",
+            "Gatotkaca"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Baxia",
+            "Yve",
+            "Claude",
+            "Marcel"
+          ],
+          "red_picks": [
+            "Arlott",
+            "Leomord",
+            "Zhuxin",
+            "Clint",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Baxia",
+            "Yve",
+            "Claude",
+            "Marcel"
+          ],
+          "team_b_picks": [
+            "Arlott",
+            "Leomord",
+            "Zhuxin",
+            "Clint",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 4,
+          "map": "Dangerous Grass",
+          "duration": "23:56",
+          "winner_side": "red",
+          "winner_picks": [
+            "Paquito",
+            "Hayabusa",
+            "Zhuxin",
+            "Moskov",
+            "Gatotkaca"
+          ],
+          "loser_picks": [
+            "Hilda",
+            "Harley",
+            "Valentina",
+            "Freya",
+            "Kalea"
+          ],
+          "blue_picks": [
+            "Hilda",
+            "Harley",
+            "Valentina",
+            "Freya",
+            "Kalea"
+          ],
+          "red_picks": [
+            "Paquito",
+            "Hayabusa",
+            "Zhuxin",
+            "Moskov",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Hilda",
+            "Harley",
+            "Valentina",
+            "Freya",
+            "Kalea"
+          ],
+          "team_b_picks": [
+            "Paquito",
+            "Hayabusa",
+            "Zhuxin",
+            "Moskov",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 5,
+          "map": "Expanding Rivers",
+          "duration": "27:36",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Paquito",
+            "Nolan",
+            "Zhuxin",
+            "Clint",
+            "Gatotkaca"
+          ],
+          "loser_picks": [
+            "Hilda",
+            "Suyou",
+            "Valentina",
+            "Moskov",
+            "Khaleed"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Nolan",
+            "Zhuxin",
+            "Clint",
+            "Gatotkaca"
+          ],
+          "red_picks": [
+            "Hilda",
+            "Suyou",
+            "Valentina",
+            "Moskov",
+            "Khaleed"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Nolan",
+            "Zhuxin",
+            "Clint",
+            "Gatotkaca"
+          ],
+          "team_b_picks": [
+            "Hilda",
+            "Suyou",
+            "Valentina",
+            "Moskov",
+            "Khaleed"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 3,
+      "team_a": {
+        "name": "Team Rey",
+        "abbreviation": "REY"
+      },
+      "team_b": {
+        "name": "Bigetron MY by VIT",
+        "abbreviation": "BTRM"
+      },
+      "score_a": 0,
+      "score_b": 3,
+      "winner": null,
+      "date": "June 3, 2026 - 19:00",
+      "format": "Bo5",
+      "games": [
+        {
+          "game": 1,
+          "map": "Dangerous Grass",
+          "duration": "17:33",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Paquito",
+            "Suyou",
+            "Yve",
+            "Obsidia",
+            "Hylos"
+          ],
+          "loser_picks": [
+            "Phoveus",
+            "Fredrinn",
+            "Gord",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Suyou",
+            "Yve",
+            "Obsidia",
+            "Hylos"
+          ],
+          "red_picks": [
+            "Phoveus",
+            "Fredrinn",
+            "Gord",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Suyou",
+            "Yve",
+            "Obsidia",
+            "Hylos"
+          ],
+          "team_b_picks": [
+            "Phoveus",
+            "Fredrinn",
+            "Gord",
+            "Claude",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Flying Cloud",
+          "duration": "22:14",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Edith",
+            "Akai",
+            "Yve",
+            "Obsidia",
+            "Gloo"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Fredrinn",
+            "Gord",
+            "Karrie",
+            "Atlas"
+          ],
+          "blue_picks": [
+            "Edith",
+            "Akai",
+            "Yve",
+            "Obsidia",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Paquito",
+            "Fredrinn",
+            "Gord",
+            "Karrie",
+            "Atlas"
+          ],
+          "team_a_picks": [
+            "Edith",
+            "Akai",
+            "Yve",
+            "Obsidia",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Paquito",
+            "Fredrinn",
+            "Gord",
+            "Karrie",
+            "Atlas"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Flying Cloud",
+          "duration": "20:46",
+          "winner_side": "red",
+          "winner_picks": [
+            "Gloo",
+            "Akai",
+            "Gord",
+            "Freya",
+            "Hylos"
+          ],
+          "loser_picks": [
+            "Phoveus",
+            "Leomord",
+            "Angela",
+            "Harith",
+            "Chou"
+          ],
+          "blue_picks": [
+            "Phoveus",
+            "Leomord",
+            "Angela",
+            "Harith",
+            "Chou"
+          ],
+          "red_picks": [
+            "Gloo",
+            "Akai",
+            "Gord",
+            "Freya",
+            "Hylos"
+          ],
+          "team_a_picks": [
+            "Phoveus",
+            "Leomord",
+            "Angela",
+            "Harith",
+            "Chou"
+          ],
+          "team_b_picks": [
+            "Gloo",
+            "Akai",
+            "Gord",
+            "Freya",
+            "Hylos"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 4,
+      "team_a": {
+        "name": "Selangor Red Giants",
+        "abbreviation": "SRG"
+      },
+      "team_b": {
+        "name": "Bigetron MY by VIT",
+        "abbreviation": "BTRM"
+      },
+      "score_a": 3,
+      "score_b": 2,
+      "winner": null,
+      "date": "June 4, 2026 - 19:00",
+      "format": "Bo5",
+      "games": [
+        {
+          "game": 1,
+          "map": "Dangerous Grass",
+          "duration": "18:03",
+          "winner_side": "red",
+          "winner_picks": [
+            "Terizla",
+            "Leomord",
+            "Zhuxin",
+            "Claude",
+            "Marcel"
+          ],
+          "loser_picks": [
+            "Arlott",
+            "Fredrinn",
+            "Valentina",
+            "Moskov",
+            "Gloo"
+          ],
+          "blue_picks": [
+            "Arlott",
+            "Fredrinn",
+            "Valentina",
+            "Moskov",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Terizla",
+            "Leomord",
+            "Zhuxin",
+            "Claude",
+            "Marcel"
+          ],
+          "team_a_picks": [
+            "Arlott",
+            "Fredrinn",
+            "Valentina",
+            "Moskov",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Terizla",
+            "Leomord",
+            "Zhuxin",
+            "Claude",
+            "Marcel"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Flying Cloud",
+          "duration": "20:25",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Lapu-Lapu",
+            "Yi Sun-shin",
+            "Kimmy",
+            "Paquito",
+            "Hylos"
+          ],
+          "loser_picks": [
+            "Phoveus",
+            "Guinevere",
+            "Yve",
+            "Claude",
+            "Khaleed"
+          ],
+          "blue_picks": [
+            "Lapu-Lapu",
+            "Yi Sun-shin",
+            "Kimmy",
+            "Paquito",
+            "Hylos"
+          ],
+          "red_picks": [
+            "Phoveus",
+            "Guinevere",
+            "Yve",
+            "Claude",
+            "Khaleed"
+          ],
+          "team_a_picks": [
+            "Lapu-Lapu",
+            "Yi Sun-shin",
+            "Kimmy",
+            "Paquito",
+            "Hylos"
+          ],
+          "team_b_picks": [
+            "Phoveus",
+            "Guinevere",
+            "Yve",
+            "Claude",
+            "Khaleed"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Broken Walls",
+          "duration": "13:15",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Paquito",
+            "Suyou",
+            "Valir",
+            "Harith",
+            "Gloo"
+          ],
+          "loser_picks": [
+            "Sora",
+            "Leomord",
+            "Valentina",
+            "Claude",
+            "Atlas"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Suyou",
+            "Valir",
+            "Harith",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Sora",
+            "Leomord",
+            "Valentina",
+            "Claude",
+            "Atlas"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Suyou",
+            "Valir",
+            "Harith",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Sora",
+            "Leomord",
+            "Valentina",
+            "Claude",
+            "Atlas"
+          ]
+        },
+        {
+          "game": 4,
+          "map": "Dangerous Grass",
+          "duration": "16:27",
+          "winner_side": "red",
+          "winner_picks": [
+            "Freya",
+            "Leomord",
+            "Lylia",
+            "Harith",
+            "Atlas"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Baxia",
+            "Kimmy",
+            "Clint",
+            "Hylos"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Baxia",
+            "Kimmy",
+            "Clint",
+            "Hylos"
+          ],
+          "red_picks": [
+            "Freya",
+            "Leomord",
+            "Lylia",
+            "Harith",
+            "Atlas"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Baxia",
+            "Kimmy",
+            "Clint",
+            "Hylos"
+          ],
+          "team_b_picks": [
+            "Freya",
+            "Leomord",
+            "Lylia",
+            "Harith",
+            "Atlas"
+          ]
+        },
+        {
+          "game": 5,
+          "map": "Dangerous Grass",
+          "duration": "14:42",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Chou"
+          ],
+          "loser_picks": [
+            "Phoveus",
+            "Suyou",
+            "Valentina",
+            "Roger",
+            "Gloo"
+          ],
+          "blue_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Chou"
+          ],
+          "red_picks": [
+            "Phoveus",
+            "Suyou",
+            "Valentina",
+            "Roger",
+            "Gloo"
+          ],
+          "team_a_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Chou"
+          ],
+          "team_b_picks": [
+            "Phoveus",
+            "Suyou",
+            "Valentina",
+            "Roger",
+            "Gloo"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 5,
+      "team_a": {
+        "name": "Invictus Gaming",
+        "abbreviation": "iG"
+      },
+      "team_b": {
+        "name": "Selangor Red Giants",
+        "abbreviation": "SRG"
+      },
+      "score_a": 1,
+      "score_b": 3,
+      "winner": null,
+      "date": "June 5, 2026 - 19:00",
+      "format": "Bo5",
+      "games": [
+        {
+          "game": 1,
+          "map": "Expanding Rivers",
+          "duration": "14:08",
+          "winner_side": "red",
+          "winner_picks": [
+            "Benedetta",
+            "Baxia",
+            "Zhuxin",
+            "Claude",
+            "Marcel"
+          ],
+          "loser_picks": [
+            "Hilda",
+            "Suyou",
+            "Lylia",
+            "Harith",
+            "Gloo"
+          ],
+          "blue_picks": [
+            "Hilda",
+            "Suyou",
+            "Lylia",
+            "Harith",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Benedetta",
+            "Baxia",
+            "Zhuxin",
+            "Claude",
+            "Marcel"
+          ],
+          "team_a_picks": [
+            "Hilda",
+            "Suyou",
+            "Lylia",
+            "Harith",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Benedetta",
+            "Baxia",
+            "Zhuxin",
+            "Claude",
+            "Marcel"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Flying Cloud",
+          "duration": "19:06",
+          "winner_side": "red",
+          "winner_picks": [
+            "Freya",
+            "Baxia",
+            "Yve",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Suyou",
+            "Zhuxin",
+            "Harith",
+            "Kalea"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Suyou",
+            "Zhuxin",
+            "Harith",
+            "Kalea"
+          ],
+          "red_picks": [
+            "Freya",
+            "Baxia",
+            "Yve",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Suyou",
+            "Zhuxin",
+            "Harith",
+            "Kalea"
+          ],
+          "team_b_picks": [
+            "Freya",
+            "Baxia",
+            "Yve",
+            "Claude",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Broken Walls",
+          "duration": "13:11",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Phoveus",
+            "Hayabusa",
+            "Yve",
+            "Claude",
+            "Khaleed"
+          ],
+          "loser_picks": [
+            "Yu Zhong",
+            "Harley",
+            "Zhuxin",
+            "Moskov",
+            "Chou"
+          ],
+          "blue_picks": [
+            "Phoveus",
+            "Hayabusa",
+            "Yve",
+            "Claude",
+            "Khaleed"
+          ],
+          "red_picks": [
+            "Yu Zhong",
+            "Harley",
+            "Zhuxin",
+            "Moskov",
+            "Chou"
+          ],
+          "team_a_picks": [
+            "Phoveus",
+            "Hayabusa",
+            "Yve",
+            "Claude",
+            "Khaleed"
+          ],
+          "team_b_picks": [
+            "Yu Zhong",
+            "Harley",
+            "Zhuxin",
+            "Moskov",
+            "Chou"
+          ]
+        },
+        {
+          "game": 4,
+          "map": "Flying Cloud",
+          "duration": "15:43",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Phoveus",
+            "Hayabusa",
+            "Zhuxin",
+            "Moskov",
+            "Chou"
+          ],
+          "loser_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Hilda"
+          ],
+          "blue_picks": [
+            "Phoveus",
+            "Hayabusa",
+            "Zhuxin",
+            "Moskov",
+            "Chou"
+          ],
+          "red_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Hilda"
+          ],
+          "team_a_picks": [
+            "Phoveus",
+            "Hayabusa",
+            "Zhuxin",
+            "Moskov",
+            "Chou"
+          ],
+          "team_b_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Hilda"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 6,
+      "team_a": {
+        "name": "Team Vamos",
+        "abbreviation": "VMS"
+      },
+      "team_b": {
+        "name": "Bigetron MY by VIT",
+        "abbreviation": "BTRM"
+      },
+      "score_a": 3,
+      "score_b": 1,
+      "winner": null,
+      "date": "June 5, 2026 - 15:00",
+      "format": "Bo5",
+      "games": [
+        {
+          "game": 1,
+          "map": "Broken Walls",
+          "duration": "17:17",
+          "winner_side": "red",
+          "winner_picks": [
+            "Freya",
+            "Suyou",
+            "Valentina",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Leomord",
+            "Yve",
+            "Clint",
+            "Gloo"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Leomord",
+            "Yve",
+            "Clint",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Freya",
+            "Suyou",
+            "Valentina",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Leomord",
+            "Yve",
+            "Clint",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Freya",
+            "Suyou",
+            "Valentina",
+            "Claude",
+            "Gatotkaca"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Broken Walls",
+          "duration": "17:11",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Phoveus",
+            "Leomord",
+            "Yve",
+            "Obsidia",
+            "Chou"
+          ],
+          "loser_picks": [
+            "Arlott",
+            "Guinevere",
+            "Lylia",
+            "Karrie",
+            "Gloo"
+          ],
+          "blue_picks": [
+            "Phoveus",
+            "Leomord",
+            "Yve",
+            "Obsidia",
+            "Chou"
+          ],
+          "red_picks": [
+            "Arlott",
+            "Guinevere",
+            "Lylia",
+            "Karrie",
+            "Gloo"
+          ],
+          "team_a_picks": [
+            "Phoveus",
+            "Leomord",
+            "Yve",
+            "Obsidia",
+            "Chou"
+          ],
+          "team_b_picks": [
+            "Arlott",
+            "Guinevere",
+            "Lylia",
+            "Karrie",
+            "Gloo"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Dangerous Grass",
+          "duration": "14:52",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Phoveus",
+            "Yi Sun-shin",
+            "Zhuxin",
+            "Freya",
+            "Gloo"
+          ],
+          "loser_picks": [
+            "Lapu-Lapu",
+            "Leomord",
+            "Yve",
+            "Karrie",
+            "Atlas"
+          ],
+          "blue_picks": [
+            "Phoveus",
+            "Yi Sun-shin",
+            "Zhuxin",
+            "Freya",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Lapu-Lapu",
+            "Leomord",
+            "Yve",
+            "Karrie",
+            "Atlas"
+          ],
+          "team_a_picks": [
+            "Phoveus",
+            "Yi Sun-shin",
+            "Zhuxin",
+            "Freya",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Lapu-Lapu",
+            "Leomord",
+            "Yve",
+            "Karrie",
+            "Atlas"
+          ]
+        },
+        {
+          "game": 4,
+          "map": "Flying Cloud",
+          "duration": "23:54",
+          "winner_side": "red",
+          "winner_picks": [
+            "Phoveus",
+            "Suyou",
+            "Valentina",
+            "Moskov",
+            "Gloo"
+          ],
+          "loser_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Hylos"
+          ],
+          "blue_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Hylos"
+          ],
+          "red_picks": [
+            "Phoveus",
+            "Suyou",
+            "Valentina",
+            "Moskov",
+            "Gloo"
+          ],
+          "team_a_picks": [
+            "Lapu-Lapu",
+            "Harley",
+            "Yve",
+            "Claude",
+            "Hylos"
+          ],
+          "team_b_picks": [
+            "Phoveus",
+            "Suyou",
+            "Valentina",
+            "Moskov",
+            "Gloo"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 7,
+      "team_a": {
+        "name": "Invictus Gaming",
+        "abbreviation": "iG"
+      },
+      "team_b": {
+        "name": "Team Vamos",
+        "abbreviation": "VMS"
+      },
+      "score_a": 0,
+      "score_b": 4,
+      "winner": null,
+      "date": "June 6, 2026 - 17:30",
+      "format": "Bo7",
+      "games": [
+        {
+          "game": 1,
+          "map": "Flying Cloud",
+          "duration": "18:21",
+          "winner_side": "red",
+          "winner_picks": [
+            "Freya",
+            "Fredrinn",
+            "Yve",
+            "Brody",
+            "Khaleed"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Nolan",
+            "Zhuxin",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "blue_picks": [
+            "Paquito",
+            "Nolan",
+            "Zhuxin",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "red_picks": [
+            "Freya",
+            "Fredrinn",
+            "Yve",
+            "Brody",
+            "Khaleed"
+          ],
+          "team_a_picks": [
+            "Paquito",
+            "Nolan",
+            "Zhuxin",
+            "Claude",
+            "Gatotkaca"
+          ],
+          "team_b_picks": [
+            "Freya",
+            "Fredrinn",
+            "Yve",
+            "Brody",
+            "Khaleed"
+          ]
+        },
+        {
+          "game": 2,
+          "map": "Expanding Rivers",
+          "duration": "12:24",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Benedetta",
+            "Guinevere",
+            "Zhuxin",
+            "Moskov",
+            "Gatotkaca"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Suyou",
+            "Valentina",
+            "Claude",
+            "Gloo"
+          ],
+          "blue_picks": [
+            "Benedetta",
+            "Guinevere",
+            "Zhuxin",
+            "Moskov",
+            "Gatotkaca"
+          ],
+          "red_picks": [
+            "Paquito",
+            "Suyou",
+            "Valentina",
+            "Claude",
+            "Gloo"
+          ],
+          "team_a_picks": [
+            "Benedetta",
+            "Guinevere",
+            "Zhuxin",
+            "Moskov",
+            "Gatotkaca"
+          ],
+          "team_b_picks": [
+            "Paquito",
+            "Suyou",
+            "Valentina",
+            "Claude",
+            "Gloo"
+          ]
+        },
+        {
+          "game": 3,
+          "map": "Expanding Rivers",
+          "duration": "15:23",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Lapu-Lapu",
+            "Fredrinn",
+            "Zhuxin",
+            "Claude",
+            "Chip"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Guinevere",
+            "Zetian",
+            "Karrie",
+            "Badang"
+          ],
+          "blue_picks": [
+            "Lapu-Lapu",
+            "Fredrinn",
+            "Zhuxin",
+            "Claude",
+            "Chip"
+          ],
+          "red_picks": [
+            "Paquito",
+            "Guinevere",
+            "Zetian",
+            "Karrie",
+            "Badang"
+          ],
+          "team_a_picks": [
+            "Lapu-Lapu",
+            "Fredrinn",
+            "Zhuxin",
+            "Claude",
+            "Chip"
+          ],
+          "team_b_picks": [
+            "Paquito",
+            "Guinevere",
+            "Zetian",
+            "Karrie",
+            "Badang"
+          ]
+        },
+        {
+          "game": 4,
+          "map": "Flying Cloud",
+          "duration": "17:24",
+          "winner_side": "blue",
+          "winner_picks": [
+            "Uranus",
+            "Hayabusa",
+            "Zhuxin",
+            "Brody",
+            "Gloo"
+          ],
+          "loser_picks": [
+            "Paquito",
+            "Guinevere",
+            "Valentina",
+            "Claude",
+            "Khaleed"
+          ],
+          "blue_picks": [
+            "Uranus",
+            "Hayabusa",
+            "Zhuxin",
+            "Brody",
+            "Gloo"
+          ],
+          "red_picks": [
+            "Paquito",
+            "Guinevere",
+            "Valentina",
+            "Claude",
+            "Khaleed"
+          ],
+          "team_a_picks": [
+            "Uranus",
+            "Hayabusa",
+            "Zhuxin",
+            "Brody",
+            "Gloo"
+          ],
+          "team_b_picks": [
+            "Paquito",
+            "Guinevere",
+            "Valentina",
+            "Claude",
+            "Khaleed"
+          ]
+        }
+      ]
+    },
+    {
+      "match_number": 8,
+      "team_a": {
+        "name": "Selangor Red Giants",
+        "abbreviation": "SRG"
+      },
+      "team_b": {
+        "name": "Team Vamos",
+        "abbreviation": "VMS"
+      },
+      "score_a": null,
+      "score_b": null,
+      "winner": null,
+      "date": "June 7, 2026 - 17:30",
+      "format": "Bo7",
+      "games": []
+    }
+  ]
+}

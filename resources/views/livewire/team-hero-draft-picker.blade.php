@@ -17,6 +17,12 @@
         >
             Calculate Winrate
         </button>
+         <button
+            wire:click="reverse"
+            class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition"
+        >
+            Reverse
+        </button>
     </div>
 
     {{-- TEAM GRID --}}

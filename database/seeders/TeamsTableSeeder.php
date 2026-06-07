@@ -56,6 +56,12 @@ class TeamsTableSeeder extends Seeder
             ['name' => "Alter Ego", 'game_id' => 2, 'country_id' => '2'],
             ['name' => "Boostgate Esports", 'game_id' => 2, 'country_id' => '12'],
             ['name' => "OG", 'game_id' => 1, 'country_id' => '1'],
+            ['name' => "Team Vamos", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "RRQ Tora", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Team Rey", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Bigetron MY by VIT", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Invictus Gaming", 'game_id' => 2, 'country_id' => '1'],
+            ['name' => "Selangor Red Giants", 'game_id' => 2, 'country_id' => '1'],
         ]);
     }
 }

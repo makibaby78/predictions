@@ -44,28 +44,28 @@ class TeamHeroDraftPicker extends Component
             ->orderBy('name')
             ->get();
 
-        // for testing only
-        // $this->team1Id = 3;
-        // $this->team2Id = 35;
+        //for testing only
+        $this->team1Id = 48;
+        $this->team2Id = 43;
 
-        // $this->team1Players = $this->loadPlayers($this->team1Id);
-        // $this->team2Players = $this->loadPlayers($this->team2Id);
+        $this->team1Players = $this->loadPlayers($this->team1Id);
+        $this->team2Players = $this->loadPlayers($this->team2Id);
 
-        // $this->team1Picks = [];
+        $this->team1Picks = [];
 
-        // $heroIds1 = [94, 69, 4, 102, 31];
+        $heroIds1 = [71, 104, 69, 70, 26];
 
-        // foreach ($this->team1Players as $index => $player) {
-        //     $this->team1Picks[$player->id] = $heroIds1[$index] ?? null;
-        // }
+        foreach ($this->team1Players as $index => $player) {
+            $this->team1Picks[$player->id] = $heroIds1[$index] ?? null;
+        }
 
-        // $this->team2Picks = [];
+        $this->team2Picks = [];
 
-        // $heroIds2 = [2, 65, 37, 44, 112];
+        $heroIds2 = [112, 30, 65, 4, 49];
 
-        // foreach ($this->team2Players as $index => $player) {
-        //     $this->team2Picks[$player->id] = $heroIds2[$index] ?? null;
-        // }
+        foreach ($this->team2Players as $index => $player) {
+            $this->team2Picks[$player->id] = $heroIds2[$index] ?? null;
+        }
     }
 
     public function getPickedHeroesProperty(): array
@@ -138,10 +138,14 @@ class TeamHeroDraftPicker extends Component
             return;
         }
 
-        $results = $this->calculateMatchups();
+        $results = $this->calculateMatchups($this->team1Picks, $this->team2Picks);
     }
 
-    public function calculateMatchups(): array
+    public function reverse():void {
+        $this->calculateMatchups($this->team2Picks, $this->team1Picks);
+    }
+
+    public function calculateMatchups(array $teamAPicks, array $teamBPicks)
     {
         // Eager load relationships to keep collection filters lightning fast
         $groupedPicks = MatchHeroPick::with('match.matchHeroPicks')->get()->groupBy('hero_id');
@@ -150,14 +154,14 @@ class TeamHeroDraftPicker extends Component
         $playerProbabilitiesSum = 0;
         $playerCount = 0;
 
-        foreach ($this->team1Picks as $playerOneId => $heroOneId) {
+        foreach ($teamAPicks as $playerOneId => $heroOneId) {
 
             $heroPicks = $groupedPicks->get($heroOneId, collect());
 
             $enemyWinRates = [];
             $activeMatchupCount = 0;
 
-            foreach ($this->team2Picks as $playerTwoId => $heroTwoId) {
+            foreach ($teamBPicks as $playerTwoId => $heroTwoId) {
 
                 // Get all matches where Hero One played AGAINST Hero Two
                 $matchupPicks = $heroPicks->filter(function ($pick) use ($heroTwoId) {
@@ -200,7 +204,6 @@ class TeamHeroDraftPicker extends Component
             ];
         }
 
-        // Calculate Team 1's combined average draft win probability
         $teamCombinedProbability = $playerCount > 0 ? $playerProbabilitiesSum / $playerCount : 50.0;
 
         dd($teamCombinedProbability);
