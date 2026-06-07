@@ -23,7 +23,7 @@ class MobileLegendsHeroesSeeder extends Seeder
             'Baxia','Ling','Wanwan','Cecilion','Popol and Kupa','Luoyi','Yu Zhong','Khaleed','Barats',
             'Atlas','Mathilda','Edith','Novaria','Cici','Chip','Yve','Beatrix','Phoveus','Natan',
             'Aamon','Valentina','Suyou','Lukas','Zetian', 'Joy', 'Zhuxin', 'Arlott', 'Zetian', 'Kalea', 
-            'Sora', 'Gloo', 'Paquito', 'Benedetta', 'Fredrinn', 'Marcel', 'Obsidia',
+            'Sora', 'Gloo', 'Paquito', 'Benedetta', 'Fredrinn', 'Marcel', 'Obsidia', 'Nolan', 'Brody'
         ];
 
         foreach ($heroNames as $name) {

@@ -296,6 +296,61 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 1, 'game_id' => 2, 'name' => 'Kelra', 'country_id' => 1, 'position' => 'Gold Laner','is_active' => true, 'joined_at' => '2026-02-06', 'left_at' => null ],
 
             ['team_id' => 4, 'game_id' => 2, 'name' => 'Savero', 'country_id' => 2, 'position' => 'Gold Laner', 'joined_at' => '2026-02-24', 'left_at' => null ],
+
+            // ── MPL Malaysia Season 17 ────────────────────────────────────────────
+
+            // Team Vamos (VMS) – team_id 43
+            //['team_id' => 43, 'game_id' => 2, 'name' => 'Zeno',       'country_id' => 3, 'position' => 'EXP Laner'],
+            ['team_id' => 43, 'game_id' => 2, 'name' => 'Sepat',      'country_id' => 3, 'position' => 'EXP Laner'],
+            ['team_id' => 43, 'game_id' => 2, 'name' => 'Error 404',  'country_id' => 3, 'position' => 'Jungler'],
+            ['team_id' => 43, 'game_id' => 2, 'name' => 'Claw Kun',   'country_id' => 2, 'position' => 'Mid Laner'],
+            ['team_id' => 43, 'game_id' => 2, 'name' => 'Natco',      'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 43, 'game_id' => 2, 'name' => 'Zqeef',      'country_id' => 3, 'position' => 'Roamer'],
+
+            // RRQ Tora (RRQT) – team_id 44
+            ['team_id' => 44, 'game_id' => 2, 'name' => 'Dyrennn',    'country_id' => 2, 'position' => 'EXP Laner'],
+            ['team_id' => 44, 'game_id' => 2, 'name' => 'Garyy',      'country_id' => 3, 'position' => 'Jungler'],
+            ['team_id' => 44, 'game_id' => 2, 'name' => 'Aj',         'country_id' => 3, 'position' => 'Mid Laner'],
+            ['team_id' => 44, 'game_id' => 2, 'name' => 'Kyym',       'country_id' => 3, 'position' => 'Mid Laner'],
+            ['team_id' => 44, 'game_id' => 2, 'name' => 'Rough',      'country_id' => 3, 'position' => 'Gold Laner'],
+            ['team_id' => 44, 'game_id' => 2, 'name' => 'Widy',       'country_id' => 2, 'position' => 'Roamer'],
+
+            // Team Rey (REY) – team_id 45
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Sizkaa',     'country_id' => 3, 'position' => 'EXP Laner'],
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Just Garrr', 'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Zahyed',     'country_id' => 3, 'position' => 'Jungler'],
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Martzy',     'country_id' => 3, 'position' => 'Mid Laner'],
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Zayyy',      'country_id' => 3, 'position' => 'Mid Laner'],
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Loleal',     'country_id' => 3, 'position' => 'Gold Laner'],
+            ['team_id' => 45, 'game_id' => 2, 'name' => 'Ivann',      'country_id' => 2, 'position' => 'Roamer'],
+
+            // Bigetron MY by VIT (BTRM) – team_id 46
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Smooth',     'country_id' => 3, 'position' => 'EXP Laner'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Lynchh',     'country_id' => 2, 'position' => 'EXP Laner'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Anavel',     'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Chibi',      'country_id' => 3, 'position' => 'Jungler'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Zieyy',      'country_id' => 3, 'position' => 'Mid Laner'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Amzziq',     'country_id' => 3, 'position' => 'Gold Laner'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'CikuGais',   'country_id' => 3, 'position' => 'Gold Laner'],
+            ['team_id' => 46, 'game_id' => 2, 'name' => 'Rasy',       'country_id' => 2, 'position' => 'Roamer'],
+
+            // Invictus Gaming (iG) – team_id 47
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'Gojes',      'country_id' => 3, 'position' => 'EXP Laner'],
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'Ye3',        'country_id' => 3, 'position' => 'EXP Laner'],
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'Hazle',      'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'SwayLow',    'country_id' => 2, 'position' => 'Mid Laner'],
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'Melqt',      'country_id' => 3, 'position' => 'Gold Laner'],
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'Darmew',     'country_id' => 3, 'position' => 'Gold Laner'],
+            ['team_id' => 47, 'game_id' => 2, 'name' => 'NovaXcobar', 'country_id' => 3, 'position' => 'Roamer'],
+
+            // Selangor Red Giants (SRG) – team_id 48
+            ['team_id' => 48, 'game_id' => 2, 'name' => 'Kramm',      'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 48, 'game_id' => 2, 'name' => 'Sekys',      'country_id' => 3, 'position' => 'Jungler'],
+            //['team_id' => 48, 'game_id' => 2, 'name' => 'Unii',       'country_id' => 3, 'position' => 'Jungler'],
+            ['team_id' => 48, 'game_id' => 2, 'name' => 'Stormie',    'country_id' => 3, 'position' => 'Mid Laner'],
+            ['team_id' => 48, 'game_id' => 2, 'name' => 'Innocent',   'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 48, 'game_id' => 2, 'name' => 'Yums',       'country_id' => 3, 'position' => 'Roamer'],
+
         ];
             
 

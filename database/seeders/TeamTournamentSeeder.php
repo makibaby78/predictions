@@ -62,5 +62,14 @@ class TeamTournamentSeeder extends Seeder
                 'team_id' => $teamId,
             ]);
         }
+
+        $mplmys17 = [43, 44, 45, 46, 47, 48];
+
+        foreach ($mplmys17 as $teamId) {
+            DB::table('team_tournament')->insert([
+                'tournament_id' => 7,
+                'team_id' => $teamId,
+            ]);
+        }
     }
 }

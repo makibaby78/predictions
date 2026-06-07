@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('match_id')->constrained()->onDelete('cascade');
             $table->foreignId('team_id')->constrained()->onDelete('cascade');
             $table->foreignId('hero_id')->constrained()->onDelete('cascade');
-            $table->foreignId('player_id')->constrained('players')->onDelete('cascade');
+            $table->foreignId('player_id')->nullable();
             $table->timestamps();
         });
     }
