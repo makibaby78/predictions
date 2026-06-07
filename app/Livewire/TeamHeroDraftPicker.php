@@ -25,6 +25,10 @@ class TeamHeroDraftPicker extends Component
     public array $team1Picks = [];
     public array $team2Picks = [];
 
+    public ?array $results = null;
+    public bool $isReversed = false;
+    public ?float $forwardProbability = null; // anchors the complement calculation
+
     public function mount(Tournament $tournament)
     {
         $this->tournament = $tournament;
@@ -138,11 +142,38 @@ class TeamHeroDraftPicker extends Component
             return;
         }
 
-        $results = $this->calculateMatchups($this->team1Picks, $this->team2Picks);
+        $this->isReversed = false;
+        $this->results = $this->calculateMatchups($this->team1Picks, $this->team2Picks);
+        $this->forwardProbability = $this->results['team_win_probability'];
     }
 
-    public function reverse():void {
-        $this->calculateMatchups($this->team2Picks, $this->team1Picks);
+    public function reverse(): void
+    {
+        if (!$this->results) {
+            return;
+        }
+
+        // Swap team IDs
+        [$this->team1Id, $this->team2Id] = [$this->team2Id, $this->team1Id];
+
+        // Swap player collections
+        [$this->team1Players, $this->team2Players] = [$this->team2Players, $this->team1Players];
+
+        // Swap picks
+        [$this->team1Picks, $this->team2Picks] = [$this->team2Picks, $this->team1Picks];
+
+        $this->isReversed = !$this->isReversed;
+
+        // Recalculate per-player breakdown from new team1's perspective,
+        // but pin the overall to the complement to avoid the fallback asymmetry
+        $this->results = $this->calculateMatchups($this->team1Picks, $this->team2Picks);
+
+        $overall = $this->isReversed
+            ? round(100 - $this->forwardProbability, 2)
+            : round($this->forwardProbability, 2);
+
+        $this->results['team_win_probability']           = $overall;
+        $this->results['team_win_probability_formatted'] = $overall . '%';
     }
 
     public function calculateMatchups(array $teamAPicks, array $teamBPicks)
@@ -160,13 +191,14 @@ class TeamHeroDraftPicker extends Component
 
             $enemyWinRates = [];
             $activeMatchupCount = 0;
+            $matchupDetails = [];
 
             foreach ($teamBPicks as $playerTwoId => $heroTwoId) {
 
                 // Get all matches where Hero One played AGAINST Hero Two
                 $matchupPicks = $heroPicks->filter(function ($pick) use ($heroTwoId) {
                     return $pick->match?->matchHeroPicks->contains(function ($otherPick) use ($pick, $heroTwoId) {
-                        return $otherPick->hero_id === $heroTwoId 
+                        return $otherPick->hero_id === $heroTwoId
                             && $otherPick->team_id !== $pick->team_id;
                     });
                 });
@@ -183,12 +215,18 @@ class TeamHeroDraftPicker extends Component
 
                     $enemyWinRates[] = $matchupWinRate;
                     $activeMatchupCount++;
+
+                    $matchupDetails[] = [
+                        'enemy_hero_id' => $heroTwoId,
+                        'win_rate'      => round($matchupWinRate, 2),
+                        'games'         => $matchupCount,
+                    ];
                 }
             }
 
             // Calculate individual dynamic average (neutral 50% baseline fallback)
-            $winProbability = $activeMatchupCount > 0 
-                ? array_sum($enemyWinRates) / $activeMatchupCount 
+            $winProbability = $activeMatchupCount > 0
+                ? array_sum($enemyWinRates) / $activeMatchupCount
                 : 50.0;
 
             // Accumulate individual probabilities for the overall team average calculation
@@ -200,13 +238,14 @@ class TeamHeroDraftPicker extends Component
                 'hero_id'                  => $heroOneId,
                 'active_matchups_counted'  => $activeMatchupCount,
                 'win_probability'          => round($winProbability, 2),
-                'win_probability_formatted'=> round($winProbability, 2) . '%'
+                'win_probability_formatted'=> round($winProbability, 2) . '%',
+                'matchups'                 => $matchupDetails,
             ];
         }
 
         $teamCombinedProbability = $playerCount > 0 ? $playerProbabilitiesSum / $playerCount : 50.0;
 
-        dd($teamCombinedProbability);
+        //dd($teamCombinedProbability);
 
         return [
             'team_win_probability'           => round($teamCombinedProbability, 2),
