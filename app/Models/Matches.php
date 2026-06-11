@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Matches extends Model
 {
@@ -18,6 +19,20 @@ class Matches extends Model
     public function series()
     {
         return $this->belongsTo(Series::class);
+    }
+
+    protected function team1(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->series?->team1
+        );
+    }
+
+    protected function team2(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->series?->team2
+        );
     }
 
     public function matchHeroPicks()
