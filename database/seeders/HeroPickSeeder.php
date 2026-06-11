@@ -960,6 +960,18 @@ class HeroPickSeeder extends Seeder
             ['match_id' => 46, 'team_id' => 43, 'hero_id' => 230, 'player_id' => null, 'created_at' => $now, 'updated_at' => $now], // VMS · Valentina
             ['match_id' => 46, 'team_id' => 43, 'hero_id' => 188, 'player_id' => null, 'created_at' => $now, 'updated_at' => $now], // VMS · Claude
             ['match_id' => 46, 'team_id' => 43, 'hero_id' => 217, 'player_id' => null, 'created_at' => $now, 'updated_at' => $now], // VMS · Khaleed
+
+            // Game 1 
+            ['match_id' => 47, 'team_id' => 49, 'hero_id' => 117, 'player_id' => 240, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 49, 'hero_id' => 78, 'player_id' => 241, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 49, 'hero_id' => 52, 'player_id' => 242, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 49, 'hero_id' => 71, 'player_id' => 243, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 49, 'hero_id' => 107, 'player_id' => 244, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 50, 'hero_id' => 37, 'player_id' => 245, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 50, 'hero_id' => 42, 'player_id' => 246, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 50, 'hero_id' => 112, 'player_id' => 247, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 50, 'hero_id' => 65, 'player_id' => 248, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 47, 'team_id' => 50, 'hero_id' => 96, 'player_id' => 249, 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

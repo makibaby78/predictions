@@ -351,6 +351,40 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 48, 'game_id' => 2, 'name' => 'Innocent',   'country_id' => 1, 'position' => 'Gold Laner'],
             ['team_id' => 48, 'game_id' => 2, 'name' => 'Yums',       'country_id' => 3, 'position' => 'Roamer'],
 
+            // Dewa United – team_id 49
+            ['team_id' => 49, 'game_id' => 2, 'name' => 'QINN',      'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 49, 'game_id' => 2, 'name' => 'Dolynn',      'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 49, 'game_id' => 2, 'name' => 'Octa',    'country_id' => 2, 'position' => 'Mid Laner'],
+            ['team_id' => 49, 'game_id' => 2, 'name' => 'Maybe',      'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 49, 'game_id' => 2, 'name' => 'Muezza',       'country_id' => 2, 'position' => 'Roamer'],
+
+            // Geek Fam ID – team_id 50
+            ['team_id' => 50, 'game_id' => 2, 'name' => 'MarceL',      'country_id' => 2, 'position' => 'EXP Laner'],
+            ['team_id' => 50, 'game_id' => 2, 'name' => 'Nazara',      'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 50, 'game_id' => 2, 'name' => 'Aboy',    'country_id' => 2, 'position' => 'Mid Laner'],
+            ['team_id' => 50, 'game_id' => 2, 'name' => 'KennzyySkie',      'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 50, 'game_id' => 2, 'name' => 'Baloyskie',       'country_id' => 1, 'position' => 'Roamer'],
+
+            // Bigetron by Vitality – team_id 51
+            ['team_id' => 51, 'game_id' => 2, 'name' => 'Shogun',      'country_id' => 1, 'position' => 'EXP Laner'],
+            ['team_id' => 51, 'game_id' => 2, 'name' => 'Nnael',      'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 51, 'game_id' => 2, 'name' => 'Moreno',    'country_id' => 2, 'position' => 'Mid Laner'],
+            ['team_id' => 51, 'game_id' => 2, 'name' => 'EMANN',      'country_id' => 1, 'position' => 'Gold Laner'],
+            ['team_id' => 51, 'game_id' => 2, 'name' => 'Finn',       'country_id' => 2, 'position' => 'Roamer'],
+
+            // EVOS – team_id 52
+            ['team_id' => 52, 'game_id' => 2, 'name' => 'Luke',      'country_id' => 2, 'position' => 'EXP Laner'],
+            ['team_id' => 52, 'game_id' => 2, 'name' => 'Albert',      'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 52, 'game_id' => 2, 'name' => 'Pheww',    'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 52, 'game_id' => 2, 'name' => 'Erlan',      'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 52, 'game_id' => 2, 'name' => 'Kyy',       'country_id' => 2, 'position' => 'Roamer'],
+
+            // Team Liquid ID – team_id 53
+            ['team_id' => 53, 'game_id' => 2, 'name' => 'Aran',      'country_id' => 2, 'position' => 'EXP Laner'],
+            ['team_id' => 53, 'game_id' => 2, 'name' => 'Kevinn',      'country_id' => 2, 'position' => 'Jungler'],
+            ['team_id' => 53, 'game_id' => 2, 'name' => 'Drichel',    'country_id' => 1, 'position' => 'Mid Laner'],
+            ['team_id' => 53, 'game_id' => 2, 'name' => 'Kyou',      'country_id' => 2, 'position' => 'Gold Laner'],
+            ['team_id' => 53, 'game_id' => 2, 'name' => 'Lyoni',       'country_id' => 2, 'position' => 'Roamer'],
         ];
             
 

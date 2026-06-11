@@ -21,7 +21,7 @@
                 </p>
                 <ul class="text-sm mt-1 text-gray-600">
                     @foreach ($team->players as $player)
-                        <li>{{ $player->name }}</li>
+                        <li>{{ $player->id }} - {{ $player->name }}</li>
                     @endforeach
                 </ul>
             </li>
