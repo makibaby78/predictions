@@ -61,24 +61,25 @@ class Hero extends Model
                 $q->select(DB::raw(1))
                     ->from('match_hero_picks as enemy_picks')
                     ->whereColumn('enemy_picks.match_id', 'match_hero_picks.match_id')
+                    ->whereColumn('enemy_picks.team_id', '!=', 'match_hero_picks.team_id')
                     ->where('enemy_picks.hero_id', $enemyHeroId);
             });
         }
 
-        $totalPicks = (clone $query)->count();
+        $stats = $query->select(
+                DB::raw('COUNT(*) as total_picks'),
+                DB::raw('SUM(CASE WHEN match_hero_picks.team_id = matches.winner_id THEN 1 ELSE 0 END) as wins')
+            )->first();
 
-        $wins = (clone $query)
-            ->whereColumn('match_hero_picks.team_id', 'matches.winner_id')
-            ->count();
+        $totalPicks = (int) $stats->total_picks;
+        $wins = (int) $stats->wins;
 
         return [
-            'hero_id' => $heroId,
+            'hero_id'     => $heroId,
             'total_picks' => $totalPicks,
-            'wins' => $wins,
-            'win_rate' => $totalPicks > 0
-                ? round(($wins / $totalPicks) * 100, 2)
-                : null,
-            'has_data' => $totalPicks > 0,
+            'wins'        => $wins,
+            'win_rate'    => $totalPicks > 0 ? round(($wins / $totalPicks) * 100, 2) : null,
+            'has_data'    => $totalPicks > 0,
         ];
     }
 }
