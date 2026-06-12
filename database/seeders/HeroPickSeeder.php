@@ -1140,6 +1140,78 @@ class HeroPickSeeder extends Seeder
             ['match_id' => 61, 'team_id' => 51, 'hero_id' => 112, 'player_id' => 252, 'created_at' => $now, 'updated_at' => $now],
             ['match_id' => 61, 'team_id' => 51, 'hero_id' => 65, 'player_id' => 253, 'created_at' => $now, 'updated_at' => $now],
             ['match_id' => 61, 'team_id' => 51, 'hero_id' => 96, 'player_id' => 254, 'created_at' => $now, 'updated_at' => $now],
+
+            // Game 1
+            ['match_id' => 62, 'team_id' => 53, 'hero_id' => 117, 'player_id' => 260, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 53, 'hero_id' => 69, 'player_id' => 261, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 53, 'hero_id' => 84, 'player_id' => 262, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 53, 'hero_id' => 65, 'player_id' => 263, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 53, 'hero_id' => 35, 'player_id' => 264, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 51, 'hero_id' => 93, 'player_id' => 250, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 51, 'hero_id' => 87, 'player_id' => 251, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 51, 'hero_id' => 112, 'player_id' => 252, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 51, 'hero_id' => 71, 'player_id' => 253, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 62, 'team_id' => 51, 'hero_id' => 116, 'player_id' => 254, 'created_at' => $now, 'updated_at' => $now],
+
+            // Game 2
+            ['match_id' => 63, 'team_id' => 53, 'hero_id' => 117, 'player_id' => 260, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 53, 'hero_id' => 69, 'player_id' => 261, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 53, 'hero_id' => 110, 'player_id' => 262, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 53, 'hero_id' => 31, 'player_id' => 263, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 53, 'hero_id' => 26, 'player_id' => 264, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 51, 'hero_id' => 115, 'player_id' => 250, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 51, 'hero_id' => 87, 'player_id' => 251, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 51, 'hero_id' => 112, 'player_id' => 252, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 51, 'hero_id' => 65, 'player_id' => 253, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 63, 'team_id' => 51, 'hero_id' => 114, 'player_id' => 254, 'created_at' => $now, 'updated_at' => $now],
+
+            // Game 3
+            ['match_id' => 64, 'team_id' => 53, 'hero_id' => 104, 'player_id' => 260, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 53, 'hero_id' => 69, 'player_id' => 261, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 53, 'hero_id' => 67, 'player_id' => 262, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 53, 'hero_id' => 75, 'player_id' => 263, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 53, 'hero_id' => 26, 'player_id' => 264, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 51, 'hero_id' => 116, 'player_id' => 250, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 51, 'hero_id' => 17, 'player_id' => 251, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 51, 'hero_id' => 102, 'player_id' => 252, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 51, 'hero_id' => 65, 'player_id' => 253, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 64, 'team_id' => 51, 'hero_id' => 114, 'player_id' => 254, 'created_at' => $now, 'updated_at' => $now],
+
+            // Game 1
+            ['match_id' => 65, 'team_id' => 50, 'hero_id' => 93, 'player_id' => 245, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 50, 'hero_id' => 42, 'player_id' => 246, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 50, 'hero_id' => 112, 'player_id' => 247, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 50, 'hero_id' => 81, 'player_id' => 248, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 50, 'hero_id' => 96, 'player_id' => 249, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 1, 'hero_id' => 115, 'player_id' => 1, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 1, 'hero_id' => 69, 'player_id' => 2, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 1, 'hero_id' => 107, 'player_id' => 3, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 1, 'hero_id' => 65, 'player_id' => 19, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 65, 'team_id' => 1, 'hero_id' => 94, 'player_id' => 5, 'created_at' => $now, 'updated_at' => $now],
+
+            // Game 2
+            ['match_id' => 66, 'team_id' => 50, 'hero_id' => 117, 'player_id' => 245, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 50, 'hero_id' => 69, 'player_id' => 246, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 50, 'hero_id' => 76, 'player_id' => 247, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 50, 'hero_id' => 81, 'player_id' => 248, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 50, 'hero_id' => 49, 'player_id' => 249, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 1, 'hero_id' => 113, 'player_id' => 1, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 1, 'hero_id' => 119, 'player_id' => 2, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 1, 'hero_id' => 23, 'player_id' => 3, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 1, 'hero_id' => 65, 'player_id' => 19, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 66, 'team_id' => 1, 'hero_id' => 26, 'player_id' => 5, 'created_at' => $now, 'updated_at' => $now],
+
+            // Game 3
+            ['match_id' => 67, 'team_id' => 50, 'hero_id' => 115, 'player_id' => 245, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 50, 'hero_id' => 119, 'player_id' => 246, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 50, 'hero_id' => 70, 'player_id' => 247, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 50, 'hero_id' => 65, 'player_id' => 248, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 50, 'hero_id' => 114, 'player_id' => 249, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 1, 'hero_id' => 37, 'player_id' => 1, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 1, 'hero_id' => 87, 'player_id' => 2, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 1, 'hero_id' => 102, 'player_id' => 3, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 1, 'hero_id' => 71, 'player_id' => 19, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 67, 'team_id' => 1, 'hero_id' => 120, 'player_id' => 5, 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

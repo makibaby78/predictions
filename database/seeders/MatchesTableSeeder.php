@@ -245,6 +245,14 @@ class MatchesTableSeeder extends Seeder
             ['series_id' => 102, 'tournament_id' => 8, 'match_number' => 2, 'winner_id' => 1, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
             ['series_id' => 102, 'tournament_id' => 8, 'match_number' => 3, 'winner_id' => 1, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
             ['series_id' => 102, 'tournament_id' => 8, 'match_number' => 4, 'winner_id' => 1, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            ['series_id' => 103, 'tournament_id' => 8, 'match_number' => 1, 'winner_id' => 51, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => 103, 'tournament_id' => 8, 'match_number' => 2, 'winner_id' => 51, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => 103, 'tournament_id' => 8, 'match_number' => 3, 'winner_id' => 51, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+
+            ['series_id' => 104, 'tournament_id' => 8, 'match_number' => 1, 'winner_id' => 1, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => 104, 'tournament_id' => 8, 'match_number' => 2, 'winner_id' => 1, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
+            ['series_id' => 104, 'tournament_id' => 8, 'match_number' => 3, 'winner_id' => 1, 'created_at' => '2025-08-04 06:07:33', 'updated_at' => '2025-08-04 06:07:33'],
         ]);
     }
 }
