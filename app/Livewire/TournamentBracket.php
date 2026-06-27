@@ -66,7 +66,13 @@ class TournamentBracket extends Component
 
     public function getSeriesProperty()
     {
-        $series = Series::with(['teamA', 'teamB', 'winner'])
+        $series = Series::with([
+            'teamA', 
+            'teamB', 
+            'winner', 
+            'matches' => function ($query) {
+                $query->with(['matchHeroPicks', 'series.teamA', 'series.teamB']);
+            }])
             ->where('tournament_id', $this->tournament->id)
             ->orderBy('match_date')
             ->get();
