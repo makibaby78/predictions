@@ -80,5 +80,14 @@ class TeamTournamentSeeder extends Seeder
                 'team_id' => $teamId,
             ]);
         }
+
+        $tieuq = [19, 54, 55, 56, 57, 58, 59, 60, 61, 17];
+
+        foreach ($tieuq as $teamId) {
+            DB::table('team_tournament')->insert([
+                'tournament_id' => 9,
+                'team_id' => $teamId,
+            ]);
+        }
     }
 }

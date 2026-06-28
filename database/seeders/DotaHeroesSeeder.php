@@ -34,7 +34,7 @@ class DotaHeroesSeeder extends Seeder
             'Timbersaw', 'Tinker', 'Tiny', 'Treant Protector', 'Troll Warlord', 'Tusk',
             'Underlord', 'Undying', 'Ursa', 'Vengeful Spirit', 'Venomancer', 'Viper',
             'Visage', 'Void Spirit', 'Warlock', 'Weaver', 'Windranger', 'Winter Wyvern',
-            'Witch Doctor', 'Wraith King', 'Zeus'
+            'Witch Doctor', 'Wraith King', 'Zeus', 'Kez', 'Ringmaster', 'Largo', 'Muerta',
         ];
 
         foreach ($heroNames as $name) {

@@ -67,6 +67,14 @@ class TeamsTableSeeder extends Seeder
             ['name' => "Bigetron by Vitality", 'game_id' => 2, 'country_id' => '2'],
             ['name' => "EVOS", 'game_id' => 2, 'country_id' => '2'],
             ['name' => "Team Liquid ID", 'game_id' => 2, 'country_id' => '2'],
+            ['name' => "Virtus.pro", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "HULIGANI", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "Yellow Submarine", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "IC x Insanity", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "Power Rangers", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "MOUZ", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "4ikibamboni", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "Enjoy", 'game_id' => 1, 'country_id' => '11'],
         ]);
     }
 }

@@ -385,6 +385,62 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 53, 'game_id' => 2, 'name' => 'Drichel',    'country_id' => 1, 'position' => 'Mid Laner'],
             ['team_id' => 53, 'game_id' => 2, 'name' => 'Kyou',      'country_id' => 2, 'position' => 'Gold Laner'],
             ['team_id' => 53, 'game_id' => 2, 'name' => 'Lyoni',       'country_id' => 2, 'position' => 'Roamer'],
+
+            // Virtus.pro – team_id 54
+            ['team_id' => 54, 'game_id' => 1, 'name' => 'Timado',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 54, 'game_id' => 1, 'name' => 'Abed',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 54, 'game_id' => 1, 'name' => 'SaberLight',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 54, 'game_id' => 1, 'name' => 'Hellscream',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 54, 'game_id' => 1, 'name' => 'Fly',       'country_id' => 2, 'position' => 'Support'],
+
+            // HULIGANI
+            ['team_id' => 55, 'game_id' => 1, 'name' => 'ssnovv1',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 55, 'game_id' => 1, 'name' => 'Mirage`',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 55, 'game_id' => 1, 'name' => 'Vazya',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 55, 'game_id' => 1, 'name' => 'sayuw',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 55, 'game_id' => 1, 'name' => 'RESPECT',       'country_id' => 2, 'position' => 'Support'],
+
+            // Yellow Submarine
+            ['team_id' => 56, 'game_id' => 1, 'name' => 'shigetsu',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 56, 'game_id' => 1, 'name' => 'Rain`',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 56, 'game_id' => 1, 'name' => 'Batyuk',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 56, 'game_id' => 1, 'name' => 'ryota',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 56, 'game_id' => 1, 'name' => 'Xakoda',       'country_id' => 2, 'position' => 'Support'],
+
+            // IC x Insanity
+            ['team_id' => 57, 'game_id' => 1, 'name' => '423',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 57, 'game_id' => 1, 'name' => 'Stojkov',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 57, 'game_id' => 1, 'name' => 'laise',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 57, 'game_id' => 1, 'name' => 'Fernans',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 57, 'game_id' => 1, 'name' => 'Se',       'country_id' => 2, 'position' => 'Support'],
+
+            // Power Rangers
+            ['team_id' => 58, 'game_id' => 1, 'name' => 'TA2000',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 58, 'game_id' => 1, 'name' => 'Nicky`Cool',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 58, 'game_id' => 1, 'name' => 'alberkaaa',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 58, 'game_id' => 1, 'name' => 'Immersion',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 58, 'game_id' => 1, 'name' => 'Hduo',       'country_id' => 2, 'position' => 'Support'],
+
+            // MOUZ
+            ['team_id' => 59, 'game_id' => 1, 'name' => 'Crystallis',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 59, 'game_id' => 1, 'name' => 'MidOne',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 59, 'game_id' => 1, 'name' => 'BOOM',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 59, 'game_id' => 1, 'name' => 'yamich',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 59, 'game_id' => 1, 'name' => 'panto',       'country_id' => 2, 'position' => 'Support'],
+
+            // 4ikibamboni
+            ['team_id' => 60, 'game_id' => 1, 'name' => 'yowaai',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 60, 'game_id' => 1, 'name' => 'Ethereal',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 60, 'game_id' => 1, 'name' => 'Ankou',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 60, 'game_id' => 1, 'name' => 'ani-san',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 60, 'game_id' => 1, 'name' => 'waveformn',       'country_id' => 2, 'position' => 'Support'],
+
+            // Enjoy
+            ['team_id' => 61, 'game_id' => 1, 'name' => 'v1olent`',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 61, 'game_id' => 1, 'name' => 'squad1x',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 61, 'game_id' => 1, 'name' => 'мистер мораль',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 61, 'game_id' => 1, 'name' => 'swedenstrong',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 61, 'game_id' => 1, 'name' => 'Rein',       'country_id' => 2, 'position' => 'Support'],
         ];
             
 

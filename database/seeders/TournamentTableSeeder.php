@@ -77,5 +77,13 @@ class TournamentTableSeeder extends Seeder
             'start_date' => '2026-03-27',
             'end_date' => '2026-06-14',
         ]);
+
+        Tournament::create([
+            'name' => 'The International 2026: Europe Regional Qualifier',
+            'game_id' => 1,
+            'prize_pool' => 1000000.00,
+            'start_date' => '2026-06-21',
+            'end_date' => '2026-06-28',
+        ]);
     }
 }

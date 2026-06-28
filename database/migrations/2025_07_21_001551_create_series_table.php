@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignId('team2_id')->nullable()->constrained('teams')->nullOnDelete();
             $table->foreignId('winner_id')->nullable()->constrained('teams')->onDelete('set null');
             $table->date('match_date')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
