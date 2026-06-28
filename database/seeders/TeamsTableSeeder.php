@@ -75,6 +75,9 @@ class TeamsTableSeeder extends Seeder
             ['name' => "MOUZ", 'game_id' => 1, 'country_id' => '11'],
             ['name' => "4ikibamboni", 'game_id' => 1, 'country_id' => '11'],
             ['name' => "Enjoy", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "Rune Eaters", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "Team Bald", 'game_id' => 1, 'country_id' => '11'],
+            ['name' => "MODUS", 'game_id' => 1, 'country_id' => '11'],
         ]);
     }
 }

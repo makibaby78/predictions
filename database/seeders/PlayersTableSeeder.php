@@ -441,6 +441,27 @@ class PlayersTableSeeder extends Seeder
             ['team_id' => 61, 'game_id' => 1, 'name' => 'мистер мораль',    'country_id' => 1, 'position' => 'Offlane'],
             ['team_id' => 61, 'game_id' => 1, 'name' => 'swedenstrong',      'country_id' => 2, 'position' => 'Support'],
             ['team_id' => 61, 'game_id' => 1, 'name' => 'Rein',       'country_id' => 2, 'position' => 'Support'],
+
+            // Rune Eaters
+            ['team_id' => 62, 'game_id' => 1, 'name' => 'Darklord^`',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 62, 'game_id' => 1, 'name' => 'Copy',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 62, 'game_id' => 1, 'name' => 'Malik',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 62, 'game_id' => 1, 'name' => 'Ekki',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 62, 'game_id' => 1, 'name' => 'aik',       'country_id' => 2, 'position' => 'Support'],
+
+            // Team Bald
+            ['team_id' => 63, 'game_id' => 1, 'name' => 'Shad',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 63, 'game_id' => 1, 'name' => 'sanctity-',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 63, 'game_id' => 1, 'name' => 'Xibbe',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 63, 'game_id' => 1, 'name' => 'mrls',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 63, 'game_id' => 1, 'name' => 'Bengan',       'country_id' => 2, 'position' => 'Support'],
+
+            // MODUS
+            ['team_id' => 64, 'game_id' => 1, 'name' => 'bottega',      'country_id' => 2, 'position' => 'Carry'],
+            ['team_id' => 64, 'game_id' => 1, 'name' => 'Mirele',      'country_id' => 2, 'position' => 'Mid'],
+            ['team_id' => 64, 'game_id' => 1, 'name' => 'seraphicyy',    'country_id' => 1, 'position' => 'Offlane'],
+            ['team_id' => 64, 'game_id' => 1, 'name' => 'prblms',      'country_id' => 2, 'position' => 'Support'],
+            ['team_id' => 64, 'game_id' => 1, 'name' => 'kasane',       'country_id' => 2, 'position' => 'Support'],
         ];
             
 
