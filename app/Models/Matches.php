@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Facades\DB;
 
 class Matches extends Model
 {
@@ -43,30 +44,24 @@ class Matches extends Model
     public function winner()
     {
         return $this->belongsTo(Team::class, 'winner_id');
-    }
-
-    // --- New Accessors Mirroring Component Calculation Logic ---
+    }    
 
     protected function team1DraftWinrate(): Attribute
     {
         return Attribute::make(
-            // Point to teamA instead of team1
             get: fn () => $this->calculateTeamDraftWinrate($this->series?->teamA?->id)
         );
     }
 
-    /**
-     * Get Team 2's combined draft average win rate.
-     */
     protected function team2DraftWinrate(): Attribute
     {
         return Attribute::make(
-            // Point to teamB instead of team2
             get: fn () => $this->calculateTeamDraftWinrate($this->series?->teamB?->id)
         );
     }
+
     /**
-     * Helper to compute the component-level logic inside the model
+     * Optimized helper to compute the tournament-filtered draft average win rate
      */
     protected function calculateTeamDraftWinrate(?int $teamId): ?float
     {
@@ -74,24 +69,40 @@ class Matches extends Model
             return null;
         }
 
-        // Filter the pre-loaded or eager-loaded hero picks for this specific team
-        $teamPicks = $this->matchHeroPicks->where('team_id', $teamId)->filter(function ($pick) {
-            return !is_null($pick->hero_id);
-        });
+        // 1. Get hero IDs picked by this team in this match
+        $heroIds = $this->matchHeroPicks
+            ->where('team_id', $teamId)
+            ->pluck('hero_id')
+            ->filter()
+            ->toArray();
 
-        if ($teamPicks->isEmpty()) {
+        if (empty($heroIds)) {
             return 0.0;
         }
 
-        $heroModel = new Hero();
-        $totalWinrateSum = 0;
+        $heroStats = DB::table('match_hero_picks')
+            ->join('matches', 'matches.id', '=', 'match_hero_picks.match_id')
+            ->whereIn('match_hero_picks.hero_id', $heroIds)
+            ->where('matches.tournament_id', $this->tournament_id)
+            ->select(
+                'match_hero_picks.hero_id',
+                DB::raw('COUNT(*) as total_picks'),
+                DB::raw('SUM(CASE WHEN match_hero_picks.team_id = matches.winner_id THEN 1 ELSE 0 END) as wins')
+            )
+            ->groupBy('match_hero_picks.hero_id')
+            ->get()
+            ->keyBy('hero_id');
 
-        foreach ($teamPicks as $pick) {
-            // Re-uses your exact logic from the Livewire component 
-            $stats = $heroModel->getHeroWinRate((int) $pick->hero_id);
-            $totalWinrateSum += $stats['win_rate'] ?? 0.0;
+        // 3. Calculate the average across the team's draft
+        $totalWinrateSum = 0;
+        foreach ($heroIds as $heroId) {
+            $stats = $heroStats->get($heroId);
+            if ($stats && $stats->total_picks > 0) {
+                $winRate = ($stats->wins / $stats->total_picks) * 100;
+                $totalWinrateSum += $winRate;
+            }
         }
 
-        return round($totalWinrateSum / $teamPicks->count(), 1);
+        return round($totalWinrateSum / count($heroIds), 1);
     }
 }
