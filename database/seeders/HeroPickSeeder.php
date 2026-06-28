@@ -1645,6 +1645,18 @@ class HeroPickSeeder extends Seeder
             ['match_id' => 103, 'team_id' => 55, 'hero_id' => 248, 'player_id' => 272, 'created_at' => $now, 'updated_at' => $now],
             ['match_id' => 103, 'team_id' => 55, 'hero_id' => 201, 'player_id' => 273, 'created_at' => $now, 'updated_at' => $now],
 
+            // Game 3
+            ['match_id' => 104, 'team_id' => 54, 'hero_id' => 138, 'player_id' => 265, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 54, 'hero_id' => 196, 'player_id' => 266, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 54, 'hero_id' => 145, 'player_id' => 133, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 54, 'hero_id' => 228, 'player_id' => 267, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 54, 'hero_id' => 199, 'player_id' => 268, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 55, 'hero_id' => 125, 'player_id' => 269, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 55, 'hero_id' => 144, 'player_id' => 270, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 55, 'hero_id' => 142, 'player_id' => 271, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 55, 'hero_id' => 248, 'player_id' => 272, 'created_at' => $now, 'updated_at' => $now],
+            ['match_id' => 104, 'team_id' => 55, 'hero_id' => 156, 'player_id' => 273, 'created_at' => $now, 'updated_at' => $now],
+
         ]);
     }
 }

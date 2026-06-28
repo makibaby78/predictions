@@ -874,7 +874,7 @@ class SeriesTableSeeder extends Seeder
                 'tournament_id' => 9,
                 'team1_id' => 54,
                 'team2_id' => 55,
-                'winner_id' => 54,
+                'winner_id' => 55,
                 'match_date' => '2026-06-28',
             ],
             [
