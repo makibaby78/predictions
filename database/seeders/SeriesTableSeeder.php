@@ -797,6 +797,38 @@ class SeriesTableSeeder extends Seeder
                 'winner_id' => 17,
                 'match_date' => '2026-06-25',
             ],
+
+            [
+                'tournament_id' => 9,
+                'team1_id' => 58,
+                'team2_id' => 55,
+                'winner_id' => 58,
+                'match_date' => '2026-06-22',
+            ],
+
+            [
+                'tournament_id' => 9,
+                'team1_id' => 55,
+                'team2_id' => 60,
+                'winner_id' => 55,
+                'match_date' => '2026-06-24',
+            ],
+
+            [
+                'tournament_id' => 9,
+                'team1_id' => 61,
+                'team2_id' => 55,
+                'winner_id' => 55,
+                'match_date' => '2026-06-26',
+            ],
+
+            [
+                'tournament_id' => 9,
+                'team1_id' => 30,
+                'team2_id' => 55,
+                'winner_id' => 55,
+                'match_date' => '2026-06-27',
+            ],
         ]);
     }
 }
